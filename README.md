@@ -1,2 +1,3 @@
-# tams
-Traning Actuate Management System Application Repository
+# tms
+## アプリケーション開発リポジトリ
+
