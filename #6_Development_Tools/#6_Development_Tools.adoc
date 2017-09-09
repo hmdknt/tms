@@ -9,11 +9,18 @@
 
 
 == IDE
+基本はこの2つの内のどちらかを使用 +
+
 * Spring Tool Suite(ver.3.9.0)
 ** 環境構築手順
 . https://spring.io/tools/sts からSTSをダウンロードする
 . ダウンロードしたものを解凍する
 
+* IntelliJ IDEA
+** 環境構築手順
+. https://www.jetbrains.com/idea/download/#section=mac からCommunity版をダウンロードする
+. ダウンロードしたideaIC-2017.2.3.dmgを選択する
+. IntelliJをApplicationにドラッグすれば完了
 
 == BuildTools
 * gradle(ver.4.1)
@@ -27,6 +34,10 @@ $ brew update && brew install gradle
 
 == DatabaseClient
 * MySQLWorkbench(ver.6.3)
+** 環境構築手順
+. https://dev.mysql.com/downloads/workbench/ からMySQLWorkbenchをダウンロードする
+. ダウンロードしたmysql-workbench-community-6.3.9-osx-x86_64.dmg を選択する
+. MySQLWorkBenchをApplicationにドラッグすれば完了
 
 
 == DocumentBuilder
@@ -40,7 +51,6 @@ $ ruby -e "$(curl -fsSL https://raw.gi thubusercontent.com/Homebrew/install/mast
 
 $ brew install asciidoc
 ....
-
 
 
 == DocumentWrittingSoft
