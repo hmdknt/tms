@@ -15,5 +15,5 @@ asciidoctor {
     sources {
         include 'index.adoc'
     }
-    outputDir = file('build/docs')
+    outputDir = file("${projectDir}/public")
 }
