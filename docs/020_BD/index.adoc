@@ -1,4 +1,12 @@
 = 基本設計
+:toc: left
+:toclevel: 2
+:toc-title: 目次
+:figure-caption: 図
+:table-caption: 表
+:imagesdir: images
+:homepage: https://traningmanagementsystem.github.io/devlog/
+
 
 == Overview
 要件定義で確定したシステムの振る舞いから機能レベルに落とし込んだ仕様となる。

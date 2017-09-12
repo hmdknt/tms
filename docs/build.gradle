@@ -14,6 +14,11 @@ asciidoctor {
     sourceDir = file("${projectDir}")
     sources {
         include 'index.adoc'
+        include '010_RD/index.adoc'
+        include '020_BD/index.adoc'
+        include '030_DD/index.adoc'
+        include '040_MUT/index.adoc'
+        include '050_SI/index.adoc'
     }
     outputDir = file("${projectDir}/public")
 }

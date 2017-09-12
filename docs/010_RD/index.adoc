@@ -1,4 +1,12 @@
 = 要件定義
+:toc: left
+:toclevel: 2
+:toc-title: 目次
+:figure-caption: 図
+:table-caption: 表
+:imagesdir: images
+:homepage: https://traningmanagementsystem.github.io/devlog/
+
 
 == Overview
 本システムにおける要件定義資料となる。
@@ -41,7 +49,7 @@ WEBシステム化するにあたり以下を要望する。
 
 ==== レポート作成
 .レポート作成時のユースケース
-image::010_RD/Sec010_RD_user_createreport.png[]
+image::Sec010_RD_user_createreport.png[]
 
 
 === 画面一覧
@@ -100,4 +108,4 @@ Information機能によって通知を表示する。
 
 === システム構成
 .システム構成
-image::010_RD/Sec010_RD_system_structure.png[]
+image::Sec010_RD_system_structure.png[]
