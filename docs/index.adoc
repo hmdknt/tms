@@ -1,7 +1,11 @@
 = Traning Management System
 :toc: left
-:toclevel: 3
-:toctitle: 目次
+:toclevel: 2
+:toc-title: 目次
+:figure-caption: 図
+:table-caption: 表
+:imagesdir: images
+:homepage: https://traningmanagementsystem.github.io/devlog/
 
 
 // 要件定義

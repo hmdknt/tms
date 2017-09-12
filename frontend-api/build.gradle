@@ -1,0 +1,19 @@
+// 依存関係
+dependencies {
+
+    // --------------------------------
+    // OSS
+    // --------------------------------
+    compile("org.springframework.boot:spring-boot-starter-web")
+
+    // --------------------------------
+    // プロジェクト内
+    // --------------------------------
+    compile project(":swagger:frontend-api-server")
+
+    // --------------------------------
+    // 開発効率化
+    // --------------------------------
+    compileOnly('org.projectlombok:lombok')
+
+}

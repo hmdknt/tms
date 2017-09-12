@@ -1,3 +1,6 @@
 rootProject.name = 'tms'
 include 'frontend-api'
+include 'frontend-web'
 include 'schema'
+include 'docs'
+include 'swagger:frontend-api-server'
