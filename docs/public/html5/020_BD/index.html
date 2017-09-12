@@ -417,9 +417,36 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 .show-for-print{display:inherit!important}}
 </style>
 </head>
-<body class="article">
+<body class="article toc2 toc-left">
 <div id="header">
 <h1>基本設計</h1>
+<div id="toc" class="toc2">
+<div id="toctitle">目次</div>
+<ul class="sectlevel1">
+<li><a href="#_overview">Overview</a></li>
+<li><a href="#_機能一覧">機能一覧</a></li>
+<li><a href="#_機能設計書">機能設計書</a>
+<ul class="sectlevel2">
+<li><a href="#Sec020_BD_functionspec_login">ログイン機能</a></li>
+<li><a href="#Sec020_BD_functionspec_A">A機能</a></li>
+<li><a href="#Sec020_BD_functionspec_B">B機能</a></li>
+</ul>
+</li>
+<li><a href="#_画面設計">画面設計</a>
+<ul class="sectlevel2">
+<li><a href="#_画面遷移図">画面遷移図</a></li>
+<li><a href="#_画面設計_2">画面設計</a></li>
+<li><a href="#_モックアップ">モックアップ</a></li>
+</ul>
+</li>
+<li><a href="#_モデリング">モデリング</a>
+<ul class="sectlevel2">
+<li><a href="#_er図">ER図</a></li>
+<li><a href="#_テーブル定義書">テーブル定義書</a></li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div class="sect1">
@@ -437,7 +464,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>本システムが有する機能の一覧を示す。</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 1. 機能一覧</caption>
+<caption class="title">表 1. 機能一覧</caption>
 <colgroup>
 <col style="width: 30%;">
 <col style="width: 70%;">
@@ -579,7 +606,7 @@ ActiveDirectoryで認証処理後、本システム内での権限情報（ROLE�
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-09-12 21:28:55 +09:00
+Last updated 2017-09-12 21:58:05 +09:00
 </div>
 </div>
 </body>
