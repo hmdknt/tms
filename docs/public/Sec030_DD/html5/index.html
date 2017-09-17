@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 1.5.3">
-<title>要件定義</title>
+<meta name="generator" content="Asciidoctor 1.5.4">
+<title>詳細設計</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -419,27 +419,28 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>要件定義</h1>
+<h1>詳細設計</h1>
 <div id="toc" class="toc2">
-<div id="toctitle">目次</div>
+<div id="toctitle"></div>
 <ul class="sectlevel1">
 <li><a href="#_overview">Overview</a></li>
-<li><a href="#_要求仕様の再整理">要求仕様の再整理</a>
+<li><a href="#_オンライン処理設計書">オンライン処理設計書</a>
 <ul class="sectlevel2">
-<li><a href="#_目的_目標">目的・目標</a></li>
-<li><a href="#_システム構成">システム構成</a></li>
+<li><a href="#_a機能_a処理">A機能-A処理</a></li>
+<li><a href="#_b機能_b処理">B機能-B処理</a></li>
 </ul>
 </li>
-<li><a href="#_ビジネス設計">ビジネス設計</a>
+<li><a href="#_画面設計">画面設計</a>
 <ul class="sectlevel2">
-<li><a href="#_ユースケース図">ユースケース図</a></li>
-<li><a href="#_画面一覧">画面一覧</a></li>
 <li><a href="#_画面遷移図">画面遷移図</a></li>
+<li><a href="#_画面設計_2">画面設計</a></li>
+<li><a href="#_モックアップ">モックアップ</a></li>
 </ul>
 </li>
-<li><a href="#_システム設計">システム設計</a>
+<li><a href="#_モデリング">モデリング</a>
 <ul class="sectlevel2">
-<li><a href="#_システム構成_2">システム構成</a></li>
+<li><a href="#_er図">ER図</a></li>
+<li><a href="#_テーブル定義書">テーブル定義書</a></li>
 </ul>
 </li>
 </ul>
@@ -449,220 +450,78 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect1">
 <h2 id="_overview">Overview</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>本システムにおける要件定義資料となる。</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_要求仕様の再整理">要求仕様の再整理</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_目的_目標">目的・目標</h3>
-<div class="paragraph">
-<p>現在、電子媒体（Excel）ベースで行われているOJTシステムを刷新しWEB化すること。<br>
-これを行うことによって以下の効果を見込んでいる。</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>利便性の向上</p>
-</li>
-<li>
-<p>OJT情報の内部公開</p>
-</li>
-<li>
-<p>情報の内部公開により人脈形成のきっかけを得る</p>
-</li>
-<li>
-<p>情報の内部公開による育成活動の活性化</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>WEBシステム化するにあたり以下を要望する。</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>旧資産の活用</p>
-<div class="ulist">
-<ul>
-<li>
-<p>旧資産はExcelなのでデータを取り込めるようにしてほしい</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>旧資産との平行運用に耐えれるようにしてもらいたい</p>
-<div class="ulist">
-<ul>
-<li>
-<p>データを旧資産のExcelフォーマットで出力できるようにしてほしい</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_システム構成">システム構成</h3>
-<div class="paragraph">
-<p>要求時点で挙げているシステム構成は以下となる。</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>WEBアプリケーションであること</p>
-<div class="ulist">
-<ul>
-<li>
-<p>SpringBootを利用</p>
-</li>
-<li>
-<p>APIの公開も行いたいため、クライアントとサーバーサイドを分離</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>永続化にはRDBMSを利用すること</p>
-</li>
-<li>
-<p>認証はActiveDirectoryで行いたい</p>
-<div class="ulist">
-<ul>
-<li>
-<p>役職による認可機能がほしい</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Dockerにて運用を行いたい</p>
-</li>
-<li>
-<p>スモールスタートするためスケールアウト可能なシステム構成としたい</p>
-</li>
-</ul>
-</div>
-</div>
+
 </div>
 </div>
 <div class="sect1">
-<h2 id="_ビジネス設計">ビジネス設計</h2>
+<h2 id="_オンライン処理設計書">オンライン処理設計書</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>システムの振る舞いや処理についての設計を行う。<br></p>
-</div>
 <div class="sect2">
-<h3 id="_ユースケース図">ユースケース図</h3>
-<div class="paragraph">
-<p>システムが実際に利用されるアクションをベースとしたユースケースを示す。</p>
+<h3 id="_a機能_a処理">A機能-A処理</h3>
+<div class="sect3">
+<h4 id="_処理概要">処理概要</h4>
+
 </div>
 <div class="sect3">
-<h4 id="_レポート作成">レポート作成</h4>
-<div class="imageblock">
-<div class="content">
-<img src="images/Sec010_RD_user_createreport.png" alt="Sec010 RD user createreport">
+<h4 id="_処理フロー">処理フロー</h4>
+
 </div>
-<div class="title">図 1. レポート作成時のユースケース</div>
-</div>
+<div class="sect3">
+<h4 id="_処理詳細">処理詳細</h4>
+
 </div>
 </div>
 <div class="sect2">
-<h3 id="_画面一覧">画面一覧</h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 30%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">ビジネスフロー</th>
-<th class="tableblock halign-left valign-top">画面名</th>
-<th class="tableblock halign-left valign-top">概要</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザー</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">インデックス</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">システムTOPページの役割の画面。<br>
-活動が活発なページや、公開された新着情報をお知らせを行う。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザー</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ログイン</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">システムにログインするための画面。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザー</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">マイページ</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザー個人が管理すべき内容またはアクセスできるページの案内を行う。<br>
-Information機能によって通知を表示する。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザー</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">レポート一覧</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザー個人のレポートの一覧を確認するための画面。
-検索機能、フィルタリング機能、削除機能をもつ。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザー</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">レポート編集</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">レポートの編集画面。編集、チェック、提出機能をもつ。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザー</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">レポート検索</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">レポートの多項目検索を行うための画面。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザー</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ヘルプ・FAQ</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザーに使い方やよくある質問などの情報を提供する画面。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">運用</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">運用インデックス</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">運用者用のシステムTOPページの画面。TODOの一覧等</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">運用</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">トレーナー設定</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">トレーニング対象メンバーに対するトレーナーの割り当てを行う画面。</p></td>
-</tr>
-</tbody>
-</table>
+<h3 id="_b機能_b処理">B機能-B処理</h3>
+<div class="sect3">
+<h4 id="_処理概要_2">処理概要</h4>
+
 </div>
+<div class="sect3">
+<h4 id="_処理フロー_2">処理フロー</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_処理詳細_2">処理詳細</h4>
+
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_画面設計">画面設計</h2>
+<div class="sectionbody">
 <div class="sect2">
 <h3 id="_画面遷移図">画面遷移図</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_画面設計_2">画面設計</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_モックアップ">モックアップ</h3>
 
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_システム設計">システム設計</h2>
+<h2 id="_モデリング">モデリング</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_システム構成_2">システム構成</h3>
-<div class="imageblock">
-<div class="content">
-<img src="images/Sec010_RD_system_structure.png" alt="Sec010 RD system structure">
+<h3 id="_er図">ER図</h3>
+
 </div>
-<div class="title">図 2. システム構成</div>
-</div>
+<div class="sect2">
+<h3 id="_テーブル定義書">テーブル定義書</h3>
+
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-09-12 21:57:41 +09:00
+Last updated 2017-09-10 17:40:16 +09:00
 </div>
 </div>
 </body>

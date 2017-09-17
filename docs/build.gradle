@@ -5,20 +5,38 @@ buildscript {
 
     dependencies {
         classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.3'
+        classpath 'org.asciidoctor:asciidoctorj-diagram:1.3.1'
+        classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.11'
     }
 }
 
-apply plugin: 'org.asciidoctor.convert'
+subprojects {
 
-asciidoctor {
-    sourceDir = file("${projectDir}")
-    sources {
-        include 'index.adoc'
-        include '010_RD/index.adoc'
-        include '020_BD/index.adoc'
-        include '030_DD/index.adoc'
-        include '040_MUT/index.adoc'
-        include '050_SI/index.adoc'
+    apply plugin: 'org.asciidoctor.convert'
+
+    asciidoctor {
+        sourceDir = file("${projectDir}")
+        sources {
+            include 'index.adoc'
+            //include '010_RD/index.adoc'
+            //include '020_BD/index.adoc'
+            //include '030_DD/index.adoc'
+            //include '040_MUT/index.adoc'
+            //include '050_SI/index.adoc'
+        }
+        resources {
+            from(sourceDir) {
+                include 'images/**/*.PNG'
+                include 'images/**/*.JPG'
+                include 'images/**/*.JPEG'
+                include 'images/**/*.png'
+                include 'images/**/*.jpg'
+                include 'images/**/*.jpeg'
+                exclude 'images/**/*.svg'
+                exclude 'images/**/*.pptx'
+            }
+        }
+        outputDir = file("${rootDir}/docs/public/${project.name}")
     }
-    outputDir = file("${projectDir}/public")
+
 }
