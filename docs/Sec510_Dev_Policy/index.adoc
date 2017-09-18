@@ -1,0 +1,15 @@
+= knowledge
+:toc: left
+:toc-title:
+:toclevels: 3
+
+
+// 概要
+[Sec510_Dev_Policy_overview]
+include::Sec510_Dev_Policy_overview.adoc[leveloffset+=1]
+
+// GitHubの使い方
+[Sec510_Dev_Policy_github]
+include::Sec510_Dev_Policy_github.adoc[leveloffset+=1]
+
+

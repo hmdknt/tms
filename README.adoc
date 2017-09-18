@@ -1,0 +1,49 @@
+= Training Management System
+
+== Overview
+このリポジトリは、Training Management Systemの開発リポジトリです。 +
+ソースコードおよびドキュメントは全てこのリポジトリで一元管理しています。
+
+== Directory Structure
+[source, text]
+----
+tms
+ │
+ ├─docs
+ │
+ ├─frontend-api
+ │
+ ├─frontend-web
+ │
+ ├─mockup
+ │
+ ├─schema
+ │
+ ├─swagger
+ │    │
+ │    ├─frontend-api-server
+----
+
+== How To Build
+
+=== Build Documents
+[source, bash]
+----
+gradle clean asciidoctor
+----
+
+=== Generate Swagger Code
+[source, bash]
+----
+gradle clean bootRepackage
+----
+
+=== Build Application
+[source, bash]
+----
+gradle clean bootRepackage
+----
+
+== How To Use
+使い方説明
+
