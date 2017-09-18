@@ -10,6 +10,12 @@ dependencies {
     // プロジェクト内
     // --------------------------------
     compile project(":swagger:frontend-api-server")
+    compile project(":swagger:frontend-api-client")
+
+    // --------------------------------
+    // テスト
+    // --------------------------------
+    testCompile('org.springframework.boot:spring-boot-starter-test')
 
     // --------------------------------
     // 開発効率化

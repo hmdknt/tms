@@ -66,6 +66,7 @@ configure(subprojects.findAll { it.name.endsWith('server') }) {
 
         // The plugin automatically extracts template JAR into below destination
         //templateDir = file("${resolveSwaggerTemplate.destinationDir}/spring-mvc")
+        templateDir = parent.file('templates/JavaSpring')
 
         components = ['models', 'apis']
 
@@ -96,15 +97,32 @@ configure(subprojects.findAll { it.name.endsWith('client') }) {
         // 言語指定
         language = 'java'
 
+        // ライブラリ
         library = 'resttemplate'
 
+        // 定義YAML
         inputFile = parent.file(project.name.replaceAll('-client', '') + '.yaml')
+
+        // 出力設定ファイル
+        configFile = project.file(project.name + "-config.json")
 
         // The plugin automatically extracts template JAR into below destination
         //templateDir = file("${resolveSwaggerTemplate.destinationDir}/spring-mvc")
+        templateDir = parent.file('templates/Java')
 
         components = ['models', 'apis', 'supportingFiles']
 
+    }
+
+    sourceSets {
+        main {
+            java {
+                srcDir "${buildDir}/swagger-code/src/main/java"
+            }
+            resources {
+                srcDir "${buildDir}/swagger-code/src/main/resources"
+            }
+        }
     }
 
 }

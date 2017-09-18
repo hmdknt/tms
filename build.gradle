@@ -17,6 +17,7 @@ buildscript {
 // プラグイン指定
 apply plugin: "io.spring.dependency-management"
 apply plugin: "maven"
+apply plugin: 'idea'
 apply plugin: "eclipse"
 
 // 依存関係を管理
