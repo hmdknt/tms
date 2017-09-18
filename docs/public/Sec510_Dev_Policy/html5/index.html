@@ -440,12 +440,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#_githubの使い方">GitHubの使い方</a>
 <ul class="sectlevel1">
+<li><a href="#_ショートカット">ショートカット</a></li>
 <li><a href="#_作業管理">作業管理</a>
 <ul class="sectlevel2">
 <li><a href="#_milestone">Milestone</a></li>
 <li><a href="#_issue">Issue</a>
 <ul class="sectlevel3">
-<li><a href="#_labelルール">Labelルール</a></li>
+<li><a href="#_label">Label</a></li>
+<li><a href="#_projects">Projects</a></li>
+<li><a href="#_milestone_2">Milestone</a></li>
+<li><a href="#_release">Release</a></li>
 </ul>
 </li>
 </ul>
@@ -569,6 +573,24 @@ knowledgeはあくまで開発ルールの記載や手順の周知と言った�
 <h2 id="_githubの使い方">GitHubの使い方</h2>
 <div class="sectionbody">
 <div class="sect1">
+<h2 id="_ショートカット">ショートカット</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/TraningManagementSystem/tms#boards">Boards</a></p>
+</li>
+<li>
+<p><a href="https://github.com/TraningManagementSystem/tms/issues">Issue</a></p>
+</li>
+<li>
+<p><a href="https://github.com/TraningManagementSystem/tms/milestones?direction=asc&amp;sort=due_date&amp;state=open">Milestone</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_作業管理">作業管理</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -582,20 +604,113 @@ ZenHubのブラウザ拡張機能を利用することで誰でも便利にペ�
 <div class="sect2">
 <h3 id="_milestone">Milestone</h3>
 <div class="paragraph">
-<p>Milestoneはプロジェクト計画のイベントのポイントを設定し、それまでに何を行なわなければならないかを明確化します。</p>
+<p>Milestoneはプロジェクト計画のイベント設定します。<br>
+期日（開始〜終了）を設定しその期間内で何を行なわなければならないかを明確化します。<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/TraningManagementSystem/tms/milestones?direction=asc&amp;sort=due_date&amp;state=open">Milestone</a></p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_issue">Issue</h3>
 <div class="paragraph">
-<p>Issueは様々なタスクで利用します。
-ただのタスク管理のみではなく、課題を管理する課題管理票の代用として利用したり、質問票の代用として利用したりします。<br>
-Issueの利用ルールは最初に決定しておかなければみんな好きに利用し始めてしまうため、決めます。</p>
+<p>Issueは以下の管理で利用します。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>タスク管理</p>
+</li>
+<li>
+<p>バグ管理</p>
+</li>
+<li>
+<p>課題管理</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>1つのIssueという方法で、複数の用途を兼ねるに複数の設定が必要です。
+以下のようなルールを設けて運用を行います。</p>
 </div>
 <div class="sect3">
-<h4 id="_labelルール">Labelルール</h4>
+<h4 id="_label">Label</h4>
 <div class="paragraph">
-<p>このラベルはこの用途で利用するんだといったルールを決めること。</p>
+<p>ラベルはIssueの種類を決めるために設定します。</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. ラベル一覧</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">ラベル名</th>
+<th class="tableblock halign-left valign-top">用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">enhancement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">機能追加。実装したらクローズ。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">question</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">質問、議論。収束したらクローズ。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">help wanted</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">助けが必要。解決したらクローズ。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bug</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">バグ。修正したらクローズ。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duplicate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">他のイシューと重複している。重複先のイシューにリンクしてクローズ。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">invalid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">間違い、勘違い、実現不可能。対応しない理由を書いてクローズ。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">wontfix</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">既知バグであるが、対応しないバグ。対応しない理由を書いてクローズ。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_projects">Projects</h4>
+<div class="paragraph">
+<p>Issueが属するプロジェクトを指定します。<br>
+今回は「TrainingManagementSystem」を指定する。<br></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_milestone_2">Milestone</h4>
+<div class="paragraph">
+<p>Issueが属するMilestoneを指定します。<br>
+今回は、以下のリンクに存在するMilestoneから選択してください。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/TraningManagementSystem/tms/milestones?direction=asc&amp;sort=due_date&amp;state=open">Milestone</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_release">Release</h4>
+<div class="paragraph">
+<p>Issueが属するReleaseの版を指定する。</p>
 </div>
 </div>
 </div>
