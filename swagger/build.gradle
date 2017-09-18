@@ -71,6 +71,17 @@ configure(subprojects.findAll { it.name.endsWith('server') }) {
 
     }
 
+    sourceSets {
+        main {
+            java {
+                srcDir "${buildDir}/swagger-code/src/main/java"
+            }
+            resources {
+                srcDir "${buildDir}/swagger-code/src/main/resources"
+            }
+        }
+    }
+
 }
 
 // クライアントプロジェクトのみ

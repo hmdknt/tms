@@ -75,12 +75,12 @@ configure(subprojects - project('docs') - project('mockup') - project('frontend-
     sourceSets {
         main {
             java {
-                srcDir 'src'
-                srcDir 'src-gen'
+                srcDir 'src/main/java'
+                srcDir 'src-gen/main/java'
             }
             resources {
-                srcDir 'src'
-                srcDir 'src-gen'
+                srcDir 'src/main/resources'
+                srcDir 'src-gen/main/resources'
             }
         }
     }
