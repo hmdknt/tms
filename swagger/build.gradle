@@ -42,7 +42,7 @@ configure(subprojects.findAll { it.name.endsWith('server') }) {
         inputFile = specYamlFile
 
         // 出力先
-        outputDir = rootProject.file("docs/Sec020_BD/swaggerui")
+        outputDir = rootProject.file("docs/public/Sec020_BD/html5/swaggerui")
 
         // カスタムヘッダ
         header = '''\
