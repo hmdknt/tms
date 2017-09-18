@@ -26,6 +26,7 @@ dependencyManagement {
     }
 }
 
+
 ext {
 
     mavenGroup = 'tms'
@@ -33,6 +34,10 @@ ext {
 
     javaVersion = '1.8'
     sourceCodeEncoding = 'UTF-8'
+
+    // bomで指定されている以外のバージョン管理
+    swaggerCodegenVersion = '2.2.3'
+    swaggerUIVersion = '2.2.6'
 
 }
 

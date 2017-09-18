@@ -1,0 +1,99 @@
+plugins {
+    id 'org.hidetake.swagger.generator' version '2.4.2'
+}
+
+// ルートプロジェクトのext
+def rootExt = rootProject.extensions.getByName('ext')
+
+// 全サブプロジェクト共通
+subprojects {
+
+    // プラグイン設定
+    apply plugin: 'org.hidetake.swagger.generator'
+
+    // 依存関係
+    dependencies {
+        swaggerCodegen "io.swagger:swagger-codegen-cli:${rootExt.getAt('swaggerCodegenVersion')}"
+        swaggerUI "org.webjars:swagger-ui:${rootExt.getAt('swaggerUIVersion')}"
+    }
+
+}
+
+// サーバーサイドプロジェクトのみ
+configure(subprojects.findAll { it.name.endsWith('server') }) {
+
+    dependencies {
+        compile 'org.springframework.boot:spring-boot-starter-web:1.4.1.RELEASE'
+        compile 'io.swagger:swagger-annotations:1.5.10'
+    }
+
+    // 仕様定義YAML
+    def specYamlFile = parent.file(project.name.replaceAll('-server', '') + '.yaml')
+
+    // 仕様定義YAML検証
+    validateSwagger {
+        inputFile = specYamlFile
+    }
+
+    // SwaggerUIの自動生成
+    generateSwaggerUI {
+
+        // 仕様定義YAML
+        inputFile = specYamlFile
+
+        // 出力先
+        outputDir = rootProject.file("docs/Sec020_BD/swaggerui")
+
+        // カスタムヘッダ
+        header = '''\
+        <style>#header { display: none; }</style>
+        '''.stripIndent()
+
+        options.docExpansion = 'full'
+    }
+
+    // ソースコードの自動生成
+    generateSwaggerCode {
+
+        // 言語指定
+        language = 'spring'
+
+        // 定義YAML
+        inputFile = specYamlFile
+
+        // 出力設定ファイル
+        configFile = project.file(project.name + "-config.json")
+
+        // The plugin automatically extracts template JAR into below destination
+        //templateDir = file("${resolveSwaggerTemplate.destinationDir}/spring-mvc")
+
+        components = ['models', 'apis']
+
+    }
+
+}
+
+// クライアントプロジェクトのみ
+configure(subprojects.findAll { it.name.endsWith('client') }) {
+
+    // 仕様定義YAML
+    def specYamlFile = parent.file(project.name.replaceAll('-server', '') + '.yaml')
+
+    // ソースコードの自動生成
+    generateSwaggerCode {
+
+        // 言語指定
+        language = 'java'
+
+        library = 'resttemplate'
+
+        inputFile = parent.file(project.name.replaceAll('-client', '') + '.yaml')
+
+        // The plugin automatically extracts template JAR into below destination
+        //templateDir = file("${resolveSwaggerTemplate.destinationDir}/spring-mvc")
+
+        components = ['models', 'apis', 'supportingFiles']
+
+    }
+
+}

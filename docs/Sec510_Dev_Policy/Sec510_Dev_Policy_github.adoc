@@ -1,5 +1,11 @@
 = GitHubの使い方
 
+== ショートカット
+* https://github.com/TraningManagementSystem/tms#boards[Boards]
+* https://github.com/TraningManagementSystem/tms/issues[Issue]
+* https://github.com/TraningManagementSystem/tms/milestones?direction=asc&sort=due_date&state=open[Milestone]
+
+
 == 作業管理
 作業管理はGitHub＋ZenHubで行います。 +
 tmsプロジェクトをベースの開発プロジェクトとしていますので、全体作業管理は「tms」リポジトリのIssueを見るようにしてください。
@@ -10,13 +16,64 @@ https://www.zenhub.com/extension
 
 
 === Milestone
-Milestoneはプロジェクト計画のイベントのポイントを設定し、それまでに何を行なわなければならないかを明確化します。
+Milestoneはプロジェクト計画のイベント設定します。 +
+期日（開始〜終了）を設定しその期間内で何を行なわなければならないかを明確化します。 +
+
+* https://github.com/TraningManagementSystem/tms/milestones?direction=asc&sort=due_date&state=open[Milestone]
 
 
 === Issue
-Issueは様々なタスクで利用します。
-ただのタスク管理のみではなく、課題を管理する課題管理票の代用として利用したり、質問票の代用として利用したりします。 +
-Issueの利用ルールは最初に決定しておかなければみんな好きに利用し始めてしまうため、決めます。
+Issueは以下の管理で利用します。
 
-==== Labelルール
-このラベルはこの用途で利用するんだといったルールを決めること。
+* タスク管理
+* バグ管理
+* 課題管理
+
+1つのIssueという方法で、複数の用途を兼ねるに複数の設定が必要です。
+以下のようなルールを設けて運用を行います。
+
+==== Label
+ラベルはIssueの種類を決めるために設定します。
+
+.ラベル一覧
+[options="header",cols="20,80"]
+|===
+|ラベル名 |用途
+
+|enhancement
+|機能追加。実装したらクローズ。
+
+|question
+|質問、議論。収束したらクローズ。
+
+|help wanted
+|助けが必要。解決したらクローズ。
+
+|bug
+|バグ。修正したらクローズ。
+
+|duplicate
+|他のイシューと重複している。重複先のイシューにリンクしてクローズ。
+
+|invalid
+|間違い、勘違い、実現不可能。対応しない理由を書いてクローズ。
+
+|wontfix
+|既知バグであるが、対応しないバグ。対応しない理由を書いてクローズ。
+
+
+|===
+
+==== Projects
+Issueが属するプロジェクトを指定します。 +
+今回は「TrainingManagementSystem」を指定する。 +
+
+==== Milestone
+Issueが属するMilestoneを指定します。 +
+今回は、以下のリンクに存在するMilestoneから選択してください。
+
+- https://github.com/TraningManagementSystem/tms/milestones?direction=asc&sort=due_date&state=open[Milestone]
+
+==== Release
+Issueが属するReleaseの版を指定する。
+

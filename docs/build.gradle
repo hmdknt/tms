@@ -1,8 +1,8 @@
 buildscript {
     repositories {
+        mavenCentral()
         jcenter()
     }
-
     dependencies {
         classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.3'
         classpath 'org.asciidoctor:asciidoctorj-diagram:1.3.1'
