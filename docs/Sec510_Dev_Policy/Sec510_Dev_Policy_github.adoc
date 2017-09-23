@@ -77,3 +77,4 @@ Issueが属するMilestoneを指定します。 +
 ==== Release
 Issueが属するReleaseの版を指定する。
 
+=== Boardの使い方（ZenHub）

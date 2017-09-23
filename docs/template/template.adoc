@@ -1,0 +1,34 @@
+= テンプレート
+:toc: left
+:toclevel: 2
+:toc-title: 目次
+:figure-caption: 図
+:table-caption: 表
+:imagesdir: images
+:homepage: https://traningmanagementsystem.github.io/devlog/
+
+
+[[見出し1]]
+== 見出し1
+基本的にアンカーで飛べるように見出しの上部に``\[[見出し]]``をつけてください。 +
+アンカーは``\<<見出し>>``で飛べるようになります。
+
+[[見出し2]]
+=== 見出し2
+
+
+.テーブル例
+[option="header", cols="30,70"]
+|===
+|列1 |列2
+
+|行1・列1
+|行1・列2
+
+|行2・列1
+|行2・列2
+
+|===
+
+
+なんか適当に育てていって・・・

@@ -1,0 +1,84 @@
+@startuml
+
+/' ---------------------------------------------- '/
+' 固定エリア
+
+'ヘッダー
+header
+
+<font color=red>公開</font>
+
+
+endheader
+
+
+'フッター
+right footer
+
+
+<b>Copyright &#169; 2017 segarden.work All Right Reserved.</b>　
+endfooter
+
+/' ---------------------------------------------- '/
+' スタイルエリア
+
+'必要なら追加
+skinparam {
+defaultFontName Meiryo
+ArrowColor black
+Shadow none
+shadowing false
+linetype ortho
+}
+skinparam artifact {
+BackgroundColor White
+BorderColor Black
+}
+skinparam actor {
+BackgroundColor White
+BorderColor Black
+}
+skinparam note {
+BackgroundColor #dcf8f8
+BorderColor Black
+}
+
+/' ---------------------------------------------- '/
+' 描画エリア
+
+actor ユーザー
+artifact ログイン
+artifact インデックス<<メニュー>>
+artifact ヘルプ
+artifact マイページ
+artifact レポート編集
+artifact レポート一覧
+artifact レポート検索
+artifact レポートアップロード
+artifact 運用インデックス
+artifact トレーナー設定
+
+
+ユーザー --> インデックス
+ユーザー --> ログイン
+note left {
+
+運用と一般の両方のログインページを兼ねる
+
+}
+ログイン --> インデックス
+インデックス --> ログイン
+インデックス --> マイページ
+インデックス --> レポート一覧
+インデックス --> レポート検索
+インデックス --> レポートアップロード
+インデックス --> ヘルプ
+インデックス --> 運用インデックス
+
+マイページ --> レポート編集
+レポート一覧 --> レポート編集
+レポート検索 --> レポート編集
+
+運用インデックス --> トレーナー設定
+
+@enduml
