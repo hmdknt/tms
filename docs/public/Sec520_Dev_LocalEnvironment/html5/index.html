@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.4">
-<title>Untitled</title>
+<title>ローカル環境構築ガイドライン</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -417,15 +417,286 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 .show-for-print{display:inherit!important}}
 </style>
 </head>
-<body class="article">
+<body class="article toc2 toc-left">
 <div id="header">
+<h1>ローカル環境構築ガイドライン</h1>
+<div id="toc" class="toc2">
+<div id="toctitle">目次</div>
+<ul class="sectlevel1">
+<li><a href="#_jdk">JDK</a></li>
+<li><a href="#_ide">IDE</a></li>
+<li><a href="#_buildtools">BuildTools</a></li>
+<li><a href="#_databaseclient">DatabaseClient</a></li>
+<li><a href="#_documentbuilder">DocumentBuilder</a></li>
+<li><a href="#_documentwrittingsoft">DocumentWrittingSoft</a></li>
+<li><a href="#_developmentenvironment">DevelopmentEnvironment</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
+<div class="sect1">
+<h2 id="_jdk">JDK</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>jdk1.8をインストールしてください。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ide">IDE</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>基本はこの2つの内のどちらかを使用してください。<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Spring Tool Suite</p>
+<div class="ulist">
+<ul>
+<li>
+<p>環境構築手順</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="https://spring.io/tools/sts" class="bare">https://spring.io/tools/sts</a> からSTSをダウンロードしてください。（最新版でOK）</p>
+</li>
+<li>
+<p>ダウンロードしたものを解凍してください。</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>IntelliJ IDEA</p>
+<div class="ulist">
+<ul>
+<li>
+<p>環境構築手順</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="https://www.jetbrains.com/idea/download/#section=mac" class="bare">https://www.jetbrains.com/idea/download/#section=mac</a> からCommunity版をダウンロードする</p>
+</li>
+<li>
+<p>ダウンロードしたideaIC-20YY.X.X.dmgを選択する</p>
+</li>
+<li>
+<p>IntelliJをApplicationにドラッグすれば完了</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_buildtools">BuildTools</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>gradle(ver.4.2)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>環境構築手順</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>javaのversionを確認する(7以上でないと上手くいかないと公式のページに書いてあった)</p>
+</li>
+<li>
+<p>以下のコマンドを実行</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ brew update &amp;&amp; brew install gradle</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_databaseclient">DatabaseClient</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>MySQLWorkbench(ver.6.3)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>環境構築手順</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="https://dev.mysql.com/downloads/workbench/" class="bare">https://dev.mysql.com/downloads/workbench/</a> からMySQLWorkbenchをダウンロードする</p>
+</li>
+<li>
+<p>ダウンロードしたmysql-workbench-community-6.3.9-osx-x86_64.dmg を選択する</p>
+</li>
+<li>
+<p>MySQLWorkBenchをApplicationにドラッグすれば完了</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_documentbuilder">DocumentBuilder</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Asciidoc</p>
+<div class="ulist">
+<ul>
+<li>
+<p>環境構築手順</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Terminalを開く</p>
+</li>
+<li>
+<p>以下の2つのコマンドを実行する</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ ruby -e "$(curl -fsSL https://raw.gi thubusercontent.com/Homebrew/install/master/install)" &lt; /dev/null 2&gt; /dev/null
 
+$ brew install asciidoc</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_documentwrittingsoft">DocumentWrittingSoft</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Atom</p>
+<div class="ulist">
+<ul>
+<li>
+<p>環境構築手順</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="https://atom.io" class="bare">https://atom.io</a> からAtomをダウンロード</p>
+</li>
+<li>
+<p>ダウンロードしたものを解凍する</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Pluginの設定</p>
+<div class="ulist">
+<ul>
+<li>
+<p>redpen(文法間違いをなくすために入れる)</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Atomを起動する</p>
+</li>
+<li>
+<p>画面左上のAtom&gt;Preferenceをクリック</p>
+</li>
+<li>
+<p>settingsの左のメニューからinstallをクリック</p>
+</li>
+<li>
+<p>redpenを検索する</p>
+</li>
+<li>
+<p><span class="image"><img src="images/redpen.jpg" alt="redpen"></span><br>
+をインストールする</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>asciidsoc-preview(shift+command+Aでプレビューが見れる)</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Atomを起動する</p>
+</li>
+<li>
+<p>画面左上のAtom&gt;Preferenceをクリック</p>
+</li>
+<li>
+<p>settingsの左のメニューからinstallをクリック</p>
+</li>
+<li>
+<p>asciidoc-previewを検索する</p>
+</li>
+<li>
+<p><span class="image"><img src="images/asciidoc-preview.jpg" alt="asciidoc preview"></span><br>
+をインストールする</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_developmentenvironment">DevelopmentEnvironment</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Docker</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-09-18 19:13:10 +09:00
+Last updated 2017-09-29 00:46:34 +09:00
 </div>
 </div>
 </body>

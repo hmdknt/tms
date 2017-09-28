@@ -1,0 +1,84 @@
+= ローカル環境構築ガイドライン
+:toc: left
+:toclevel: 2
+:toc-title: 目次
+:figure-caption: 図
+:table-caption: 表
+:imagesdir: images
+:homepage: https://traningmanagementsystem.github.io/devlog/
+
+== JDK
+jdk1.8をインストールしてください。
+
+== IDE
+基本はこの2つの内のどちらかを使用してください。 +
+
+* Spring Tool Suite
+** 環境構築手順
+. https://spring.io/tools/sts からSTSをダウンロードしてください。（最新版でOK）
+. ダウンロードしたものを解凍してください。
+
+* IntelliJ IDEA
+** 環境構築手順
+. https://www.jetbrains.com/idea/download/#section=mac からCommunity版をダウンロードする
+. ダウンロードしたideaIC-20YY.X.X.dmgを選択する
+. IntelliJをApplicationにドラッグすれば完了
+
+== BuildTools
+* gradle(ver.4.2)
+** 環境構築手順
+. javaのversionを確認する(7以上でないと上手くいかないと公式のページに書いてあった)
+. 以下のコマンドを実行
+[source,bash]
+----
+$ brew update && brew install gradle
+----
+
+
+== DatabaseClient
+* MySQLWorkbench(ver.6.3)
+** 環境構築手順
+. https://dev.mysql.com/downloads/workbench/ からMySQLWorkbenchをダウンロードする
+. ダウンロードしたmysql-workbench-community-6.3.9-osx-x86_64.dmg を選択する
+. MySQLWorkBenchをApplicationにドラッグすれば完了
+
+
+== DocumentBuilder
+* Asciidoc
+** 環境構築手順
+. Terminalを開く
+. 以下の2つのコマンドを実行する
+
+[source,bash]
+----
+$ ruby -e "$(curl -fsSL https://raw.gi thubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null
+
+$ brew install asciidoc
+----
+
+
+== DocumentWrittingSoft
+* Atom
+** 環境構築手順
+. https://atom.io からAtomをダウンロード
+. ダウンロードしたものを解凍する
+
+** Pluginの設定
+- redpen(文法間違いをなくすために入れる)
+. Atomを起動する
+. 画面左上のAtom>Preferenceをクリック
+. settingsの左のメニューからinstallをクリック
+. redpenを検索する
+. image:redpen.jpg[] +
+   をインストールする
+- asciidsoc-preview(shift+command+Aでプレビューが見れる)
+. Atomを起動する
+. 画面左上のAtom>Preferenceをクリック
+. settingsの左のメニューからinstallをクリック
+. asciidoc-previewを検索する
+. image:asciidoc-preview.jpg[] +
+   をインストールする
+
+
+== DevelopmentEnvironment
+* Docker

@@ -17,4 +17,7 @@ include::Sec510_Dev_Policy_overview.adoc[leveloffset+=1]
 [Sec510_Dev_Policy_github]
 include::Sec510_Dev_Policy_github.adoc[leveloffset+=1]
 
+// 作業の進め方
+[Sec510_Dev_Policy_github]
+include::Sec510_Dev_Policy_howtowork.adoc[leveloffset+=1]
 

@@ -446,6 +446,21 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </li>
+<li><a href="#_作業の進め方">作業の進め方</a>
+<ul class="sectlevel1">
+<li><a href="#_作業フロー">作業フロー</a>
+<ul class="sectlevel2">
+<li><a href="#_タスクの確認">タスクの確認</a></li>
+<li><a href="#_ブランチの作成">ブランチの作成</a></li>
+<li><a href="#_クローン_チェックアウト">クローン＆チェックアウト</a></li>
+<li><a href="#_作業">作業</a></li>
+<li><a href="#_プルリクエスト">プルリクエスト</a></li>
+<li><a href="#_レビュー">レビュー</a></li>
+<li><a href="#_マージ">マージ</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -712,10 +727,86 @@ ZenHubのブラウザ拡張機能を利用することで誰でも便利にペ�
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_作業の進め方">作業の進め方</h2>
+<div class="sectionbody">
+<div class="sect1">
+<h2 id="_作業フロー">作業フロー</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>作業の管理については、GitHub/ZenHubを利用したIssueベースで行います。<br>
+では実際にどのように作業を進めるのかの具体的なフローについて説明します。<br>
+まず基本的な作業フローは以下となります。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Sec510_Dev_Policy_workflow.png" alt="Sec510 Dev Policy workflow">
+</div>
+<div class="title">図 1. 作業フロー</div>
+</div>
+<div class="paragraph">
+<p>以降でそれぞれの要素について詳細に説明を行います。</p>
+</div>
+<div class="sect2">
+<h3 id="_タスクの確認">タスクの確認</h3>
+<div class="paragraph">
+<p>GitHubもしくはZenHubにてタスクの確認を行います。
+仮にIssueにタスクの目的や詳細な内容が記載されていない場合はタスクをあげた人に問い合わせましょう。
+またIssueの状態がプロジェクトのルールに沿っていない場合もきちんと指摘してルールを守るように促すまたは修正を行いましょう。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ブランチの作成">ブランチの作成</h3>
+<div class="paragraph">
+<p>ブランチの作成は、WEBブラウザで簡単に行えますが、コマンドラインやIDEで行う方法を覚えた方がよいでしょう。
+理由として、コマンドラインやIDE操作ではGitのWEBホスティングサービスが変わっても同一のオペレーションで
+ブランチの作成＆プッシュができるようになるからです。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_クローン_チェックアウト">クローン＆チェックアウト</h3>
+<div class="paragraph">
+<p>Gitの機能を利用してクローン＆チェックアウトを行い自分の作業ブランチでの作業準備を行いましょう。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_作業">作業</h3>
+<div class="paragraph">
+<p>ここは作業毎に異なるので手順にはかけません。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_プルリクエスト">プルリクエスト</h3>
+<div class="paragraph">
+<p>プルリクエストを行うことで自分の作業ブランチの内容を公開ブランチに反映するためのレビューを投げます。
+基本的に作業をコミットメントするためには第三者のレビューが必要であり勝手に自分で進んでいくという事態を防ぎます。
+こうすることで必ず誰かの目を通す文化が出来上がり属人性が高い成果物が出来上がっていくことを防ぐこともできます。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_レビュー">レビュー</h3>
+<div class="paragraph">
+<p>レビューはプルリクエストを受けた人間が行いますが、きちんとレビューする対象物を理解して実施しましょう。
+レビューの結果はプルリクエストに残しておきます。テキストの比較ベースでプルリクエストの中身を確認することができるのでとても便利です。
+逆に言うとテキストでない成果物はレビューが面倒であるといえます。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_マージ">マージ</h3>
+<div class="paragraph">
+<p>レビュワーのレビューが完了したらマージを行います。
+これはレビュワーが行うため、作業者は何も行いません。
+作成されているブランチはマージのタイミングで削除するようにしましょう。</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-09-21 02:23:56 +09:00
+Last updated 2017-09-29 00:34:40 +09:00
 </div>
 </div>
 </body>

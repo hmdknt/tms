@@ -1,0 +1,100 @@
+@startuml
+
+/' ---------------------------------------------- '/
+' 固定エリア
+
+'ヘッダー
+header
+
+<font color=red>公開</font>
+
+
+endheader
+
+
+'フッター
+right footer
+
+
+<b>Copyright &#169; 2017 segarden.work All Right Reserved.</b>　
+endfooter
+
+/' ---------------------------------------------- '/
+' スタイルエリア
+
+'必要なら追加
+skinparam {
+defaultFontName Meiryo
+ArrowColor black
+Shadow none
+shadowing false
+'linetype ortho
+}
+skinparam rectangle {
+BackgroundColor White
+BorderColor Black
+}
+skinparam actor {
+BackgroundColor White
+BorderColor Black
+}
+skinparam note {
+BackgroundColor #dcf8f8
+BorderColor Black
+}
+
+/' ---------------------------------------------- '/
+' 描画エリア
+
+rectangle 作業開始
+rectangle タスクの確認
+rectangle ブランチの作成
+rectangle クローンandチェックアウト
+rectangle 作業
+rectangle コミットandプッシュ
+rectangle プルリクエスト
+rectangle レビュー
+rectangle マージ
+rectangle 作業完了
+
+作業開始 --> タスクの確認
+note left {
+GitHubもしくはZenHubでIssueを確認する。
+Issueのステータスを変更する。
+}
+タスクの確認 --> ブランチの作成
+note left {
+GitHubに対して自分の作業を行うためのブランチを作成する。
+}
+ブランチの作成 --> クローンandチェックアウト
+note left {
+作成したブランチをチェックアウトする。
+クローンを行なっていなければクローンする。
+}
+クローンandチェックアウト --> 作業
+note left {
+ローカル作業を行う。
+}
+作業 --> コミットandプッシュ
+note left {
+作業が完了したらコミット＆プッシュを行う。
+この時点でGitHub上のブランチが変更される。
+}
+コミットandプッシュ --> プルリクエスト
+note left {
+プルリクエストを行い、レビュワーに対してレビュー依頼を行う。
+}
+プルリクエスト --> レビュー
+note left {
+レビュワーはレビューを行う。
+指摘がある場合は、GitHub上で指摘を行う。
+}
+レビュー --> 作業 : 指摘をもらった場合は、修正対応等を行う
+レビュー --> マージ
+note left {
+問題なければ、変更を承認するマージを行う。
+}
+マージ --> 作業完了
+
+
+@enduml
