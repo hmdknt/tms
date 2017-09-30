@@ -1,9 +1,82 @@
 = GitHubの使い方
+:toc: left
+:toclevel: 2
+:toc-title: 目次
+:figure-caption: 図
+:table-caption: 表
+:imagesdir: images
+:homepage: https://traningmanagementsystem.github.io/devlog/
+
 
 == ショートカット
+このショートカットは一度開発ポリシーを読んだことがある人がリンクを探す必要がないように
+ページ先頭に用意しているものです。初めて訪れる人はきちんと開発ポリシーは読んでください。
+
 * https://github.com/TraningManagementSystem/tms#boards[Boards]
 * https://github.com/TraningManagementSystem/tms/issues[Issue]
 * https://github.com/TraningManagementSystem/tms/milestones?direction=asc&sort=due_date&state=open[Milestone]
+
+== Overview
+GitHubとはバージョン管理ソフトウェアであるGitのWebホスティングサービスで世界的にOSS活動、企業活動等で利用されています。
+GitのWebフロントという側面以外にも組織運営をするためのサポート機能も充実しておりとても便利です。
+類似サービスとして https://about.gitlab.com/[GitLab]、 https://bitbucket.org/product[Bitbucket]があります。
+
+
+== 基本的な使い方
+基本的な使い方については、様々な一般サイト様でとても丁寧な解説文がありますのでそちらを参照してください。
+
+* GitHub
+** https://techacademy.jp/magazine/6235[今さら聞けない！GitHubの使い方【超初心者向け】]
+** https://qiita.com/ay3/items/8d758ebde41d256a32dc[GitHub 入門]
+
+* Git
+** https://www.backlog.jp/git-guide/[サルでもわかるGit入門]
+** https://progit-ja.github.io/[Pro Git]
+
+今さら聞けない、サルでもわかる。といった煽り文句はわからない人がそれだけ多くいて困ることがある。
+ということの裏返しですので不明点が出るたびに見返すと良いかと思います。
+
+
+== ブランチ戦略
+初回リリースまでは、GitHub Flowを利用します。 +
+masterとfeatureの2ブランチのみのシンプルなものです。
+
+image::Sec510_Dev_Policy_gitbranch.png[]
+
+featureブランチはそれぞれの担当者が作業を行うたびに作成し、masterへプルリクエストを介してマージします。
+この際featureブランチは削除します。 +
+ +
+複数人で作業を行うので、様々なタイミングで複数のブランチが作成されmasterへマージされます。
+他の人と同じファイルの更新を行わないように作業管理やパッケージ分割等を行うことが一番望ましいですが、
+それでも被ることはあるので、masterから適宜最新版を作業ブランチへ反映することが重要です。 +
+ +
+以降で説明しますが、今回の作業はIssueをベースに管理をしますので「feature」という名前はあくまでも
+一般的な話として記載しており命名規約は別途定めます。
+
+
+=== ブランチ命名ルール
+利用するブランチの命名ルールを定めます。
+
+[options="header", cols="20,30,50"]
+|===
+
+|ブランチ名
+|命名
+|説明
+
+|マスター
+|master（固定）
+|本ブランチです。ここが開発の公式な最新版を示します。
+
+|作業ブランチ
+|issue/{issue-no}_{summary}
+|作業ブランチです。Issueだと一眼でわかるようにしています。「issue-no」はGitHubのIssueの番号です。＃の後の番号を利用してください。
+「summary」は作業の概要です。ぱっと見でなんとなくわかるようにしてください。単語力鍛えられそう。。。
+
+|===
+
+Issueはブランチ戦略で説明しました、featureブランチと同じものです。 +
+命名ルールが異なるだけなので深く考えないようにしてください。
 
 
 == 作業管理
@@ -21,6 +94,9 @@ Milestoneはプロジェクト計画のイベント設定します。 +
 
 * https://github.com/TraningManagementSystem/tms/milestones?direction=asc&sort=due_date&state=open[Milestone]
 
+本活動は、業務外で行なっているため作業の強制は行いません。
+しかし、ある程度スケジュールを明確化しなければ活動としてもゴールが定まらず風化してしまうので
+Milestoneを設けています。
 
 === Issue
 Issueは以下の管理で利用します。
@@ -29,7 +105,7 @@ Issueは以下の管理で利用します。
 * バグ管理
 * 課題管理
 
-1つのIssueという方法で、複数の用途を兼ねるに複数の設定が必要です。
+1つのIssueという方法で、複数の用途を兼ねるためにLabelの設定が必要です。
 以下のようなルールを設けて運用を行います。
 
 ==== Label

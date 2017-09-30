@@ -1,0 +1,60 @@
+@startuml
+
+/' ---------------------------------------------- '/
+' 固定エリア
+
+'ヘッダー
+header
+
+<font color=red>公開</font>
+
+
+endheader
+
+
+'フッター
+right footer
+
+
+<b>Copyright &#169; 2017 segarden.work All Right Reserved.</b>　
+endfooter
+
+/' ---------------------------------------------- '/
+' スタイルエリア
+
+'必要なら追加
+skinparam {
+defaultFontName Meiryo
+ArrowColor black
+Shadow none
+shadowing false
+'linetype ortho
+}
+skinparam participant {
+BackgroundColor White
+BorderColor Black
+}
+skinparam actor {
+BackgroundColor White
+BorderColor Black
+}
+skinparam note {
+BackgroundColor #dcf8f8
+BorderColor Black
+}
+
+/' ---------------------------------------------- '/
+' 描画エリア
+
+master -> "feature/A" : masterを元にfeature/Aを作成
+activate "feature/A"
+master -> "feature/B" : masterを元にfeature/Bを作成
+activate "feature/B"
+"feature/B" -> master : masterへマージ（プルリクは必須）
+deactivate "feature/B"
+master -> "feature/A" : masterからfeature/Bの内容を取り込む（rebase）
+"feature/A" -> master : masterへマージ（プルリクは必須）
+deactivate "feature/A"
+
+
+@enduml

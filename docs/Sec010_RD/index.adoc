@@ -117,3 +117,26 @@ image::Sec010_RD_ScreenTransition.png[]
 === システム構成
 .システム構成
 image::Sec010_RD_system_structure.png[]
+
+
+=== ミドルウェア
+
+=== ソフトウェアスタック
+
+==== フロントエンド（クライアント）
+
+==== フロントエンド（サーバーサイド）
+
+[options="header",cols="10,20,70"]
+|===
+
+|a
+|aa
+|aaa
+
+|a
+|aa
+|aaa
+
+
+|===
