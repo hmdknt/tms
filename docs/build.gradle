@@ -10,6 +10,8 @@ buildscript {
     }
 }
 
+apply plugin: 'org.asciidoctor.convert'
+
 subprojects {
 
     apply plugin: 'org.asciidoctor.convert'
@@ -39,4 +41,21 @@ subprojects {
         outputDir = file("${rootDir}/docs/public/${project.name}")
     }
 
+}
+
+asciidoctor.dependsOn("mockupPublish")
+
+task mockupPublish() {
+    doLast {
+        mockupDelete.execute()
+        mockupCopy.execute()
+    }
+}
+task mockupDelete(type: Delete) {
+    delete "${rootDir}/docs/public/Sec900_Mockup"
+}
+task mockupCopy(type: Copy) {
+    from "${rootDir}/mockup"
+    into "${rootDir}/docs/public/Sec900_Mockup"
+    exclude "**/*.mobirise"
 }
