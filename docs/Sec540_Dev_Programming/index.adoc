@@ -6,3 +6,33 @@
 :table-caption: 表
 :imagesdir: images
 :homepage: https://traningmanagementsystem.github.io/devlog/
+
+== ディレクトリ構成
+
+== Java
+
+=== アーティファクト定義
+
+=== 命名ルール
+
+==== パッケージ構成
+
+==== クラス名
+
+=== コーディング規約
+他のサイトに飛ばせばいいと思う。。。
+
+=== 共通
+
+=== オンライン/REST-API
+
+=== バッチ
+あるかな。。。
+
+== Node.js
+こっちになるのかな。 +
+正直こっちの世界わからんのだが。。。
+
+== JavaScript/HTML
+こっちになるのかな。 +
+正直こっちの世界わからんのだが。。。

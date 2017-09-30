@@ -7,20 +7,33 @@
 :imagesdir: images
 :homepage: https://traningmanagementsystem.github.io/devlog/
 
+== Overview
+現在（2017/9）時点のメンバー全員がMacでの作業を行なっているため、 +
+基本的にWindowsの環境構築に一切の配慮をしていません。 +
+これ以降で活動に入られた方でWindowsを使用される方がおられる場合は追記をしていただけると助かります。
+なんといっても業務ではWindows利用が圧倒的多数ですので。。。
+
 == JDK
-jdk1.8をインストールしてください。
+JDK1.8をインストールしてください。 +
+バージョンは最新版で良いです。
+
+* 手順
+** https://devnote.jp/jdk/8/osx/[JDK (Mac OS X版)]
+** https://www.javadrive.jp/install/jdk/index1.html[JDK (Win版)]
 
 == IDE
 基本はこの2つの内のどちらかを使用してください。 +
+オススメは「IntelliJ」です。ただし、業務では「Spring Tool Suite」を利用する方が多いでしょう。 +
+理由はベースがEclipseであるからです。
 
 * Spring Tool Suite
 ** 環境構築手順
-. https://spring.io/tools/sts からSTSをダウンロードしてください。（最新版でOK）
+. https://spring.io/tools/sts[公式サイト]からSTSをダウンロードしてください。（最新版でOK）
 . ダウンロードしたものを解凍してください。
 
 * IntelliJ IDEA
 ** 環境構築手順
-. https://www.jetbrains.com/idea/download/#section=mac からCommunity版をダウンロードする
+. https://www.jetbrains.com/idea/download/#section=mac[公式サイト]からCommunity版をダウンロードする
 . ダウンロードしたideaIC-20YY.X.X.dmgを選択する
 . IntelliJをApplicationにドラッグすれば完了
 
@@ -34,16 +47,22 @@ jdk1.8をインストールしてください。
 $ brew update && brew install gradle
 ----
 
+== Docker
+開発環境としてDockerを利用します。 +
+
+== Docker Compose
 
 == DatabaseClient
 * MySQLWorkbench(ver.6.3)
 ** 環境構築手順
-. https://dev.mysql.com/downloads/workbench/ からMySQLWorkbenchをダウンロードする
+. https://dev.mysql.com/downloads/workbench/[公式サイト] からMySQLWorkbenchをダウンロードする
 . ダウンロードしたmysql-workbench-community-6.3.9-osx-x86_64.dmg を選択する
 . MySQLWorkBenchをApplicationにドラッグすれば完了
 
 
 == DocumentBuilder
+ドキュメントビルダーとしてAsciiDoc/AsciiDoctorを利用します。
+
 * Asciidoc
 ** 環境構築手順
 . Terminalを開く
@@ -60,7 +79,7 @@ $ brew install asciidoc
 == DocumentWrittingSoft
 * Atom
 ** 環境構築手順
-. https://atom.io からAtomをダウンロード
+. https://atom.io[公式サイト]からAtomをダウンロード
 . ダウンロードしたものを解凍する
 
 ** Pluginの設定
@@ -80,5 +99,3 @@ $ brew install asciidoc
    をインストールする
 
 
-== DevelopmentEnvironment
-* Docker

@@ -6,3 +6,21 @@
 :table-caption: 表
 :imagesdir: images
 :homepage: https://traningmanagementsystem.github.io/devlog/
+
+
+== Overview
+このページの目的や概要を記載してください。
+
+== Java
+
+=== JUnitの使い方？SpringTestの使い方？お作法？
+
+=== ビジネスロジックの単体テスト
+
+== Node.js
+こっちになるのかな。 +
+正直こっちの世界わからんのだが。。。
+
+== JavaScript/HTML
+こっちになるのかな。 +
+正直こっちの世界わからんのだが。。。

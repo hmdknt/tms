@@ -1,4 +1,4 @@
-= 設計ガイドライン
+= ドキュメントの書き方
 :toc: left
 :toclevel: 2
 :toc-title: 目次
@@ -7,6 +7,5 @@
 :imagesdir: images
 :homepage: https://traningmanagementsystem.github.io/devlog/
 
-
-== Overview
-このページの目的や概要を記載してください。
+== AsciiDocを用いたドキュメントの書き方を書く！
+== PluntUMLを用いた図の書き方を書く！

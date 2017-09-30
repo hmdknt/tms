@@ -423,22 +423,53 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">目次</div>
 <ul class="sectlevel1">
+<li><a href="#_overview">Overview</a></li>
 <li><a href="#_jdk">JDK</a></li>
 <li><a href="#_ide">IDE</a></li>
 <li><a href="#_buildtools">BuildTools</a></li>
+<li><a href="#_docker">Docker</a></li>
+<li><a href="#_docker_compose">Docker Compose</a></li>
 <li><a href="#_databaseclient">DatabaseClient</a></li>
 <li><a href="#_documentbuilder">DocumentBuilder</a></li>
 <li><a href="#_documentwrittingsoft">DocumentWrittingSoft</a></li>
-<li><a href="#_developmentenvironment">DevelopmentEnvironment</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div class="sect1">
+<h2 id="_overview">Overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>現在（2017/9）時点のメンバー全員がMacでの作業を行なっているため、<br>
+基本的にWindowsの環境構築に一切の配慮をしていません。<br>
+これ以降で活動に入られた方でWindowsを使用される方がおられる場合は追記をしていただけると助かります。
+なんといっても業務ではWindows利用が圧倒的多数ですので。。。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_jdk">JDK</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>jdk1.8をインストールしてください。</p>
+<p>JDK1.8をインストールしてください。<br>
+バージョンは最新版で良いです。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>手順</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://devnote.jp/jdk/8/osx/">JDK (Mac OS X版)</a></p>
+</li>
+<li>
+<p><a href="https://www.javadrive.jp/install/jdk/index1.html">JDK (Win版)</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -446,7 +477,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_ide">IDE</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>基本はこの2つの内のどちらかを使用してください。<br></p>
+<p>基本はこの2つの内のどちらかを使用してください。<br>
+オススメは「IntelliJ」です。ただし、業務では「Spring Tool Suite」を利用する方が多いでしょう。<br>
+理由はベースがEclipseであるからです。</p>
 </div>
 <div class="ulist">
 <ul>
@@ -459,7 +492,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><a href="https://spring.io/tools/sts" class="bare">https://spring.io/tools/sts</a> からSTSをダウンロードしてください。（最新版でOK）</p>
+<p><a href="https://spring.io/tools/sts">公式サイト</a>からSTSをダウンロードしてください。（最新版でOK）</p>
 </li>
 <li>
 <p>ダウンロードしたものを解凍してください。</p>
@@ -479,7 +512,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><a href="https://www.jetbrains.com/idea/download/#section=mac" class="bare">https://www.jetbrains.com/idea/download/#section=mac</a> からCommunity版をダウンロードする</p>
+<p><a href="https://www.jetbrains.com/idea/download/#section=mac">公式サイト</a>からCommunity版をダウンロードする</p>
 </li>
 <li>
 <p>ダウンロードしたideaIC-20YY.X.X.dmgを選択する</p>
@@ -532,6 +565,20 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
+<h2 id="_docker">Docker</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>開発環境としてDockerを利用します。<br></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_docker_compose">Docker Compose</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
 <h2 id="_databaseclient">DatabaseClient</h2>
 <div class="sectionbody">
 <div class="ulist">
@@ -545,7 +592,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><a href="https://dev.mysql.com/downloads/workbench/" class="bare">https://dev.mysql.com/downloads/workbench/</a> からMySQLWorkbenchをダウンロードする</p>
+<p><a href="https://dev.mysql.com/downloads/workbench/">公式サイト</a> からMySQLWorkbenchをダウンロードする</p>
 </li>
 <li>
 <p>ダウンロードしたmysql-workbench-community-6.3.9-osx-x86_64.dmg を選択する</p>
@@ -566,6 +613,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect1">
 <h2 id="_documentbuilder">DocumentBuilder</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>ドキュメントビルダーとしてAsciiDoc/AsciiDoctorを利用します。</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -613,7 +663,7 @@ $ brew install asciidoc</code></pre>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><a href="https://atom.io" class="bare">https://atom.io</a> からAtomをダウンロード</p>
+<p><a href="https://atom.io">公式サイト</a>からAtomをダウンロード</p>
 </li>
 <li>
 <p>ダウンロードしたものを解凍する</p>
@@ -681,22 +731,10 @@ $ brew install asciidoc</code></pre>
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="_developmentenvironment">DevelopmentEnvironment</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Docker</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-09-29 00:46:34 +09:00
+Last updated 2017-09-30 23:56:08 +09:00
 </div>
 </div>
 </body>
