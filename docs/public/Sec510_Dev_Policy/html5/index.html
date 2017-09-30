@@ -437,6 +437,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_githubの使い方">GitHubの使い方</a>
 <ul class="sectlevel1">
 <li><a href="#_ショートカット">ショートカット</a></li>
+<li><a href="#_overview">Overview</a></li>
+<li><a href="#_基本的な使い方">基本的な使い方</a></li>
+<li><a href="#_ブランチ戦略">ブランチ戦略</a>
+<ul class="sectlevel2">
+<li><a href="#_ブランチ命名ルール">ブランチ命名ルール</a></li>
+</ul>
+</li>
 <li><a href="#_作業管理">作業管理</a>
 <ul class="sectlevel2">
 <li><a href="#_milestone">Milestone</a></li>
@@ -580,6 +587,10 @@ knowledgeはあくまで開発ルールの記載や手順の周知と言った�
 <div class="sect1">
 <h2 id="_ショートカット">ショートカット</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>このショートカットは一度開発ポリシーを読んだことがある人がリンクを探す必要がないように
+ページ先頭に用意しているものです。初めて訪れる人はきちんと開発ポリシーは読んでください。</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -592,6 +603,120 @@ knowledgeはあくまで開発ルールの記載や手順の周知と言った�
 <p><a href="https://github.com/TraningManagementSystem/tms/milestones?direction=asc&amp;sort=due_date&amp;state=open">Milestone</a></p>
 </li>
 </ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_overview">Overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>GitHubとはバージョン管理ソフトウェアであるGitのWebホスティングサービスで世界的にOSS活動、企業活動等で利用されています。
+GitのWebフロントという側面以外にも組織運営をするためのサポート機能も充実しておりとても便利です。
+類似サービスとして <a href="https://about.gitlab.com/">GitLab</a>、 <a href="https://bitbucket.org/product">Bitbucket</a>があります。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_基本的な使い方">基本的な使い方</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>基本的な使い方については、様々な一般サイト様でとても丁寧な解説文がありますのでそちらを参照してください。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>GitHub</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://techacademy.jp/magazine/6235">今さら聞けない！GitHubの使い方【超初心者向け】</a></p>
+</li>
+<li>
+<p><a href="https://qiita.com/ay3/items/8d758ebde41d256a32dc">GitHub 入門</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Git</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.backlog.jp/git-guide/">サルでもわかるGit入門</a></p>
+</li>
+<li>
+<p><a href="https://progit-ja.github.io/">Pro Git</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>今さら聞けない、サルでもわかる。といった煽り文句はわからない人がそれだけ多くいて困ることがある。
+ということの裏返しですので不明点が出るたびに見返すと良いかと思います。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ブランチ戦略">ブランチ戦略</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>初回リリースまでは、GitHub Flowを利用します。<br>
+masterとfeatureの2ブランチのみのシンプルなものです。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Sec510_Dev_Policy_gitbranch.png" alt="Sec510 Dev Policy gitbranch">
+</div>
+</div>
+<div class="paragraph">
+<p>featureブランチはそれぞれの担当者が作業を行うたびに作成し、masterへプルリクエストを介してマージします。
+この際featureブランチは削除します。<br>
+<br>
+複数人で作業を行うので、様々なタイミングで複数のブランチが作成されmasterへマージされます。
+他の人と同じファイルの更新を行わないように作業管理やパッケージ分割等を行うことが一番望ましいですが、
+それでも被ることはあるので、masterから適宜最新版を作業ブランチへ反映することが重要です。<br>
+<br>
+以降で説明しますが、今回の作業はIssueをベースに管理をしますので「feature」という名前はあくまでも
+一般的な話として記載しており命名規約は別途定めます。</p>
+</div>
+<div class="sect2">
+<h3 id="_ブランチ命名ルール">ブランチ命名ルール</h3>
+<div class="paragraph">
+<p>利用するブランチの命名ルールを定めます。</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 30%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">ブランチ名</th>
+<th class="tableblock halign-left valign-top">命名</th>
+<th class="tableblock halign-left valign-top">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">マスター</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">master（固定）</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">本ブランチです。ここが開発の公式な最新版を示します。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">作業ブランチ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">issue/{issue-no}_{summary}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">作業ブランチです。Issueだと一眼でわかるようにしています。「issue-no」はGitHubのIssueの番号です。＃の後の番号を利用してください。
+「summary」は作業の概要です。ぱっと見でなんとなくわかるようにしてください。単語力鍛えられそう。。。</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Issueはブランチ戦略で説明しました、featureブランチと同じものです。<br>
+命名ルールが異なるだけなので深く考えないようにしてください。</p>
+</div>
 </div>
 </div>
 </div>
@@ -619,6 +744,11 @@ ZenHubのブラウザ拡張機能を利用することで誰でも便利にペ�
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>本活動は、業務外で行なっているため作業の強制は行いません。
+しかし、ある程度スケジュールを明確化しなければ活動としてもゴールが定まらず風化してしまうので
+Milestoneを設けています。</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_issue">Issue</h3>
@@ -639,7 +769,7 @@ ZenHubのブラウザ拡張機能を利用することで誰でも便利にペ�
 </ul>
 </div>
 <div class="paragraph">
-<p>1つのIssueという方法で、複数の用途を兼ねるに複数の設定が必要です。
+<p>1つのIssueという方法で、複数の用途を兼ねるためにLabelの設定が必要です。
 以下のようなルールを設けて運用を行います。</p>
 </div>
 <div class="sect3">
@@ -806,7 +936,7 @@ ZenHubのブラウザ拡張機能を利用することで誰でも便利にペ�
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-09-29 00:34:40 +09:00
+Last updated 2017-09-29 22:50:58 +09:00
 </div>
 </div>
 </body>
