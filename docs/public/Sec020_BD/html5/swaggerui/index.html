@@ -100,9 +100,28 @@
   "schemes" : [ "http", "https" ],
   "basePath" : "/api/v1",
   "produces" : [ "application/json" ],
+  "tags" : [ {
+    "name" : "User",
+    "description" : "ユーザーAPI"
+  } ],
   "paths" : {
+    "/users" : {
+      "post" : {
+        "operationId" : "post_users",
+        "summary" : "ユーザー登録",
+        "description" : "ユーザーを登録します.\n",
+        "parameters" : [ {
+          "name" : "employeeNo",
+          "in" : "body",
+          "description" : "ユーザーID",
+          "required" : true,
+          "type" : "string"
+        } ]
+      }
+    },
     "/users/{userId}" : {
       "get" : {
+        "operationId" : "get_users",
         "summary" : "ユーザー取得",
         "description" : "ユーザーを一意に特定することができるユーザーIDを元にユーザー情報を取得します.\n",
         "parameters" : [ {
@@ -112,7 +131,37 @@
           "required" : true,
           "type" : "string"
         } ],
-        "tags" : [ "Users" ],
+        "tags" : [ "User" ],
+        "responses" : {
+          "200" : {
+            "description" : "An array of products",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/User"
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected error",
+            "schema" : {
+              "$ref" : "#/definitions/Result"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "operationId" : "delete_users",
+        "summary" : "ユーザー削除",
+        "description" : "ユーザーを一意に特定することができるユーザーIDを元にユーザー情報を削除します.\n",
+        "parameters" : [ {
+          "name" : "userId",
+          "in" : "path",
+          "description" : "ユーザーID",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "tags" : [ "User" ],
         "responses" : {
           "200" : {
             "description" : "An array of products",
@@ -134,6 +183,19 @@
     }
   },
   "definitions" : {
+    "UserRegist" : {
+      "type" : "object",
+      "properties" : {
+        "employeeId" : {
+          "type" : "string",
+          "descriptionId" : "社員番号."
+        },
+        "password" : {
+          "type" : "password",
+          "descriptionId" : "ドメインパスワード."
+        }
+      }
+    },
     "User" : {
       "type" : "object",
       "properties" : {

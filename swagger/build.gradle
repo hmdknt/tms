@@ -91,6 +91,11 @@ configure(subprojects.findAll { it.name.endsWith('client') }) {
     // 仕様定義YAML
     def specYamlFile = parent.file(project.name.replaceAll('-server', '') + '.yaml')
 
+    dependencies {
+        compile 'org.springframework.boot:spring-boot-starter-web:1.4.1.RELEASE'
+        compile 'io.swagger:swagger-annotations:1.5.10'
+    }
+
     // ソースコードの自動生成
     generateSwaggerCode {
 

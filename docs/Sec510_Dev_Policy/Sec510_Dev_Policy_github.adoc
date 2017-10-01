@@ -1,4 +1,4 @@
-= GitHubの使い方
+== GitHubの使い方
 :toc: left
 :toclevel: 2
 :toc-title: 目次
@@ -7,8 +7,7 @@
 :imagesdir: images
 :homepage: https://traningmanagementsystem.github.io/devlog/
 
-
-== ショートカット
+=== ショートカット
 このショートカットは一度開発ポリシーを読んだことがある人がリンクを探す必要がないように
 ページ先頭に用意しているものです。初めて訪れる人はきちんと開発ポリシーは読んでください。
 
@@ -16,13 +15,13 @@
 * https://github.com/TraningManagementSystem/tms/issues[Issue]
 * https://github.com/TraningManagementSystem/tms/milestones?direction=asc&sort=due_date&state=open[Milestone]
 
-== Overview
+=== Overview
 GitHubとはバージョン管理ソフトウェアであるGitのWebホスティングサービスで世界的にOSS活動、企業活動等で利用されています。
 GitのWebフロントという側面以外にも組織運営をするためのサポート機能も充実しておりとても便利です。
 類似サービスとして https://about.gitlab.com/[GitLab]、 https://bitbucket.org/product[Bitbucket]があります。
 
 
-== 基本的な使い方
+=== 基本的な使い方
 基本的な使い方については、様々な一般サイト様でとても丁寧な解説文がありますのでそちらを参照してください。
 
 * GitHub
@@ -37,7 +36,7 @@ GitのWebフロントという側面以外にも組織運営をするための�
 ということの裏返しですので不明点が出るたびに見返すと良いかと思います。
 
 
-== ブランチ戦略
+=== ブランチ戦略
 初回リリースまでは、GitHub Flowを利用します。 +
 masterとfeatureの2ブランチのみのシンプルなものです。
 
@@ -54,7 +53,7 @@ featureブランチはそれぞれの担当者が作業を行うたびに作成�
 一般的な話として記載しており命名規約は別途定めます。
 
 
-=== ブランチ命名ルール
+==== ブランチ命名ルール
 利用するブランチの命名ルールを定めます。
 
 [options="header", cols="20,30,50"]
@@ -79,16 +78,20 @@ Issueはブランチ戦略で説明しました、featureブランチと同じ�
 命名ルールが異なるだけなので深く考えないようにしてください。
 
 
-== 作業管理
+=== 作業管理
 作業管理はGitHub＋ZenHubで行います。 +
 tmsプロジェクトをベースの開発プロジェクトとしていますので、全体作業管理は「tms」リポジトリのIssueを見るようにしてください。
 ZenHubとはGitHubのIssue管理を便利するサービスです。 +
  +
 ZenHubのブラウザ拡張機能を利用することで誰でも便利にページを観ることができます。 +
-https://www.zenhub.com/extension
+https://www.zenhub.com/extension +
+ +
+
+.ZenHubのスクリーンショット
+image::Sec510_Dev_Policy_zenhub_screenshot.png[]
 
 
-=== Milestone
+==== Milestone
 Milestoneはプロジェクト計画のイベント設定します。 +
 期日（開始〜終了）を設定しその期間内で何を行なわなければならないかを明確化します。 +
 
@@ -98,7 +101,7 @@ Milestoneはプロジェクト計画のイベント設定します。 +
 しかし、ある程度スケジュールを明確化しなければ活動としてもゴールが定まらず風化してしまうので
 Milestoneを設けています。
 
-=== Issue
+==== Issue
 Issueは以下の管理で利用します。
 
 * タスク管理
@@ -108,7 +111,7 @@ Issueは以下の管理で利用します。
 1つのIssueという方法で、複数の用途を兼ねるためにLabelの設定が必要です。
 以下のようなルールを設けて運用を行います。
 
-==== Label
+===== Label
 ラベルはIssueの種類を決めるために設定します。
 
 .ラベル一覧
@@ -140,17 +143,17 @@ Issueは以下の管理で利用します。
 
 |===
 
-==== Projects
+===== Projects
 Issueが属するプロジェクトを指定します。 +
 今回は「TrainingManagementSystem」を指定する。 +
 
-==== Milestone
+===== Milestone
 Issueが属するMilestoneを指定します。 +
 今回は、以下のリンクに存在するMilestoneから選択してください。
 
 - https://github.com/TraningManagementSystem/tms/milestones?direction=asc&sort=due_date&state=open[Milestone]
 
-==== Release
+===== Release
 Issueが属するReleaseの版を指定する。
 
-=== Boardの使い方（ZenHub）
+==== Boardの使い方（ZenHub）

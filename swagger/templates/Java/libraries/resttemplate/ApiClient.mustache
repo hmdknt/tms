@@ -68,7 +68,7 @@ import {{invokerPackage}}.auth.OAuth;
 
 {{>generatedAnnotation}}
 @Component("{{invokerPackage}}.ApiClient")
-@ConfigurationProperties(prefix= "{{invokerPackage}}.ApiClient")
+//@ConfigurationProperties(prefix= "{{invokerPackage}}.ApiClient")
 public class ApiClient {
     public enum CollectionFormat {
         CSV(","), TSV("\t"), SSV(" "), PIPES("|"), MULTI(null);

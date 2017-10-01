@@ -9,7 +9,8 @@ import io.swagger.annotations.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 {{/jdk8-no-delegate}}
-import org.springframework.stereotype.Controller;
+//import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RestController;
 {{^jdk8-no-delegate}}
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -35,17 +36,17 @@ import javax.validation.constraints.*;
 import javax.validation.Valid;
 {{/useBeanValidation}}
 {{>generatedAnnotation}}
-@Controller
+@RestController
 {{#operations}}
 public class {{classname}}Controller implements {{classname}} {
-    private final ObjectMapper objectMapper;
+    private ObjectMapper objectMapper;
 
     public {{classname}}Controller(ObjectMapper objectMapper) {
         this.objectMapper = objectMapper;
     }
 
 {{#isDelegate}}
-    private final {{classname}}Delegate delegate;
+    private {{classname}}Delegate delegate;
 
     @org.springframework.beans.factory.annotation.Autowired
     public {{classname}}Controller({{classname}}Delegate delegate) {

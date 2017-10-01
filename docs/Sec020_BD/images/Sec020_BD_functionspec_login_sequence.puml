@@ -1,0 +1,67 @@
+@startuml
+
+/' ---------------------------------------------- '/
+' 固定エリア
+
+'ヘッダー
+header
+
+<font color=red>公開</font>
+
+
+endheader
+
+
+'フッター
+right footer
+
+
+<b>Copyright &#169; 2017 segarden.work All Right Reserved.</b>　
+endfooter
+
+/' ---------------------------------------------- '/
+' スタイルエリア
+
+'必要なら追加
+skinparam {
+defaultFontName Meiryo
+ArrowColor black
+Shadow none
+shadowing false
+'linetype ortho
+}
+skinparam sequence {
+ActorBorderColor black
+LifeLineBorderColor black
+LifeLineBackgroundColor black
+ParticipantBorderColor black
+ParticipantBackgroundColor black
+}
+skinparam participant {
+BackgroundColor White
+BorderColor Black
+}
+skinparam actor {
+BackgroundColor White
+BorderColor Black
+}
+skinparam note {
+BackgroundColor #dcf8f8
+BorderColor Black
+}
+
+/' ---------------------------------------------- '/
+' 描画エリア
+
+' 参考
+' http://plantuml.com/sequence-diagram
+
+
+クライアント -> "REST-API": ログイン要求リクエスト
+"REST-API" -> "ActiveDirectoryサーバー": 問い合わせ（ユーザー/パスワード）
+"ActiveDirectoryサーバー" -> "REST-API" : 問い合わせ結果
+"REST-API" -> "REST-API" : 認証処理
+"REST-API" -> "キャッシュサーバー" : 認証キャッシュ作成
+"REST-API" -> クライアント: ログイン要求レスポンス
+
+@enduml

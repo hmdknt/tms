@@ -18,8 +18,7 @@ import java.util.concurrent.{{^jdk8}}Callable{{/jdk8}}{{#jdk8}}CompletableFuture
  * A delegate to be called by the {@link {{classname}}Controller}}.
  * Should be implemented as a controller but without the {@link org.springframework.stereotype.Controller} annotation.
  * Instead, use spring to autowire this class into the {@link {{classname}}Controller}.
- */
-{{>generatedAnnotation}}
+ */{{>generatedAnnotation}}
 public interface {{classname}}Delegate {
 
 {{#operation}}

@@ -422,54 +422,29 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h1>knowledge</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">目次</div>
-<ul class="sectlevel0">
+<ul class="sectlevel1">
 <li><a href="#Sec510_Dev_Policy_overview">この活動について</a></li>
 <li><a href="#_プロジェクトの構成">プロジェクトの構成</a>
-<ul class="sectlevel1">
-<li><a href="#_プロジェクトグループ">プロジェクトグループ</a>
 <ul class="sectlevel2">
-<li><a href="#_tms">tms</a></li>
-<li><a href="#_devlog">devlog</a></li>
-</ul>
-</li>
+<li><a href="#_プロジェクトグループ">プロジェクトグループ</a></li>
 </ul>
 </li>
 <li><a href="#Sec510_Dev_Policy_github">GitHubの使い方</a>
-<ul class="sectlevel1">
+<ul class="sectlevel2">
 <li><a href="#_ショートカット">ショートカット</a></li>
 <li><a href="#_overview">Overview</a></li>
 <li><a href="#_基本的な使い方">基本的な使い方</a></li>
-<li><a href="#_ブランチ戦略">ブランチ戦略</a>
-<ul class="sectlevel2">
-<li><a href="#_ブランチ命名ルール">ブランチ命名ルール</a></li>
-</ul>
-</li>
-<li><a href="#_作業管理">作業管理</a>
-<ul class="sectlevel2">
-<li><a href="#_milestone">Milestone</a></li>
-<li><a href="#_issue">Issue</a></li>
-<li><a href="#_boardの使い方_zenhub">Boardの使い方（ZenHub）</a></li>
-</ul>
-</li>
+<li><a href="#_ブランチ戦略">ブランチ戦略</a></li>
+<li><a href="#_作業管理">作業管理</a></li>
 </ul>
 </li>
 <li><a href="#Sec510_Dev_Policy_howtowork">作業の進め方</a>
-<ul class="sectlevel1">
-<li><a href="#_作業フロー">作業フロー</a>
 <ul class="sectlevel2">
-<li><a href="#_タスクの確認">タスクの確認</a></li>
-<li><a href="#_ブランチの作成">ブランチの作成</a></li>
-<li><a href="#_クローン_チェックアウト">クローン＆チェックアウト</a></li>
-<li><a href="#_作業">作業</a></li>
-<li><a href="#_プルリクエスト">プルリクエスト</a></li>
-<li><a href="#_レビュー">レビュー</a></li>
-<li><a href="#_マージ">マージ</a></li>
-</ul>
-</li>
+<li><a href="#_作業フロー">作業フロー</a></li>
 </ul>
 </li>
 <li><a href="#Sec510_Dev_Policy_howtowritedocument">ドキュメントの書き方</a>
-<ul class="sectlevel1">
+<ul class="sectlevel2">
 <li><a href="#_asciidocを用いたドキュメントの書き方を書く">AsciiDocを用いたドキュメントの書き方を書く！</a></li>
 <li><a href="#_pluntumlを用いた図の書き方を書く">PluntUMLを用いた図の書き方を書く！</a></li>
 </ul>
@@ -478,7 +453,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div id="content">
-<h1 id="Sec510_Dev_Policy_overview" class="sect0">この活動について</h1>
+<div class="sect1">
+<h2 id="Sec510_Dev_Policy_overview">この活動について</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>以下のことに注意して、有意義な活動にできればと思ってます。<br></p>
 </div>
@@ -507,25 +484,28 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<h1 id="_プロジェクトの構成" class="sect0">プロジェクトの構成</h1>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_プロジェクトの構成">プロジェクトの構成</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>このプロジェクトの構成は以下のようになっています。<br>
 それぞれのプロジェクトの用途は抑えるようにしてください。</p>
 </div>
-<div class="sect1">
-<h2 id="_プロジェクトグループ">プロジェクトグループ</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_プロジェクトグループ">プロジェクトグループ</h3>
 <div class="paragraph">
 <p><a href="https://github.com/TraningManagementSystem" class="bare">https://github.com/TraningManagementSystem</a></p>
 </div>
-<div class="sect2">
-<h3 id="_tms">tms</h3>
+<div class="sect3">
+<h4 id="_tms">tms</h4>
 <div class="paragraph">
 <p>「Training Management System」のアプリケーションリポジトリです。<br>
 アプリケーション資材はすべてこのリポジトリ内に入れることにしましょう。<br></p>
 </div>
-<div class="sect3">
-<h4 id="_docs">docs</h4>
+<div class="sect4">
+<h5 id="_docs">docs</h5>
 <div class="paragraph">
 <p><a href="https://github.com/TraningManagementSystem/tms" class="bare">https://github.com/TraningManagementSystem/tms</a><br>
 この資料は上記のURLで誰でも見れます。<br>
@@ -565,8 +545,8 @@ Training Management System で作成するドキュメントおよびをシス�
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_devlog">devlog</h3>
+<div class="sect3">
+<h4 id="_devlog">devlog</h4>
 <div class="paragraph">
 <p><a href="https://github.com/TraningManagementSystem/devlog" class="bare">https://github.com/TraningManagementSystem/devlog</a><br>
 システム開発ブログです。<br>
@@ -583,10 +563,12 @@ knowledgeはあくまで開発ルールの記載や手順の周知と言った�
 </div>
 </div>
 </div>
-<h1 id="Sec510_Dev_Policy_github" class="sect0">GitHubの使い方</h1>
+</div>
 <div class="sect1">
-<h2 id="_ショートカット">ショートカット</h2>
+<h2 id="Sec510_Dev_Policy_github">GitHubの使い方</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_ショートカット">ショートカット</h3>
 <div class="paragraph">
 <p>このショートカットは一度開発ポリシーを読んだことがある人がリンクを探す必要がないように
 ページ先頭に用意しているものです。初めて訪れる人はきちんと開発ポリシーは読んでください。</p>
@@ -605,20 +587,16 @@ knowledgeはあくまで開発ルールの記載や手順の周知と言った�
 </ul>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_overview">Overview</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_overview">Overview</h3>
 <div class="paragraph">
 <p>GitHubとはバージョン管理ソフトウェアであるGitのWebホスティングサービスで世界的にOSS活動、企業活動等で利用されています。
 GitのWebフロントという側面以外にも組織運営をするためのサポート機能も充実しておりとても便利です。
 類似サービスとして <a href="https://about.gitlab.com/">GitLab</a>、 <a href="https://bitbucket.org/product">Bitbucket</a>があります。</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_基本的な使い方">基本的な使い方</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_基本的な使い方">基本的な使い方</h3>
 <div class="paragraph">
 <p>基本的な使い方については、様々な一般サイト様でとても丁寧な解説文がありますのでそちらを参照してください。</p>
 </div>
@@ -657,10 +635,8 @@ GitのWebフロントという側面以外にも組織運営をするための�
 ということの裏返しですので不明点が出るたびに見返すと良いかと思います。</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_ブランチ戦略">ブランチ戦略</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_ブランチ戦略">ブランチ戦略</h3>
 <div class="paragraph">
 <p>初回リリースまでは、GitHub Flowを利用します。<br>
 masterとfeatureの2ブランチのみのシンプルなものです。</p>
@@ -681,8 +657,8 @@ masterとfeatureの2ブランチのみのシンプルなものです。</p>
 以降で説明しますが、今回の作業はIssueをベースに管理をしますので「feature」という名前はあくまでも
 一般的な話として記載しており命名規約は別途定めます。</p>
 </div>
-<div class="sect2">
-<h3 id="_ブランチ命名ルール">ブランチ命名ルール</h3>
+<div class="sect3">
+<h4 id="_ブランチ命名ルール">ブランチ命名ルール</h4>
 <div class="paragraph">
 <p>利用するブランチの命名ルールを定めます。</p>
 </div>
@@ -719,20 +695,25 @@ masterとfeatureの2ブランチのみのシンプルなものです。</p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_作業管理">作業管理</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_作業管理">作業管理</h3>
 <div class="paragraph">
 <p>作業管理はGitHub＋ZenHubで行います。<br>
 tmsプロジェクトをベースの開発プロジェクトとしていますので、全体作業管理は「tms」リポジトリのIssueを見るようにしてください。
 ZenHubとはGitHubのIssue管理を便利するサービスです。<br>
 <br>
 ZenHubのブラウザ拡張機能を利用することで誰でも便利にページを観ることができます。<br>
-<a href="https://www.zenhub.com/extension" class="bare">https://www.zenhub.com/extension</a></p>
+<a href="https://www.zenhub.com/extension" class="bare">https://www.zenhub.com/extension</a><br>
+<br></p>
 </div>
-<div class="sect2">
-<h3 id="_milestone">Milestone</h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/Sec510_Dev_Policy_zenhub_screenshot.png" alt="Sec510 Dev Policy zenhub screenshot">
+</div>
+<div class="title">図 1. ZenHubのスクリーンショット</div>
+</div>
+<div class="sect3">
+<h4 id="_milestone">Milestone</h4>
 <div class="paragraph">
 <p>Milestoneはプロジェクト計画のイベント設定します。<br>
 期日（開始〜終了）を設定しその期間内で何を行なわなければならないかを明確化します。<br></p>
@@ -750,8 +731,8 @@ ZenHubのブラウザ拡張機能を利用することで誰でも便利にペ�
 Milestoneを設けています。</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_issue">Issue</h3>
+<div class="sect3">
+<h4 id="_issue">Issue</h4>
 <div class="paragraph">
 <p>Issueは以下の管理で利用します。</p>
 </div>
@@ -772,8 +753,8 @@ Milestoneを設けています。</p>
 <p>1つのIssueという方法で、複数の用途を兼ねるためにLabelの設定が必要です。
 以下のようなルールを設けて運用を行います。</p>
 </div>
-<div class="sect3">
-<h4 id="_label">Label</h4>
+<div class="sect4">
+<h5 id="_label">Label</h5>
 <div class="paragraph">
 <p>ラベルはIssueの種類を決めるために設定します。</p>
 </div>
@@ -821,15 +802,15 @@ Milestoneを設けています。</p>
 </tbody>
 </table>
 </div>
-<div class="sect3">
-<h4 id="_projects">Projects</h4>
+<div class="sect4">
+<h5 id="_projects">Projects</h5>
 <div class="paragraph">
 <p>Issueが属するプロジェクトを指定します。<br>
 今回は「TrainingManagementSystem」を指定する。<br></p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_milestone_2">Milestone</h4>
+<div class="sect4">
+<h5 id="_milestone_2">Milestone</h5>
 <div class="paragraph">
 <p>Issueが属するMilestoneを指定します。<br>
 今回は、以下のリンクに存在するMilestoneから選択してください。</p>
@@ -842,23 +823,25 @@ Milestoneを設けています。</p>
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_release">Release</h4>
+<div class="sect4">
+<h5 id="_release">Release</h5>
 <div class="paragraph">
 <p>Issueが属するReleaseの版を指定する。</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_boardの使い方_zenhub">Boardの使い方（ZenHub）</h3>
+<div class="sect3">
+<h4 id="_boardの使い方_zenhub">Boardの使い方（ZenHub）</h4>
 
 </div>
 </div>
 </div>
-<h1 id="Sec510_Dev_Policy_howtowork" class="sect0">作業の進め方</h1>
+</div>
 <div class="sect1">
-<h2 id="_作業フロー">作業フロー</h2>
+<h2 id="Sec510_Dev_Policy_howtowork">作業の進め方</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_作業フロー">作業フロー</h3>
 <div class="paragraph">
 <p>作業の管理については、GitHub/ZenHubを利用したIssueベースで行います。<br>
 では実際にどのように作業を進めるのかの具体的なフローについて説明します。<br>
@@ -868,57 +851,57 @@ Milestoneを設けています。</p>
 <div class="content">
 <img src="images/Sec510_Dev_Policy_workflow.png" alt="Sec510 Dev Policy workflow">
 </div>
-<div class="title">図 1. 作業フロー</div>
+<div class="title">図 2. 作業フロー</div>
 </div>
 <div class="paragraph">
 <p>以降でそれぞれの要素について詳細に説明を行います。</p>
 </div>
-<div class="sect2">
-<h3 id="_タスクの確認">タスクの確認</h3>
+<div class="sect3">
+<h4 id="_タスクの確認">タスクの確認</h4>
 <div class="paragraph">
 <p>GitHubもしくはZenHubにてタスクの確認を行います。
 仮にIssueにタスクの目的や詳細な内容が記載されていない場合はタスクをあげた人に問い合わせましょう。
 またIssueの状態がプロジェクトのルールに沿っていない場合もきちんと指摘してルールを守るように促すまたは修正を行いましょう。</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_ブランチの作成">ブランチの作成</h3>
+<div class="sect3">
+<h4 id="_ブランチの作成">ブランチの作成</h4>
 <div class="paragraph">
 <p>ブランチの作成は、WEBブラウザで簡単に行えますが、コマンドラインやIDEで行う方法を覚えた方がよいでしょう。
 理由として、コマンドラインやIDE操作ではGitのWEBホスティングサービスが変わっても同一のオペレーションで
 ブランチの作成＆プッシュができるようになるからです。</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_クローン_チェックアウト">クローン＆チェックアウト</h3>
+<div class="sect3">
+<h4 id="_クローン_チェックアウト">クローン＆チェックアウト</h4>
 <div class="paragraph">
 <p>Gitの機能を利用してクローン＆チェックアウトを行い自分の作業ブランチでの作業準備を行いましょう。</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_作業">作業</h3>
+<div class="sect3">
+<h4 id="_作業">作業</h4>
 <div class="paragraph">
 <p>ここは作業毎に異なるので手順にはかけません。</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_プルリクエスト">プルリクエスト</h3>
+<div class="sect3">
+<h4 id="_プルリクエスト">プルリクエスト</h4>
 <div class="paragraph">
 <p>プルリクエストを行うことで自分の作業ブランチの内容を公開ブランチに反映するためのレビューを投げます。
 基本的に作業をコミットメントするためには第三者のレビューが必要であり勝手に自分で進んでいくという事態を防ぎます。
 こうすることで必ず誰かの目を通す文化が出来上がり属人性が高い成果物が出来上がっていくことを防ぐこともできます。</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_レビュー">レビュー</h3>
+<div class="sect3">
+<h4 id="_レビュー">レビュー</h4>
 <div class="paragraph">
 <p>レビューはプルリクエストを受けた人間が行いますが、きちんとレビューする対象物を理解して実施しましょう。
 レビューの結果はプルリクエストに残しておきます。テキストの比較ベースでプルリクエストの中身を確認することができるのでとても便利です。
 逆に言うとテキストでない成果物はレビューが面倒であるといえます。</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_マージ">マージ</h3>
+<div class="sect3">
+<h4 id="_マージ">マージ</h4>
 <div class="paragraph">
 <p>レビュワーのレビューが完了したらマージを行います。
 これはレビュワーが行うため、作業者は何も行いません。
@@ -927,17 +910,18 @@ Milestoneを設けています。</p>
 </div>
 </div>
 </div>
-<h1 id="Sec510_Dev_Policy_howtowritedocument" class="sect0">ドキュメントの書き方</h1>
-<div class="sect1">
-<h2 id="_asciidocを用いたドキュメントの書き方を書く">AsciiDocを用いたドキュメントの書き方を書く！</h2>
-<div class="sectionbody">
-
-</div>
 </div>
 <div class="sect1">
-<h2 id="_pluntumlを用いた図の書き方を書く">PluntUMLを用いた図の書き方を書く！</h2>
+<h2 id="Sec510_Dev_Policy_howtowritedocument">ドキュメントの書き方</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_asciidocを用いたドキュメントの書き方を書く">AsciiDocを用いたドキュメントの書き方を書く！</h3>
 
+</div>
+<div class="sect2">
+<h3 id="_pluntumlを用いた図の書き方を書く">PluntUMLを用いた図の書き方を書く！</h3>
+
+</div>
 </div>
 </div>
 </div>

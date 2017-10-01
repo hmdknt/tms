@@ -59,7 +59,7 @@ ActiveDirectoryに対応したシステムへのログイン機能。 +
 ActiveDirectoryで認証処理後、本システム内での権限情報（ROLE）と共に認証情報をセッション情報に保持する。
 
 ==== シーケンス図
-* なんか図を書いて。
+image::Sec020_BD_functionspec_login_sequence.png[]
 
 '''
 

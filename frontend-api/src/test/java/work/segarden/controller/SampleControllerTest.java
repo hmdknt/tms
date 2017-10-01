@@ -34,7 +34,7 @@ public class SampleControllerTest {
     private MockMvc mvc;
 
     @Autowired
-    private work.segarden.helper.UsersApi usersApi;
+    private work.segarden.helper.UserApi usersApi;
 
     @Before
     public void setup() {
