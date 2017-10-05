@@ -26,3 +26,5 @@ dependencies {
     compileOnly('org.projectlombok:lombok')
 
 }
+
+compileJava.dependsOn ":swagger:frontend-api-server:generateSwaggerCode",":swagger:frontend-api-client:generateSwaggerCode"
