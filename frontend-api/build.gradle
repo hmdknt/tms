@@ -1,3 +1,6 @@
+// プラグイン
+apply plugin: 'org.springframework.boot'
+
 // 依存関係
 dependencies {
 

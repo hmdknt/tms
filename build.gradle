@@ -47,10 +47,9 @@ allprojects {
 }
 
 // サブプロジェクト共通設定
-configure(subprojects - project('docs') - project('mockup') - project('frontend-web') - project('schema')) {
+configure(subprojects - project('docs') - project('mockup') - project('frontend-web')) {
 
     apply plugin: 'java'
-    apply plugin: 'org.springframework.boot'
 
     // リポジトリ
     repositories {
