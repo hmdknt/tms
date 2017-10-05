@@ -1,5 +1,7 @@
 = Training Management System
 
+image:https://travis-ci.org/TraningManagementSystem/tms.svg?branch=master["Build Status", link="https://travis-ci.org/TraningManagementSystem/tms"]
+
 == Overview
 このリポジトリは、Training Management Systemの開発リポジトリです。 +
 ソースコードおよびドキュメントは全てこのリポジトリで一元管理しています。
