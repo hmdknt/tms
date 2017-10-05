@@ -1,11 +1,19 @@
 version: "3"
 services:
+  jenkins:
+    image: 'jenkins:2.46.2'
+    ports:
+      - "8080:8080"
+    volumes:
+      - './data:/var/jenkins_home'
+
   redis:
     image: redis:latest
     ports:
       - "6379:6379"
     networks:
       - frontend
+
   database:
     image: mysql:latest
     ports:
@@ -16,12 +24,14 @@ services:
         MYSQL_ROOT_PASSWORD: password
     networks:
       - frontend
+
 #  rest:
 #    image: openjdk:8-jdk-alpine
 #    ports:
 #     - "8081:8081"
 #    networks:
 #      - frontend
+
 networks:
   frontend:
 volumes:
