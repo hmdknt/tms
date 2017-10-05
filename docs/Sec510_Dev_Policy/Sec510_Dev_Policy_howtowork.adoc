@@ -35,7 +35,7 @@ Gitの機能を利用してクローン＆チェックアウトを行い自分�
 .コマンドライン上でのブランチ作成
 ----
 ■クローン(初期一回のみ)
-    $ git cloen https://github.com/TraningManagementSystem/tms.git
+    $ git clone https://github.com/TraningManagementSystem/tms.git
     $ cd tms
 
 ■ブランチ作成(masterブランチから作成すること)
