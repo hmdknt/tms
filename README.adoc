@@ -9,17 +9,17 @@
 ----
 tms
  │
- ├─docs
+ ├─docs :ドキュメント
  │
- ├─frontend-api
+ ├─frontend-api :フロントエンドREST-APIサーバー
  │
- ├─frontend-web
+ ├─frontend-web :フロントエンドWEBサーバー
  │
- ├─mockup
+ ├─mockup :モックアップ
  │
- ├─schema
+ ├─schema :データベーススキーマ
  │
- ├─swagger
+ ├─swagger :OpenAPI(Swagger)
  │    │
  │    ├─frontend-api-server
 ----
