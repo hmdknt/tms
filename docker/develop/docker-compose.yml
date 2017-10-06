@@ -1,7 +1,7 @@
 version: "3"
 services:
   jenkins:
-    image: 'jenkins:2.46.2'
+    image: 'jenkins:latest'
     ports:
       - "8080:8080"
     volumes:
