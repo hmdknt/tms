@@ -40,7 +40,8 @@ Gitの機能を利用してクローン＆チェックアウトを行い自分�
 
 ■ブランチ作成(masterブランチから作成すること)
     $ git checkout master
-    $ git branch 作成するブランチ名
+    $ git pull
+    $ git branch 作成するブランチ名
 
 ■ブランチを作成したら編集作業を行う前に作業用のブランチをpushしておく
     $ git checkout 作成したブランチ名
