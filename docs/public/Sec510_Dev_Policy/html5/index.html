@@ -445,8 +445,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#Sec510_Dev_Policy_howtowritedocument">ドキュメントの書き方</a>
 <ul class="sectlevel2">
-<li><a href="#_asciidocを用いたドキュメントの書き方を書く">AsciiDocを用いたドキュメントの書き方を書く！</a></li>
-<li><a href="#_pluntumlを用いた図の書き方を書く">PluntUMLを用いた図の書き方を書く！</a></li>
+<li><a href="#_asciidocでのドキュメンテーションについて">AsciiDocでのドキュメンテーションについて</a></li>
+<li><a href="#_文章の作成">文章の作成</a></li>
+<li><a href="#_図および画像の利用">図および画像の利用</a></li>
+<li><a href="#_図の作成">図の作成</a></li>
 </ul>
 </li>
 </ul>
@@ -925,12 +927,191 @@ Milestoneを設けています。</p>
 <h2 id="Sec510_Dev_Policy_howtowritedocument">ドキュメントの書き方</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_asciidocを用いたドキュメントの書き方を書く">AsciiDocを用いたドキュメントの書き方を書く！</h3>
-
+<h3 id="_asciidocでのドキュメンテーションについて">AsciiDocでのドキュメンテーションについて</h3>
+<div class="paragraph">
+<p>このドキュメント自体がAsciiDocを用いて作成されていますが、この活動では全般的にOfficeの利用を廃止しています。
+理由としては以下が挙げられます。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>GitHubを利用しているのでレビュー(Textでの比較)が行いたい</p>
+</li>
+<li>
+<p>ドキュメンテーションとして無駄な整形や番号振りといった作業をやめたい</p>
+</li>
+<li>
+<p>1つの大きなドキュメントを分担して作成したい</p>
+</li>
+<li>
+<p>複数人でドキュメントを作成しても統合するのは容易にしたい</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>最初のうちは、慣れないことが多くあるかと思いますが、
+慣れたらこちらの方が圧倒的に楽になるはずです。（すみませんが、人によるので断言できません）</p>
+</div>
 </div>
 <div class="sect2">
-<h3 id="_pluntumlを用いた図の書き方を書く">PluntUMLを用いた図の書き方を書く！</h3>
-
+<h3 id="_文章の作成">文章の作成</h3>
+<div class="paragraph">
+<p>AsciiDocを記述するにあたっていくつかの共通ルールを設けて、全員が守ることで最終成果物が綺麗になりますしレビューをするための前提条件にもなります。
+命名するにあたり英単語に迷った場合は <a href="https://codic.jp/">codic</a> 等の辞書サイトを利用してもよい。</p>
+</div>
+<div class="sect3">
+<h4 id="_ドキュメントの配置場所">ドキュメントの配置場所</h4>
+<div class="paragraph">
+<p>ドキュメントはプロジェクト内の`docs`ディレクトリへ集約します。
+このディレクトリ配下の`public`ディレクトリが公開ディレクトリになります。
+ディレクトリ構成は以下のようになります。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-text" data-lang="text">tms
+ │
+ ├─docs :ドキュメント
+ │  │
+ │  ├─public : ドキュメント公開ディレクトリ
+ │  ├─Sec###_****
+ │  │
+ │  ├─index.html : ドキュメント公開ディレクトリのTOPページ</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_セクション名の命名ルール">セクション名の命名ルール</h4>
+<div class="paragraph">
+<p>セクションは、文章の区切りです。以下の命名ルールに沿って作成してください。</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">命名ルール</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"Sec + セクション番号 + "_" + セクション内容を表すワード(任意)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">セクション番号</dt>
+<dd>
+<p>セクション番号は、番号同士が近いと後々差し込むことができなくなるため、
+ある程度の間を設けることにする。今回は最低でも「10」の幅を持たせるようにして下さい。</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_ファイルの命名ルール">ファイルの命名ルール</h4>
+<div class="paragraph">
+<p>AsciiDocは以下の命名ルールに沿って作成してください。</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">命名ルール</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"Sec + セクション名 + "_" + ドキュメント内容を表すワード(任意) + ".adoc"</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_テンプレートの利用">テンプレートの利用</h4>
+<div class="paragraph">
+<p>AsciiDocを記載するにあたり、
+あらかじめ用意してあるテンプレートを利用して簡易に作成できます。
+テンプレートは以下にありますのでコピーして利用してください。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>tms/docs/template/template.adoc</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>設計書のフォーマットが定まってきたら、別途整理してテンプレート化をしていきましょう。</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_図および画像の利用">図および画像の利用</h3>
+<div class="paragraph">
+<p>図および画像を利用する場合は、各セクションディレクトリの配下にimagesというディレクトリを作成して
+その中に図および画像のファイルを入れてください。
+現在対応している拡張子は以下のみです。</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">表 2. 画像拡張子</caption>
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">拡張子</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">png</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">jpg</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gif</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>ファイル名は、以下の通りとします。</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">命名ルール</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"Sec + セクション名 + "<em>" + ドキュメント内容を表すワード(任意) + "</em>" + 画像を表すワード(任意) + 画像拡張子</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_図の作成">図の作成</h3>
+<div class="paragraph">
+<p>図の作成には極力 <a href="http://plantuml.com/">PluntUML</a>を利用してください。
+<a href="http://plantuml.com/">PluntUML</a>はシーケンス図、クラス図、コンポーネント図等を手早くテキストベースの
+DSLで記述すると画像変換してくれる便利なツールです。<br>
+<br>
+テキストベースなので差分比較も行えます。
+これ自体がレビュー対象になることはないかもしれませんが、後で見返した際にテキストで比較できることは大きいですし、
+第三者による後続メンテナンスも楽になります。<br>
+<br>
+こちらも通常の画像と同様に各セクションディレクトリの配下にimagesというディレクトリを作成して
+その中に図の元となる「puml」という拡張子のPluntUMLのDSLファイルと、変換後の画像ファイルを格納してください。
+いくつかのテンプレートを用意していますので利用してください。
+<br></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>tms/docs/template/images/template_sequence.adoc ：シーケンス用
+tms/docs/template/images/template_usecase.adoc ：ユースケース用</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>いくつかの種類があるので、テンプレートにないものを作成した場合には、テンプレート化をしていきましょう。</p>
+</div>
 </div>
 </div>
 </div>
