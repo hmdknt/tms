@@ -90,6 +90,12 @@ https://www.zenhub.com/extension +
 .ZenHubのスクリーンショット
 image::Sec510_Dev_Policy_zenhub_screenshot.png[]
 
+ブラウザの拡張機能を入れると、以下のようなボードが扱えるようになる。 +
+アジャイル開発のためのボード機能であるが、これを利用して作業状況を楽に変更することができる。 +
+
+.Issueを作業中にするイメージ
+image::Sec510_Dev_Policy_zenhub_issuemove.gif[]
+
 
 ==== Milestone
 Milestoneはプロジェクト計画のイベント設定します。 +

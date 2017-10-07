@@ -33,6 +33,7 @@ subprojects {
                 include 'images/**/*.JPEG'
                 include 'images/**/*.png'
                 include 'images/**/*.jpg'
+                include 'images/**/*.gif'
                 include 'images/**/*.jpeg'
                 exclude 'images/**/*.svg'
                 exclude 'images/**/*.pptx'

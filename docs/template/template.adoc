@@ -5,7 +5,7 @@
 :figure-caption: 図
 :table-caption: 表
 :imagesdir: images
-:homepage: https://traningmanagementsystem.github.io/devlog/
+:homepage: https://traningmanagementsystem.github.io/tms/
 
 
 [[見出し1]]
@@ -15,6 +15,12 @@
 
 [[見出し2]]
 === 見出し2
+[[見出し3]]
+==== 見出し3
+[[見出し4]]
+==== 見出し4
+[[見出し5]]
+==== 見出し5
 
 
 .テーブル例
@@ -31,4 +37,25 @@
 |===
 
 
-なんか適当に育てていって・・・
+[[ソースコードの記述]]
+=== ソースコードの記述
+ソースコードを人に見やすいシンタックスハイライトを適用して記述することができます。
+ソースコードを記載するときは見やすさを考慮すると、4スペースやタブではなく、2スペースが良いです。
+
+[source,java]
+----
+
+public class Sample {
+
+  public static void main() {
+
+    System.out.println("Hello World!!!");
+
+  }
+
+}
+
+----
+
+他記述方法は以下を参照してもらえるとよいです。
+http://www.venus.dti.ne.jp/~iisaka/DocSys/cheatsheet-ja/asciidoc-869/asciidoc-869.html
