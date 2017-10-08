@@ -1,4 +1,4 @@
-= knowledge
+= 開発ポリシー
 :toc: left
 :toclevel: 2
 :toc-title: 目次

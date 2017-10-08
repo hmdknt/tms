@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.4">
-<title>開発ポリシー</title>
+<title>Knowledge - Gitの使い方</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -419,34 +419,38 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>開発ポリシー</h1>
+<h1>Knowledge - Gitの使い方</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">目次</div>
 <ul class="sectlevel1">
-<li><a href="#Sec510_Dev_Policy_overview">この活動について</a></li>
-<li><a href="#_プロジェクトの構成">プロジェクトの構成</a>
-<ul class="sectlevel2">
-<li><a href="#_プロジェクトグループ">プロジェクトグループ</a></li>
-</ul>
-</li>
-<li><a href="#Sec510_Dev_Policy_github">GitHubの使い方</a>
-<ul class="sectlevel2">
-<li><a href="#_ショートカット">ショートカット</a></li>
 <li><a href="#_overview">Overview</a></li>
-<li><a href="#_基本的な使い方">基本的な使い方</a></li>
-<li><a href="#_ブランチ戦略">ブランチ戦略</a></li>
-<li><a href="#_作業管理">作業管理</a></li>
+<li><a href="#_超初心者向けのざっくりとした説明">超初心者向けのざっくりとした説明</a></li>
+<li><a href="#_git初心者向けよく使うコマンドまとめと説明">Git初心者向けよく使うコマンドまとめと説明</a>
+<ul class="sectlevel2">
+<li><a href="#_プロジェクトのクローン">プロジェクトのクローン</a></li>
+<li><a href="#_ファイルの更新_pull">ファイルの更新(pull)</a></li>
 </ul>
 </li>
-<li><a href="#Sec510_Dev_Policy_howtowork">作業の進め方</a>
+<li><a href="#_ブランチの作成">ブランチの作成</a></li>
+<li><a href="#_ブランチの切り替え">ブランチの切り替え</a></li>
+<li><a href="#_編集を破棄してむりやりブランチを切り替える">編集を破棄してむりやりブランチを切り替える</a>
 <ul class="sectlevel2">
-<li><a href="#_作業フロー">作業フロー</a></li>
+<li><a href="#_ブランチの削除">ブランチの削除</a></li>
+<li><a href="#_ファイルの送信_push">ファイルの送信(push)</a></li>
+<li><a href="#_pushの前準備_add_commit">pushの前準備(add,commit)</a></li>
+<li><a href="#_送信_push">送信(push)</a></li>
+<li><a href="#_コミットの取り消し">コミットの取り消し</a></li>
+<li><a href="#_git_reset_の取り消し_コミットの取り消しの取り消し">git reset の取り消し(コミットの取り消しの取り消し)</a></li>
+<li><a href="#_ファイルのdiif_変更点の確認">ファイルのdiif(変更点の確認)</a></li>
 </ul>
 </li>
-<li><a href="#Sec510_Dev_Policy_howtowritedocument">ドキュメントの書き方</a>
+<li><a href="#_特定のファイルを前のバージョンに戻す">特定のファイルを前のバージョンに戻す</a>
 <ul class="sectlevel2">
-<li><a href="#_asciidocを用いたドキュメントの書き方を書く">AsciiDocを用いたドキュメントの書き方を書く！</a></li>
-<li><a href="#_pluntumlを用いた図の書き方を書く">PluntUMLを用いた図の書き方を書く！</a></li>
+<li><a href="#_リモートのファイルを削除">リモートのファイルを削除</a></li>
+<li><a href="#_リモートのファイル名を変更">リモートのファイル名を変更</a></li>
+<li><a href="#_タグの付与">タグの付与</a></li>
+<li><a href="#_タグの削除">タグの削除</a></li>
+<li><a href="#_ユーザの設定">ユーザの設定</a></li>
 </ul>
 </li>
 </ul>
@@ -454,553 +458,414 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="Sec510_Dev_Policy_overview">この活動について</h2>
+<h2 id="_overview">Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>以下のことに注意して、有意義な活動にできればと思ってます。<br></p>
+<p>git初心者に向けてGitの使い方と説明をまとめていく。<br>
+gitのインストールが済んでいる前提である。<br>
+gitが入ってるかどうかはターミナルから</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>無理しなくていいです。強制要素は何もありません。</p>
-</li>
-<li>
-<p>抜けるのも完全に自由です。</p>
-</li>
-<li>
-<p>チームに残り続けてROM（眺めるだけ）でも構いません。</p>
-</li>
-<li>
-<p>健康を阻害してまでやる活動ではありません。</p>
-</li>
-<li>
-<p>メンバー間での活動の強制もやめましょう。</p>
-</li>
-<li>
-<p>趣味レベル級にハマってきたら少し落ち着いてください。</p>
-</li>
-<li>
-<p>睡眠時間を削ってまで活動を行わないでください。</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_プロジェクトの構成">プロジェクトの構成</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>このプロジェクトの構成は以下のようになっています。<br>
-それぞれのプロジェクトの用途は抑えるようにしてください。</p>
-</div>
-<div class="sect2">
-<h3 id="_プロジェクトグループ">プロジェクトグループ</h3>
-<div class="paragraph">
-<p><a href="https://github.com/TraningManagementSystem" class="bare">https://github.com/TraningManagementSystem</a></p>
-</div>
-<div class="sect3">
-<h4 id="_tms">tms</h4>
-<div class="paragraph">
-<p>「Training Management System」のアプリケーションリポジトリです。<br>
-アプリケーション資材はすべてこのリポジトリ内に入れることにしましょう。<br></p>
-</div>
-<div class="sect4">
-<h5 id="_docs">docs</h5>
-<div class="paragraph">
-<p><a href="https://github.com/TraningManagementSystem/tms" class="bare">https://github.com/TraningManagementSystem/tms</a><br>
-この資料は上記のURLで誰でも見れます。<br>
-隠す内容も何もないので、そのまま公開にしたいと思ってます。<br>
-<br>
-Training Management System で作成するドキュメントおよびをシステム構築するにあたりチームの決め事であったりノウハウの共有、
-ハマりポイントなどを共有するガイドラインを記載するページです。後者に関してはグループソフトウェアやWikiをイメージしてもらえると良いかと。<br>
-以下が現時点で考えられているガイドラインです。</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>ポリシー（活動ルール等）</p>
-</li>
-<li>
-<p>ローカル環境構築ガイドライン</p>
-</li>
-<li>
-<p>設計ガイドライン</p>
-</li>
-<li>
-<p>実装ガイドライン</p>
-</li>
-<li>
-<p>単体テストガイドライン</p>
-</li>
-<li>
-<p>結合テストガイドライン</p>
-</li>
-<li>
-<p>CI/CDガイドライン</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong class="red">あくまで公開範囲はインターネット上の全てということをお忘れなく。</strong></p>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_devlog">devlog</h4>
-<div class="paragraph">
-<p><a href="https://github.com/TraningManagementSystem/devlog" class="bare">https://github.com/TraningManagementSystem/devlog</a><br>
-システム開発ブログです。<br>
-必須ではありませんが、開発中に気になったことや調べて「ほぇ」と思ったことを書くと良いかと。<br>
-knowledgeはあくまで開発ルールの記載や手順の周知と言った内容ですが、devlogはゆるくて構いません。<br>
-なお、一発目はこんな感じのシステムが作れたらなぁと言った内容を投稿します。<br>
-<br>
-どちらかというと、日々のこの活動に対する不満とか、無茶振りだろこれ。<br>
-とかそういった愚痴を描いてもらう場でいいのかなぁとも思ってます。<br>
-どれだけこういったことを学ぶのに苦労するか、ということの心理的な感覚もそこから得られるので・・・<br>
-<br>
-<strong class="red">あくまで公開範囲はインターネット上の全てということをお忘れなく。</strong></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="Sec510_Dev_Policy_github">GitHubの使い方</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_ショートカット">ショートカット</h3>
-<div class="paragraph">
-<p>このショートカットは一度開発ポリシーを読んだことがある人がリンクを探す必要がないように
-ページ先頭に用意しているものです。初めて訪れる人はきちんと開発ポリシーは読んでください。</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/TraningManagementSystem/tms#boards">Boards</a></p>
-</li>
-<li>
-<p><a href="https://github.com/TraningManagementSystem/tms/issues">Issue</a></p>
-</li>
-<li>
-<p><a href="https://github.com/TraningManagementSystem/tms/milestones?direction=asc&amp;sort=due_date&amp;state=open">Milestone</a></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_overview">Overview</h3>
-<div class="paragraph">
-<p>GitHubとはバージョン管理ソフトウェアであるGitのWebホスティングサービスで世界的にOSS活動、企業活動等で利用されています。
-GitのWebフロントという側面以外にも組織運営をするためのサポート機能も充実しておりとても便利です。
-類似サービスとして <a href="https://about.gitlab.com/">GitLab</a>、 <a href="https://bitbucket.org/product">Bitbucket</a>があります。</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_基本的な使い方">基本的な使い方</h3>
-<div class="paragraph">
-<p>基本的な使い方については、様々な一般サイト様でとても丁寧な解説文がありますのでそちらを参照してください。</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>GitHub</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://techacademy.jp/magazine/6235">今さら聞けない！GitHubの使い方【超初心者向け】</a></p>
-</li>
-<li>
-<p><a href="https://qiita.com/ay3/items/8d758ebde41d256a32dc">GitHub 入門</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Git</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://www.backlog.jp/git-guide/">サルでもわかるGit入門</a></p>
-</li>
-<li>
-<p><a href="https://progit-ja.github.io/">Pro Git</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>今さら聞けない、サルでもわかる。といった煽り文句はわからない人がそれだけ多くいて困ることがある。
-ということの裏返しですので不明点が出るたびに見返すと良いかと思います。</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_ブランチ戦略">ブランチ戦略</h3>
-<div class="paragraph">
-<p>初回リリースまでは、GitHub Flowを利用します。<br>
-masterとfeatureの2ブランチのみのシンプルなものです。</p>
-</div>
-<div class="imageblock">
+<div class="listingblock">
 <div class="content">
-<img src="images/Sec510_Dev_Policy_gitbranch.png" alt="Sec510 Dev Policy gitbranch">
+<pre>$ git --version</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>featureブランチはそれぞれの担当者が作業を行うたびに作成し、masterへプルリクエストを介してマージします。
-この際featureブランチは削除します。<br>
-<br>
-複数人で作業を行うので、様々なタイミングで複数のブランチが作成されmasterへマージされます。
-他の人と同じファイルの更新を行わないように作業管理やパッケージ分割等を行うことが一番望ましいですが、
-それでも被ることはあるので、masterから適宜最新版を作業ブランチへ反映することが重要です。<br>
-<br>
-以降で説明しますが、今回の作業はIssueをベースに管理をしますので「feature」という名前はあくまでも
-一般的な話として記載しており命名規約は別途定めます。</p>
+<p>を打ちバージョン番号が表示されたらOK。$はコマンドプロンプトなのでコピペする必要はない。</p>
 </div>
-<div class="sect3">
-<h4 id="_ブランチ命名ルール">ブランチ命名ルール</h4>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_超初心者向けのざっくりとした説明">超初心者向けのざっくりとした説明</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>利用するブランチの命名ルールを定めます。</p>
+<p><strong class="big">addしてcommitしてpushするとgithubに変更が保存される。</strong><br></p>
+</div>
+<div class="paragraph">
+<p>↑がわかればとりあえずなんとか使えます。また、</p>
+</div>
+<div class="paragraph">
+<p><strong class="big">編集作業を行う前に作業用のブランチに切り替えて編集する。</strong></p>
+</div>
+<div class="paragraph">
+<p>という考えが重要です。masterブランチは成果物(提出用)なのでみんなで一斉にいじるのは良くないです。かならず作業用ブランチを作成し、作業用ブランチに切り替えてから作業を行いましょう。</p>
+</div>
+<div class="paragraph">
+<p><strong class="big">実際の作業の流れは <a href="https://github.com/TraningManagementSystem/tms/blob/master/docs/Sec510_Dev_Policy/Sec510_Dev_Policy_howtowork.adoc">作業の進め方</a>を参照</strong></p>
 </div>
 <table class="tableblock frame-all grid-all spread">
+<caption class="title">表 1. ざっくりとした語句説明</caption>
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 30%;">
-<col style="width: 50%;">
+<col style="width: 25%;">
+<col style="width: 75%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">ブランチ名</th>
-<th class="tableblock halign-left valign-top">命名</th>
+<th class="tableblock halign-left valign-top">語句</th>
 <th class="tableblock halign-left valign-top">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">マスター</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">master（固定）</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">本ブランチです。ここが開発の公式な最新版を示します。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">コミット前にコミットするファイルをインデックスにまとめておくこと。</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">作業ブランチ</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">issue/{issue-no}_{summary}</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">作業ブランチです。Issueだと一眼でわかるようにしています。「issue-no」はGitHubのIssueの番号です。＃の後の番号を利用してください。
-「summary」は作業の概要です。ぱっと見でなんとなくわかるようにしてください。単語力鍛えられそう。。。</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">commit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">リポジトリに編集したファイルを登録すること。例)コミットしておけば「コミットログ4dcc22d3e4c1ca5dfc682b2b6ca1bebc3d65781dのファイルに戻す」とかできる。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">push</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">リモートにリポジトリの状態を反映させる。今回はGithubにコミットしたものを反映させる。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">インデックス</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">コミットするためのファイルを書き込んでおくファイル。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">リポジトリ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">「どのファイルがどんな変更でいつのコミットで登録された」みたいなのまるまる記録している場所のこと。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ブランチ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">　『自分用の作業スペース』という感覚でOK。適当な名前のブランチを作成してそこで作業する。100人で開発するときmasterブランチを直接いじるのはマズイので。</p></td>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>Issueはブランチ戦略で説明しました、featureブランチと同じものです。<br>
-命名ルールが異なるだけなので深く考えないようにしてください。</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_作業管理">作業管理</h3>
-<div class="paragraph">
-<p>作業管理はGitHub＋ZenHubで行います。<br>
-tmsプロジェクトをベースの開発プロジェクトとしていますので、全体作業管理は「tms」リポジトリのIssueを見るようにしてください。
-ZenHubとはGitHubのIssue管理を便利するサービスです。<br>
-<br>
-ZenHubのブラウザ拡張機能を利用することで誰でも便利にページを観ることができます。<br>
-<a href="https://www.zenhub.com/extension" class="bare">https://www.zenhub.com/extension</a><br>
-<br></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/Sec510_Dev_Policy_zenhub_screenshot.png" alt="Sec510 Dev Policy zenhub screenshot">
-</div>
-<div class="title">図 1. ZenHubのスクリーンショット</div>
-</div>
-<div class="sect3">
-<h4 id="_milestone">Milestone</h4>
-<div class="paragraph">
-<p>Milestoneはプロジェクト計画のイベント設定します。<br>
-期日（開始〜終了）を設定しその期間内で何を行なわなければならないかを明確化します。<br></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/TraningManagementSystem/tms/milestones?direction=asc&amp;sort=due_date&amp;state=open">Milestone</a></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>本活動は、業務外で行なっているため作業の強制は行いません。
-しかし、ある程度スケジュールを明確化しなければ活動としてもゴールが定まらず風化してしまうので
-Milestoneを設けています。</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_issue">Issue</h4>
-<div class="paragraph">
-<p>Issueは以下の管理で利用します。</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>タスク管理</p>
-</li>
-<li>
-<p>バグ管理</p>
-</li>
-<li>
-<p>課題管理</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>1つのIssueという方法で、複数の用途を兼ねるためにLabelの設定が必要です。
-以下のようなルールを設けて運用を行います。</p>
-</div>
-<div class="sect4">
-<h5 id="_label">Label</h5>
-<div class="paragraph">
-<p>ラベルはIssueの種類を決めるために設定します。</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<caption class="title">表 1. ラベル一覧</caption>
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">ラベル名</th>
-<th class="tableblock halign-left valign-top">用途</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">enhancement</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">機能追加。実装したらクローズ。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">question</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">質問、議論。収束したらクローズ。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">help wanted</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">助けが必要。解決したらクローズ。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">bug</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">バグ。修正したらクローズ。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">duplicate</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">他のイシューと重複している。重複先のイシューにリンクしてクローズ。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">invalid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">間違い、勘違い、実現不可能。対応しない理由を書いてクローズ。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">wontfix</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">既知バグであるが、対応しないバグ。対応しない理由を書いてクローズ。</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_projects">Projects</h5>
-<div class="paragraph">
-<p>Issueが属するプロジェクトを指定します。<br>
-今回は「TrainingManagementSystem」を指定する。<br></p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_milestone_2">Milestone</h5>
-<div class="paragraph">
-<p>Issueが属するMilestoneを指定します。<br>
-今回は、以下のリンクに存在するMilestoneから選択してください。</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/TraningManagementSystem/tms/milestones?direction=asc&amp;sort=due_date&amp;state=open">Milestone</a></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_release">Release</h5>
-<div class="paragraph">
-<p>Issueが属するReleaseの版を指定する。</p>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_boardの使い方_zenhub">Boardの使い方（ZenHub）</h4>
-
-</div>
-</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="Sec510_Dev_Policy_howtowork">作業の進め方</h2>
+<h2 id="_git初心者向けよく使うコマンドまとめと説明">Git初心者向けよく使うコマンドまとめと説明</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_作業フロー">作業フロー</h3>
+<h3 id="_プロジェクトのクローン">プロジェクトのクローン</h3>
 <div class="paragraph">
-<p>作業の管理については、GitHub/ZenHubを利用したIssueベースで行います。<br>
-では実際にどのように作業を進めるのかの具体的なフローについて説明します。<br>
-まず基本的な作業フローは以下となります。</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/Sec510_Dev_Policy_workflow.png" alt="Sec510 Dev Policy workflow">
-</div>
-<div class="title">図 2. 作業フロー</div>
-</div>
-<div class="paragraph">
-<p>以降でそれぞれの要素について詳細に説明を行います。</p>
-</div>
-<div class="sect3">
-<h4 id="_タスクの確認">タスクの確認</h4>
-<div class="paragraph">
-<p>GitHubもしくはZenHubにてタスクの確認を行います。
-仮にIssueにタスクの目的や詳細な内容が記載されていない場合はタスクをあげた人に問い合わせましょう。
-またIssueの状態がプロジェクトのルールに沿っていない場合もきちんと指摘してルールを守るように促すまたは修正を行いましょう。</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_ブランチの作成">ブランチの作成</h4>
-<div class="paragraph">
-<p>ブランチの作成は、WEBブラウザで簡単に行えますが、コマンドラインやIDEで行う方法を覚えた方がよいでしょう。
-理由として、コマンドラインやIDE操作ではGitのWEBホスティングサービスが変わっても同一のオペレーションで
-ブランチの作成＆プッシュができるようになるからです。</p>
-</div>
-<div class="paragraph">
-<p>#Gitのコマンドラインについては <a href="https://github.com/TraningManagementSystem/tms/tree/master/docs/Sec510_Dev_Policy/Sec510_Dev_Policy_GitHowToUse.adoc">Gitの使い方</a>を参照。</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_クローン_チェックアウト">クローン＆チェックアウト</h4>
-<div class="paragraph">
-<p>Gitの機能を利用してクローン＆チェックアウトを行い自分の作業ブランチでの作業準備を行いましょう。</p>
-</div>
-<div class="listingblock">
-<div class="title">コマンドライン上でのブランチ作成</div>
-<div class="content">
-<pre>■クローン(初期一回のみ)
-    $ git clone https://github.com/TraningManagementSystem/tms.git
-    $ cd tms
-
-■ブランチ作成(masterブランチから作成すること)
-    $ git checkout master
-    $ git pull
-    $ git branch 作成するブランチ名
-
-■ブランチを作成したら編集作業を行う前に作業用のブランチをpushしておく
-    $ git checkout 作成したブランチ名
-    $ git push origin 作成したブランチ名
-
-■実際に作業へ移る↓</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>#ブランチの命名規則は <a href="https://github.com/TraningManagementSystem/tms/blob/master/docs/Sec510_Dev_Policy/Sec510_Dev_Policy_github.adoc#4">ブランチ戦略</a>を参照。</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_作業">作業</h4>
-<div class="paragraph">
-<p>ここは作業毎に異なるので手順にはかけません。</p>
-</div>
-<div class="paragraph">
-<p>編集したファイルをGitHubにpushする際は以下のコマンド。</p>
+<p>クローン⇒ファイルのダウンロードみたいなもの。変更履歴までまるまる持ってくきてくれる。<br></p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>■編集したファイルをindexに登録(add)
-    $ git add 編集したファイル名
- もしくは
- 編集したすべてのファイルをaddするときは
-    $ git add --all
-
-■編集したファイルをローカルのリポジトリに反映(commit)
-    $ git commit -m コメント
-
-■編集したファイルをリモートのリポジトリに反映(push)
-    $ git push origin 作成したブランチ名
-
-
-例）
-  $ git add ./docs/Sec510_Dev_Policy/Sec510_Dev_Policy_howtowork.adoc
-  $ git commit -m 作業の進め方にgitコマンド追記
-  $ git push origin issue/12_Git_HowTo</pre>
+<pre>使い方
+$ git clone 資材の置いてあるURL
+例)
+$ git clone https://github.com/TraningManagementSystem/knowledge.git
+$ git clone https://github.com/TraningManagementSystem/tms.git</pre>
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_プルリクエスト">プルリクエスト</h4>
+<div class="sect2">
+<h3 id="_ファイルの更新_pull">ファイルの更新(pull)</h3>
 <div class="paragraph">
-<p>プルリクエストを行うことで自分の作業ブランチの内容を公開ブランチに反映するためのレビューを投げます。
-基本的に作業をコミットメントするためには第三者のレビューが必要であり勝手に自分で進んでいくという事態を防ぎます。
-こうすることで必ず誰かの目を通す文化が出来上がり属人性が高い成果物が出来上がっていくことを防ぐこともできます。</p>
+<p>リモート(例:GitHub)にある最新ファイルをローカル(自分のPC)に持ってきて更新する。</p>
 </div>
-<div class="sect4">
-<h5 id="_プルリクエストのやり方">プルリクエストのやり方</h5>
-<div class="paragraph">
-<p>下記の画面を参考にNew pull requestを押下</p>
-</div>
-<div class="imageblock">
+<div class="listingblock">
 <div class="content">
-<img src="images/Sec510_Dev_Policy_GitHowToUse_pullreq01.png" alt="Sec510 Dev Policy GitHowToUse pullreq01">
-</div>
-<div class="title">図 3. プルリクエストのやり方１</div>
+<pre>$ git pull</pre>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_プルリクエストの作成">プルリクエストの作成</h5>
+<div class="sect3">
+<h4 id="_無理やりpullしてリモート先に合わせる">無理やりpullしてリモート先に合わせる</h4>
 <div class="paragraph">
-<p>右のブランチから左のブランチへマージされるため、左にmasterブランチ、右に作業用ブランチを選択した後Create pull requestを押下する。</p>
+<p>自分で編集を行っていた場合、そのファイルについてはpullで更新されない。
+とにかくリモート先が正しいからそれに合わせたい。というときにリモート先と同じ状態にするには下記を実行。</p>
 </div>
-<div class="imageblock">
+<div class="listingblock">
 <div class="content">
-<img src="images/Sec510_Dev_Policy_GitHowToUse_pullreq02.png" alt="Sec510 Dev Policy GitHowToUse pullreq02">
+<pre>$ git fetch origin
+$ git reset --hard origin/ブランチ名
+
+例）masterブランチと全く同じ状態にしたい
+$ git fetch origin
+$ git reset --hard origin/master</pre>
 </div>
-<div class="title">図 4. プルリクエストのやりかた２</div>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_レビュー">レビュー</h4>
-<div class="paragraph">
-<p>レビューはプルリクエストを受けた人間が行いますが、きちんとレビューする対象物を理解して実施しましょう。
-レビューの結果はプルリクエストに残しておきます。テキストの比較ベースでプルリクエストの中身を確認することができるのでとても便利です。
-逆に言うとテキストでない成果物はレビューが面倒であるといえます。</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_マージ">マージ</h4>
-<div class="paragraph">
-<p>レビュワーのレビューが完了したらマージを行います。
-これはレビュワーが行うため、作業者は何も行いません。
-作成されているブランチはマージのタイミングで削除するようにしましょう。</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="Sec510_Dev_Policy_howtowritedocument">ドキュメントの書き方</h2>
+<h2 id="_ブランチの作成">ブランチの作成</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_asciidocを用いたドキュメントの書き方を書く">AsciiDocを用いたドキュメントの書き方を書く！</h3>
+<div class="listingblock">
+<div class="content">
+<pre>$ git branch ブランチ名</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ブランチの切り替え">ブランチの切り替え</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre>$ git checkout ブランチ名</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>編集したファイルがコミットしてない場合失敗します</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong class="big">開発は作業用ブランチに切り替えてからファイルを作成/修正しましょう</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>■現在自分のいるブランチ名を確認
+  $ git branch
+■ブランチの作成
+  $ git branch ブランチ名
+■ブランチに切り替える
+  $ git checkout ブランチ名
+■ブランチをpushしてリモートに反映させる。
+  $ git push origin ブランチ名</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_編集を破棄してむりやりブランチを切り替える">編集を破棄してむりやりブランチを切り替える</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre>$ git checkout --force ブランチ名
 
+■それでもうまく切りかえれないときはgit stashしてからchckoutする
+$ git stash</pre>
+</div>
 </div>
 <div class="sect2">
-<h3 id="_pluntumlを用いた図の書き方を書く">PluntUMLを用いた図の書き方を書く！</h3>
+<h3 id="_ブランチの削除">ブランチの削除</h3>
+<div class="paragraph">
+<p>削除するブランチにいるときはcheckoutでブランチを移動すること</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>■ローカルブランチの削除
+  git branch -d ブランチ名
+■リモートブランチの削除(2通り)
+  git push origin :ブランチ名
+  git push --delete origin ブランチ名
 
+
+(削除の流れ)
+■現在のブランチの確認
+  $ git branch -r
+■ブランチの変更(削除するブランチに居るときは適当な別のブランチに移動する。)
+  $ git checkout 適当なブランチ名(masterでおｋ)
+■ブランチの削除(ローカル)
+  $ git branch -d 削除するブランチ名
+■ブランチの確認
+  $ git branch
+■ブランチの削除(リモート)
+  $ push origin :削除するブランチ名</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ファイルの送信_push">ファイルの送信(push)</h3>
+<div class="paragraph">
+<p>編集したローカルのファイルをリモート先に送信する。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pushの前準備_add_commit">pushの前準備(add,commit)</h3>
+<div class="listingblock">
+<div class="content">
+<pre>$ git add 編集したファイル名
+$ git commit</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>viが起動するのでiで入力モードに<br>
+コメント(何を修正したかを記入)を追加したら<br>
+Escでコマンド入力モードへ<br>
+:wqを押しエンター(wirte quitの意味)<br></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>例)
+$ git add --all
+$ git commit -m コメン</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>addの際-fで.gitignoreに書かれている管理対象外のファイルも強制的にadd。<strong class="big">-fは使わないように！</strong></p>
+</li>
+<li>
+<p>--allで全てのをadd。</p>
+</li>
+<li>
+<p>-mでviエディタを開かずにコメント入力してコミットできる(””はいらない)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_送信_push">送信(push)</h3>
+<div class="listingblock">
+<div class="content">
+<pre>$ git push　リポジトリ名 ブランチ名
+(例)
+$ git push origin master</pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_addし忘れた時">addし忘れた時</h4>
+<div class="paragraph">
+<p>addし忘れた！！というときに追加でaddしてコミットする。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ git add hogehoge.txt
+$ git commit --amend</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_コミットの取り消し">コミットの取り消し</h3>
+<div class="listingblock">
+<div class="content">
+<pre>コミットの取り消し
+■コミットのみの取り消し
+$ git reset --soft HEAD^
+
+■コミットとワーキングツリー(実際に編集してきたファイル)の戻し。前回コミットした段階までファイルも戻っちゃう。
+$ git reset --hard HEAD^</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_git_reset_の取り消し_コミットの取り消しの取り消し">git reset の取り消し(コミットの取り消しの取り消し)</h3>
+<div class="listingblock">
+<div class="content">
+<pre>現在のブランチの最新コミットを表すHEADに移動すればOK
+$ git reset --soft HEAD
+or
+$ git reset --hard HEAD</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ファイルのdiif_変更点の確認">ファイルのdiif(変更点の確認)</h3>
+<div class="listingblock">
+<div class="content">
+<pre>■add前のdiffをとるとき
+$ git diff
+■add後のdiffをとるとき
+$ git diff -cached
+■コミット後のdiffをとるとき
+$ git diff HEAD^
+
+■全体の変更点の確認(まだaddしてないファイル等を確認できたりする。addの際--all使うならあんまり使わないかも)
+$ git status</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="big">pushの前にdiffを取って変なファイルや変更をコミットしていないか確認する(推奨)</strong></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_特定のファイルを前のバージョンに戻す">特定のファイルを前のバージョンに戻す</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre>$ git log で戻したいコミット番号を確認
+$ git checkout コミット番号　戻したいファイル名
+$ git add 戻したファイル名
+$ git commit -m コメント
+$ git push origin ブランチ名</pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_リモートのファイルを削除">リモートのファイルを削除</h3>
+<div class="listingblock">
+<div class="content">
+<pre>$ git rm 削除するファイル名
+$ git commit -m コメント
+$ git push origin ブランチ名</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_リモートのファイル名を変更">リモートのファイル名を変更</h3>
+<div class="listingblock">
+<div class="content">
+<pre>$ git mv ファイル名(変更前)　ファイル名(変更後)
+$ git commit -m コメント
+$ git push origin ブランチ名</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_タグの付与">タグの付与</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">タグ</dt>
+<dd>
+<p>これもバージョンみたいなもの。</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>試験する毎にタグ切っておくと、このタグで試験しました！とか言える。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ git tag -a -m "タグ名" タグ名
+$ git push リポジトリ名 タグ名
+
+(例)
+$ git tag -a -m "V0.0.1" V0.0.1
+$ git push origin V0.0.1</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_タグの削除">タグの削除</h3>
+<div class="listingblock">
+<div class="content">
+<pre>$ git tag -d タグ名
+$ git push origin :refs/tags/タグ名</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ユーザの設定">ユーザの設定</h3>
+<div class="listingblock">
+<div class="content">
+<pre>$ git config --global user.name "ユーザ名"
+$ git config --global user.email 登録するメールアドレス</pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_設定の確認">設定の確認</h4>
+<div class="paragraph">
+<p>ユーザ、リポジトリ名(デフォルト値origin)、ブランチ名(デフォルト値master)等が確認できる</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ git config --list</pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-10-08 22:23:58 +09:00
+Last updated 2017-10-08 22:32:34 +09:00
 </div>
 </div>
 </body>
