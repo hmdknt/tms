@@ -27,16 +27,76 @@ GitHubもしくはZenHubにてタスクの確認を行います。
 理由として、コマンドラインやIDE操作ではGitのWEBホスティングサービスが変わっても同一のオペレーションで
 ブランチの作成＆プッシュができるようになるからです。
 
+#Gitのコマンドラインについては https://github.com/TraningManagementSystem/tms/tree/master/docs/Sec510_Dev_Policy/Sec510_Dev_Policy_GitHowToUse.adoc[Gitの使い方]を参照。
+
+
 ==== クローン＆チェックアウト
 Gitの機能を利用してクローン＆チェックアウトを行い自分の作業ブランチでの作業準備を行いましょう。
 
+.コマンドライン上でのブランチ作成
+----
+■クローン(初期一回のみ)
+    $ git clone https://github.com/TraningManagementSystem/tms.git
+    $ cd tms
+
+■ブランチ作成(masterブランチから作成すること)
+    $ git checkout master
+    $ git pull
+    $ git branch 作成するブランチ名
+
+■ブランチを作成したら編集作業を行う前に作業用のブランチをpushしておく
+    $ git checkout 作成したブランチ名
+    $ git push origin 作成したブランチ名
+
+■実際に作業へ移る↓
+----
+#ブランチの命名規則は https://github.com/TraningManagementSystem/tms/blob/master/docs/Sec510_Dev_Policy/Sec510_Dev_Policy_github.adoc#4[ブランチ戦略]を参照。
+
+
+
+
 ==== 作業
 ここは作業毎に異なるので手順にはかけません。
+
+編集したファイルをGitHubにpushする際は以下のコマンド。
+----
+■編集したファイルをindexに登録(add)
+    $ git add 編集したファイル名
+ もしくは
+ 編集したすべてのファイルをaddするときは
+    $ git add --all
+
+■編集したファイルをローカルのリポジトリに反映(commit)
+    $ git commit -m コメント
+
+■編集したファイルをリモートのリポジトリに反映(push)
+    $ git push origin 作成したブランチ名
+
+
+例）
+  $ git add ./docs/Sec510_Dev_Policy/Sec510_Dev_Policy_howtowork.adoc
+  $ git commit -m 作業の進め方にgitコマンド追記
+  $ git push origin issue/12_Git_HowTo
+----
+
 
 ==== プルリクエスト
 プルリクエストを行うことで自分の作業ブランチの内容を公開ブランチに反映するためのレビューを投げます。
 基本的に作業をコミットメントするためには第三者のレビューが必要であり勝手に自分で進んでいくという事態を防ぎます。
 こうすることで必ず誰かの目を通す文化が出来上がり属人性が高い成果物が出来上がっていくことを防ぐこともできます。
+
+===== プルリクエストのやり方
+下記の画面を参考にNew pull requestを押下
+
+.プルリクエストのやり方１
+image::Sec510_Dev_Policy_GitHowToUse_pullreq01.png[]
+
+
+===== プルリクエストの作成
+右のブランチから左のブランチへマージされるため、左にmasterブランチ、右に作業用ブランチを選択した後Create pull requestを押下する。
+
+.プルリクエストのやりかた２
+image::Sec510_Dev_Policy_GitHowToUse_pullreq02.png[]
 
 ==== レビュー
 レビューはプルリクエストを受けた人間が行いますが、きちんとレビューする対象物を理解して実施しましょう。
