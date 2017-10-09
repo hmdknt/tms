@@ -1,4 +1,4 @@
-package work.segarden.controller;
+package work.segarden.frontend.api.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

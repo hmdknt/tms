@@ -1,10 +1,10 @@
-package work.segarden.controller;
+package work.segarden.frontend.api.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.WebRequest;
-import work.segarden.bean.Sample;
+import work.segarden.frontend.api.bean.Sample;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
