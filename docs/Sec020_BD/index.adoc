@@ -22,28 +22,23 @@
 |<<Sec020_BD_functionspec_login,ログイン機能>>
 |ActiveDirectoryに対応したシステムへのログイン機能。
 
-|ユーザー通知機能
+|<<Sec020_BD_functionspec_notification,ユーザー通知機能>>
+|ユーザーに様々なタイミングで情報通知を行う機能。
+
+|<<Sec020_BD_functionspec_reportlist,レポート一覧機能>>
+|ログインしているユーザーが自分のレポートの一覧を参照する機能。
+
+|<<Sec020_BD_functionspec_reportedit,レポート編集機能>>
+|ログインしているユーザーが自分のレポートを編集する機能。
+
+|<<Sec020_BD_functionspec_reportdraft,レポート下書き機能>>
+|ログインしているユーザーが自分のレポートを編集中に下書き保存する機能。
+また、下書き保存状態から復帰して再度編集するための機能。
+
+|<<Sec020_BD_functionspec_reportsubmission,レポート提出機能>>
 |...
 
-|レポート一覧機能
-|...
-
-|レポート編集機能
-|...
-
-|レポート提出機能
-|...
-
-|レポート修正依頼機能
-|...
-
-|...
-|...
-
-|...
-|...
-
-|...
+|<<Sec020_BD_functionspec_reportmodrequest,レポート修正依頼機能>>
 |...
 
 |===
@@ -52,14 +47,8 @@
 
 == 機能設計書
 
-[[Sec020_BD_functionspec_login]]
-=== ログイン機能
-==== 機能概要
-ActiveDirectoryに対応したシステムへのログイン機能。 +
-ActiveDirectoryで認証処理後、本システム内での権限情報（ROLE）と共に認証情報をセッション情報に保持する。
-
-==== シーケンス図
-image::Sec020_BD_functionspec_login_sequence.png[]
+// ログイン機能
+include::Sec020_BD_functionspec_login.adoc[]
 
 '''
 

@@ -481,35 +481,28 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top"><p class="tableblock">ActiveDirectoryに対応したシステムへのログイン機能。</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザー通知機能</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Sec020_BD_functionspec_notification">ユーザー通知機能</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザーに様々なタイミングで情報通知を行う機能。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Sec020_BD_functionspec_reportlist">レポート一覧機能</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ログインしているユーザーが自分のレポートの一覧を参照する機能。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Sec020_BD_functionspec_reportedit">レポート編集機能</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ログインしているユーザーが自分のレポートを編集する機能。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Sec020_BD_functionspec_reportdraft">レポート下書き機能</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ログインしているユーザーが自分のレポートを編集中に下書き保存する機能。
+また、下書き保存状態から復帰して再度編集するための機能。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Sec020_BD_functionspec_reportsubmission">レポート提出機能</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">レポート一覧機能</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">レポート編集機能</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">レポート提出機能</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">レポート修正依頼機能</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Sec020_BD_functionspec_reportmodrequest">レポート修正依頼機能</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;</p></td>
 </tr>
 </tbody>
@@ -534,6 +527,31 @@ ActiveDirectoryで認証処理後、本システム内での権限情報（ROLE�
 <div class="content">
 <img src="images/Sec020_BD_functionspec_login_sequence.png" alt="Sec020 BD functionspec login sequence">
 </div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_機能説明">機能説明</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>クライアントよりログイン要求リクエストを行う。この際にユーザー/パスワードを入力として受け取る。</p>
+</li>
+<li>
+<p>ユーザー/パスワードを元にActiveDirectoryに対して問い合わせを行う。</p>
+</li>
+<li>
+<p>問い合わせ結果が正常に取得できた場合（認証エラーにならない場合）には、
+本システムとしてのユーザー情報の有無を確認し権限を取得する。
+本システムとしてのユーザーが存在しない場合には、初回アクセス時のユーザー登録処理を行う。</p>
+</li>
+<li>
+<p>本システムのユーザー情報および権限情報を認証キャッシュとしてキャッシュサーバーへ登録する。
+認証キャッシュの有効期間（TTL）は<code>0.25H（15分間）</code>とする。</p>
+</li>
+<li>
+<p>ログインが正常に行えたことをユーザーへ通知する。この際認証キャッシュのキーをクライアントへ返却すること。</p>
+</li>
+</ol>
 </div>
 <hr>
 </div>
@@ -610,7 +628,7 @@ ActiveDirectoryで認証処理後、本システム内での権限情報（ROLE�
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-10-01 23:43:56 +09:00
+Last updated 2017-10-11 01:33:14 +09:00
 </div>
 </div>
 </body>

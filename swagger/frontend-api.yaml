@@ -12,7 +12,9 @@ produces:
   - application/json
 tags :
   - name : User
-    description: ユーザーAPI.
+    description: ユーザー.
+  - name : Report
+    description: レポート.
 paths:
   /users:
     post:
@@ -101,6 +103,24 @@ paths:
           description: Unexpected error
           schema:
             $ref: '#/definitions/Result'
+  /reports:
+    post:
+      operationId : post_repotes
+      summary: レポート新規作成
+      description: |
+        レポートを編集します.
+      tags:
+        - Report
+      parameters:
+      - in: body
+        name: body
+        description: レポート情報オブジェクト
+        required: true
+        schema:
+          $ref: '#/definitions/Report'
+      responses:
+        200:
+          description: 正常に編集された場合に返却します.
 definitions:
   UserRegist:
     type: object
@@ -124,6 +144,23 @@ definitions:
       name:
         type: string
         description: 名前.
+  Report:
+    type: object
+    properties:
+      reportId:
+        type: string
+        description: レポートを一意に特定するためのレポートID.
+      userId:
+        type: string
+        description: ユーザーID.
+      year:
+        type: integer
+        format: int32
+        description: 年（西暦）
+      month:
+        type: integer
+        format: int32
+        description: 月
   Result:
     type: object
     properties:

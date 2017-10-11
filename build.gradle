@@ -14,7 +14,7 @@ buildscript {
     }
 }
 
-// プラグイン指定
+// プラグイン定義
 apply plugin: "maven"
 apply plugin: 'idea'
 apply plugin: "eclipse"
@@ -30,8 +30,8 @@ dependencyManagement {
 
 ext {
 
-    mavenGroup = 'tms'
-    mavenVersion = 'version'
+    mavenGroup = 'work.segarden'
+    mavenVersion = '1.0.0'
 
     javaVersion = '1.8'
     sourceCodeEncoding = 'UTF-8'
@@ -49,6 +49,7 @@ allprojects {
 // サブプロジェクト共通設定
 configure(subprojects - project('docs') - project('mockup') - project('frontend-web')) {
 
+    // プラグイン定義
     apply plugin: 'java'
 
     // リポジトリ

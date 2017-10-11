@@ -1,12 +1,20 @@
+// Root
 rootProject.name = 'tms'
+
+// Applications
 include 'frontend-api'
 include 'frontend-web'
+
+// DataBase
 include 'schema'
-include 'docs'
-include 'mockup'
+
+// OpenApi
 include 'swagger'
 include 'swagger:frontend-api-server'
 include 'swagger:frontend-api-client'
+
+// Documents
+include 'mockup'
 include 'docs'
 include 'docs:Sec000_UsersGuidline'
 include 'docs:Sec010_RD'
@@ -22,3 +30,7 @@ include 'docs:Sec550_Dev_UnitTest'
 include 'docs:Sec560_Dev_IntegrationTest'
 include 'docs:Sec570_Dev_CICD'
 include 'docs:Sec700_Knowledge_GitHowToUse'
+
+// Framework
+include 'framework:framework-frontend-api'
+include 'framework:framework-swagger-template'

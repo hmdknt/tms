@@ -4,7 +4,7 @@
   "hideGenerationTimestamp": false,
   "java8": true,
   "serializableModel": true,
-  "delegatePattern" : false,
+  "delegatePattern" : true,
   "useTags" : true,
   "async" : false
 }

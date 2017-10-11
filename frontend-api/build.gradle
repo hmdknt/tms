@@ -9,6 +9,12 @@ dependencies {
     // --------------------------------
     compile("org.springframework.boot:spring-boot-starter-web")
 
+
+    // --------------------------------
+    // Framework
+    // --------------------------------
+    compile project(":framework:framework-frontend-api")
+
     // --------------------------------
     // プロジェクト内
     // --------------------------------
