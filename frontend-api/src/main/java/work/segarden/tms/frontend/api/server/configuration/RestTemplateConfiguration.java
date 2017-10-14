@@ -1,4 +1,4 @@
-package work.segarden.frontend.api.configuration;
+package work.segarden.tms.frontend.api.server.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

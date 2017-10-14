@@ -1,9 +1,10 @@
 {
-  "modelPackage": "work.segarden.bean",
-  "apiPackage": "work.segarden.controller",
+  "modelPackage": "work.segarden.tms.frontend.api.server.bean",
+  "apiPackage": "work.segarden.tms.frontend.api.server.control",
   "hideGenerationTimestamp": false,
   "java8": true,
   "serializableModel": true,
+  "useBeanValidation": true,
   "delegatePattern" : true,
   "useTags" : true,
   "async" : false

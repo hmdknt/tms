@@ -18,15 +18,6 @@ buildscript {
 apply plugin: "maven"
 apply plugin: 'idea'
 apply plugin: "eclipse"
-apply plugin: "io.spring.dependency-management"
-
-// 依存関係を管理
-dependencyManagement {
-    imports {
-        mavenBom 'io.spring.platform:platform-bom:Brussels-SR5'
-    }
-}
-
 
 ext {
 
@@ -39,6 +30,14 @@ ext {
     // bomで指定されている以外のバージョン管理
     swaggerCodegenVersion = '2.2.3'
     swaggerUIVersion = '2.2.6'
+    swaggerAnnotationVersion = '1.5.10'
+    springfoxVersion = '2.7.0'
+
+    // MySQLConnector
+    mySqlConnectorVersion = '5.1.44'
+
+    // MyBatisGenerator
+    myBatisGeneratorVersion = '1.3.5'
 
 }
 
@@ -51,11 +50,19 @@ configure(subprojects - project('docs') - project('mockup') - project('frontend-
 
     // プラグイン定義
     apply plugin: 'java'
+    apply plugin: "io.spring.dependency-management"
 
     // リポジトリ
     repositories {
         mavenCentral()
         jcenter()
+    }
+
+    // 依存関係を管理
+    dependencyManagement {
+        imports {
+            mavenBom 'io.spring.platform:platform-bom:Brussels-SR5'
+        }
     }
 
     // 依存関係

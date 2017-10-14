@@ -1,4 +1,4 @@
-package work.segarden.frontend.api.bean;
+package work.segarden.tms.frontend.api.server.bean;
 
 import lombok.Builder;
 import lombok.Data;

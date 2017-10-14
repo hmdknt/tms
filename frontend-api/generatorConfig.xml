@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<!-- see : http://www.mybatis.org/generator/configreference/xmlconfig.html -->
+<generatorConfiguration>
+    <context id="tms" targetRuntime="MyBatis3">
+
+        <!-- JDBC接続定義 -->
+        <jdbcConnection
+                driverClass="com.mysql.jdbc.Driver"
+                connectionURL="jdbc:mysql://localhost:3306/tmsdb"
+                userId="root"
+                password="password">
+        </jdbcConnection>
+
+        <!-- Model/Entity -->
+        <javaModelGenerator
+                targetPackage="work.segarden.tms.frontend.api.bean"
+                targetProject="./src-gen/main/java">
+        </javaModelGenerator>
+
+        <!-- XMLMapper -->
+        <sqlMapGenerator
+                targetPackage="work.segarden.tms.frontend.api.mapper"
+                targetProject="./src-gen/main/resources">
+        </sqlMapGenerator>
+
+        <!-- MapperInterface -->
+        <javaClientGenerator
+                type="XMLMAPPER"
+                targetPackage="work.segarden.tms.frontend.api.mapper"
+                targetProject="./src-gen/main/java">
+        </javaClientGenerator>
+
+        <!-- Tables -->
+        <table tableName="{TableName}">
+        </table>
+
+    </context>
+</generatorConfiguration>

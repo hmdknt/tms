@@ -1,18 +1,18 @@
-package work.segarden.frontend.api.controller;
+package work.segarden.tms.frontend.api.server.control;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.WebRequest;
-import work.segarden.frontend.api.bean.Sample;
+import work.segarden.tms.frontend.api.server.bean.Sample;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 import java.util.TimeZone;
 
-@RestController
-@RequestMapping("/samples")
+//@RestController
+//@RequestMapping("/samples")
 public class SampleController {
 
 

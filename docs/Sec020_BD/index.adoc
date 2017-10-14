@@ -44,6 +44,18 @@
 |===
 
 
+・インフラストラクチャ
+ER図→DDL（MySQLWorkbench）：自動
+DDL→DB（flyway）：自動
+DB→MyBatisMapper系(MyBatisGenerator)：自動
+
+・サーバーサイド
+SwaggerYAML→コード（Swagger）：自動
+コード実装残はサービス・ビジネスロジックだけ。：スクラッチ
+
+・むずい系
+認証周り（SpringSecurity）：スクラッチ
+旧フォーマット取り込み（非同期処理か？）：半スクラッチ
 
 == 機能設計書
 

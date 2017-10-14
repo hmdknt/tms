@@ -1,4 +1,4 @@
-package work.segarden.frontend.api;
+package work.segarden.tms.frontend.api.server;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

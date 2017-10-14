@@ -1,4 +1,4 @@
-package work.segarden.frontend.api.controller;
+package work.segarden.tms.frontend.api.server.control;
 
 
 import org.junit.Before;
@@ -11,14 +11,14 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
-import work.segarden.bean.User;
+
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @Ignore
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 //@SpringBootTest
 public class SampleControllerTest {
 
@@ -28,7 +28,7 @@ public class SampleControllerTest {
     private MockMvc mvc;
 
     @Autowired
-    private work.segarden.helper.UserApi usersApi;
+    //private work.segarden.tms.frontend.api.helper.UsersApi usersApi;
 
     @Before
     public void setup() {
