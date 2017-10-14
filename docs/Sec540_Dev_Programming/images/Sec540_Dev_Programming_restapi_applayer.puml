@@ -1,0 +1,91 @@
+@startuml
+
+/' ---------------------------------------------- '/
+' 固定エリア
+
+'ヘッダー
+header
+
+<font color=red>公開</font>
+
+
+endheader
+
+
+'フッター
+right footer
+
+
+<b>Copyright &#169; 2017 segarden.work All Right Reserved.</b>　
+endfooter
+
+/' ---------------------------------------------- '/
+' スタイルエリア
+
+'必要なら追加
+skinparam {
+defaultFontName Meiryo
+ArrowColor black
+Shadow none
+shadowing false
+'linetype ortho
+}
+skinparam rectangle {
+BackgroundColor White
+BorderColor Black
+roundCorner 20
+}
+skinparam database {
+BackgroundColor White
+BorderColor Black
+}
+skinparam note {
+BackgroundColor #dcf8f8
+BorderColor Black
+}
+
+/' ---------------------------------------------- '/
+' 描画エリア
+
+
+rectangle SpringBootアプリケーション {
+
+rectangle "アプリケーション層" {
+  rectangle "コントローラ"
+  rectangle "モデル"
+  rectangle "デリゲート"
+}
+
+rectangle "ドメイン層" {
+	rectangle "サービス"
+	rectangle "ヘルパー"
+	rectangle "リポジトリ"
+	rectangle "APIクライアント"
+}
+
+rectangle "インフラストラクチャ層" {
+    rectangle "部品等"
+	rectangle "エンティティ"
+	rectangle "マッパー"
+
+}
+
+}
+
+database "データベースorキャッシュ"
+rectangle "他システム"
+
+モデル --> コントローラ
+コントローラ --> デリゲート
+デリゲート --> サービス
+サービス --> ヘルパー
+サービス --> リポジトリ
+サービス --> APIクライアント
+APIクライアント --> 他システム
+リポジトリ --> エンティティ
+エンティティ --> マッパー
+リポジトリ --> 部品等
+マッパー --> データベースorキャッシュ
+部品等 --> データベースorキャッシュ
+
+@enduml

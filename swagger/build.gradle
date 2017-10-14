@@ -49,7 +49,7 @@ project('frontend-api-server') {
                 // Path to the generate configuration file
                 configFile = project.file(project.name + "-config.json")
                 // Path to the template directory
-                templateDir = parent.file('templates/JavaSpring')
+                //templateDir = parent.file('templates/JavaSpring')
                 // Validate YAML before code generation
                 dependsOn validation
                 // Generate only models and controllers
@@ -84,11 +84,13 @@ project('frontend-api-client') {
             // SwaggerCodeGen
             code {
                 // Select generate langurage
-                language = 'spring'
+                language = 'java'
+                // Select generate library
+                library = 'resttemplate'
                 // Path to the generate configuration file
                 configFile = project.file(project.name + "-config.json")
                 // Path to the template directory
-                templateDir = parent.file('templates/JavaSpring')
+                //templateDir = parent.file('templates/Java')
                 // Validate YAML before code generation
                 dependsOn validation
                 // Generate only models and controllers

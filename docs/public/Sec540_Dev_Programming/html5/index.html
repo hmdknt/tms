@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.4">
-<title>実装ガイドライン</title>
+<title>Java実装ガイドライン</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -419,23 +419,37 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>実装ガイドライン</h1>
+<h1>Java実装ガイドライン</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">目次</div>
 <ul class="sectlevel1">
 <li><a href="#_ディレクトリ構成">ディレクトリ構成</a></li>
-<li><a href="#_java">Java</a>
-<ul class="sectlevel2">
 <li><a href="#_アーティファクト定義">アーティファクト定義</a></li>
-<li><a href="#_命名ルール">命名ルール</a></li>
-<li><a href="#_コーディング規約">コーディング規約</a></li>
-<li><a href="#_共通">共通</a></li>
-<li><a href="#_オンライン_rest_api">オンライン/REST-API</a></li>
-<li><a href="#_バッチ">バッチ</a></li>
+<li><a href="#_モジュール定義">モジュール定義</a></li>
+<li><a href="#_命名ルール">命名ルール</a>
+<ul class="sectlevel2">
+<li><a href="#_パッケージ構成">パッケージ構成</a></li>
+<li><a href="#_クラス名">クラス名</a></li>
+<li><a href="#_メッセージid">メッセージID</a></li>
 </ul>
 </li>
-<li><a href="#_node_js">Node.js</a></li>
-<li><a href="#_javascript_html">JavaScript/HTML</a></li>
+<li><a href="#_コーディング規約">コーディング規約</a></li>
+<li><a href="#_共通">共通</a>
+<ul class="sectlevel2">
+<li><a href="#_mybatisgeneratorによる自動生成">MyBatisGeneratorによる自動生成</a></li>
+<li><a href="#_lombok">lombok</a></li>
+<li><a href="#_定数enum">定数Enum</a></li>
+<li><a href="#_ユーティリティ">ユーティリティ</a></li>
+<li><a href="#_トランザクション制御">トランザクション制御</a></li>
+</ul>
+</li>
+<li><a href="#_rest_api">REST-API</a>
+<ul class="sectlevel2">
+<li><a href="#_アプリケーションの構成">アプリケーションの構成</a></li>
+<li><a href="#_実装の流れ">実装の流れ</a></li>
+<li><a href="#_セッション管理">セッション管理</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -443,71 +457,369 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect1">
 <h2 id="_ディレクトリ構成">ディレクトリ構成</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>プロジェクトのディレクトリ構成を以下に示します。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-text" data-lang="text">tms
+ │
+ ├─docs :ドキュメント
+ │
+ ├─frontend-api :フロントエンドREST-APIサーバー
+ │
+ ├─frontend-web :フロントエンドWEBサーバー
+ │
+ ├─mockup :モックアップ
+ │
+ ├─schema :データベーススキーマ
+ │
+ ├─swagger :OpenAPI(Swagger)
+ │    │
+ │    ├─frontend-api-server
+ │    ├─frontend-api-client</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_アーティファクト定義">アーティファクト定義</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Java資材は全てGrdleによるビルドを行います。<br>
+ライブラリの形式はMaven形式とします。<br>
+アーティファクトの定義は以下の通りとします。</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">グループ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">work.segarden.tms</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">アーティファクト</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">モジュール名<br>
+(ext)<br>
+frontend-api<br>
+frontend-api-client</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">バージョン</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">セマンティックバージョニングを採用します。<br>
+suffixは別途整理します。</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_モジュール定義">モジュール定義</h2>
+<div class="sectionbody">
 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_java">Java</h2>
+<h2 id="_命名ルール">命名ルール</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>簡易的ではありますが、各種命名ルールを定めます。</p>
+</div>
+<div class="sect2">
+<h3 id="_パッケージ構成">パッケージ構成</h3>
+<div class="paragraph">
+<p>各種パッケージの命名ルールは以下の通りとなります。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-text" data-lang="text">プロジェクト（frontend-api等）
+ │
+ ├─src/main/java
+ │    │
+ │    └─work.segarden.tms.&lt;モジュール名&gt;
+ │        │
+ │        ├─bean <b class="conum">(1)</b>
+ │        │  ├─model <b class="conum">(2)</b>
+ │        │  └─entity <b class="conum">(3)</b>
+ │        ├─configuration <b class="conum">(4)</b>
+ │        ├─control <b class="conum">(5)</b>
+ │        ├─mapper <b class="conum">(6)</b>
+ │        ├─service <b class="conum">(7)</b>
+ │        ├─type <b class="conum">(8)</b>
+ │        ├─helper <b class="conum">(9)</b></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>基本思想としてパッケージ名は名詞とします。<br></p>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>JavaBeanを格納します。</p>
+</li>
+<li>
+<p>モデルクラスを格納します。</p>
+</li>
+<li>
+<p>エンティティ（データベースのテーブルと１対１）クラスを格納します。</p>
+</li>
+<li>
+<p>Javaコンフィグレーションクラスを格納します。</p>
+</li>
+<li>
+<p>アプリケーション層のクラスを格納します。コントローラ、デリゲートが格納されます。</p>
+</li>
+<li>
+<p>インフラストラクチャ層のマッパークラスを格納します。</p>
+</li>
+<li>
+<p>ドメイン層のサービスクラスを格納します。</p>
+</li>
+<li>
+<p>定数定義Enumを格納します。</p>
+</li>
+<li>
+<p>ユーティリティクラスを格納します。</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_クラス名">クラス名</h3>
+<div class="paragraph">
+<p>各種クラス名の命名ルールは以下の通りとなります。</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 30%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">種別</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">クラス</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ルール</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">共通</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">設定クラス</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">*Configration.java</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">共通</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mapper（MyBatis）</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">*Mapper.java</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">共通</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">エンティティ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;テーブル物理名のキャメルケース&gt;.java</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">共通</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">定数Enum</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">*Type.java</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">共通</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ユーティリティ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">*Helper.java</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">共通</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">例外</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">*Exception.java</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">オンライン</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">コントローラ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">*Controller.java</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">オンライン</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">デリゲート</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">*Delegate.java<br>
+*DelegateImpl.java</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">オンライン</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">サービス</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">*Service.java<br>
+*ServiceImpl.java</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_メッセージid">メッセージID</h3>
+<div class="paragraph">
+<p>めんどくさいな。。。<br>
+正直どうでもいい。。。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_コーディング規約">コーディング規約</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://www.future.co.jp">フューチャーアーキテクト株式会社</a> がまとめておられる
+Javaのコーディング規約がとてもまとまっておりJDK8にも対応しているため、
+こちらを参照することにします。</p>
+</div>
+<div class="paragraph">
+<p><a href="https://future-architect.github.io/coding-standards/documents/forJava/Java%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E8%A6%8F%E7%B4%84.html">Javaコーディング規約</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_共通">共通</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_アーティファクト定義">アーティファクト定義</h3>
+<h3 id="_mybatisgeneratorによる自動生成">MyBatisGeneratorによる自動生成</h3>
 
 </div>
 <div class="sect2">
-<h3 id="_命名ルール">命名ルール</h3>
+<h3 id="_lombok">lombok</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_定数enum">定数Enum</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_ユーティリティ">ユーティリティ</h3>
+<div class="paragraph">
+<p>ユーティリティクラスは、staticメソッドのみを保有するシングルトンクラスを作成するのではなく、
+SpringのDIコンテナに管理を任せてインジェクションして利用するようなクラスを実装します。<br>
+<br>
+これは本開発でのポリシーであり、一般的にはstaticメソッドを保有するシングルトンユーティリティが数多く存在します。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_トランザクション制御">トランザクション制御</h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_rest_api">REST-API</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_アプリケーションの構成">アプリケーションの構成</h3>
+<div class="paragraph">
+<p>本開発では、OpenAPI（Swagger）を利用したREST-APIの構築を行うため、
+通常のSpringBoot・SpringMVCでREST-APIを実装するよりは少し冗長的なクラス構成となっています。
+しかし、スクラッチ開発と比較し初期実装コストが低くなる他、仕様変更時の改修コストも低くなり生産性の向上が見込めます。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Sec540_Dev_Programming_restapi_applayer.png" alt="Sec540 Dev Programming restapi applayer">
+</div>
+</div>
+<div class="paragraph">
+<p>アプリケーションの構成として、大きく以下の３つに分類する。<br></p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">階層</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">説明</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">アプリケーション</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">クライアントとリクエスト/レスポンスのやり取りを行う階層です。
+コントローラがこの層のメイン処理となるが、処理内容としては入力チェック（単項目・相関）、ドメイン層への処理の移譲、例外ハンドリング、レスポンスの編集となります。
+フレームワークや共通化によって実際に多くの実装担当者がスクラッチによって開発する部分は極小化されていることが多く望ましくもあります。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ドメイン</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">システムの実現したい仕様を実装する階層です。サービス（ビジネスロジック）がメイン処理となります。
+リポジトリ等を利用してデータベースやキャッシュにアクセスしたり、APIクライアント等の部品を利用して外部のシステムと連動したりもします。
+基本的にトランザクションデータを作り出したりするのはドメイン層に閉じておくことが望ましいと考えます。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">インフラストラクチャ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">主に永続化層とのアクセスを担います。ORM（ORMapper）等がこの実装に当たります。</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>本開発では、OpenAPI（Swagger）を利用することによってアプリケーション層の実装をほぼ行わなくても良い状況となります。
+また、インフラストラクチャ層の実装もMyBatisGeneratorを利用することによって複雑性の低いデータベースアクセス処理は
+ソースコードの自動生成を行なったソースをそのまま利用することができます。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_実装の流れ">実装の流れ</h3>
+<div class="paragraph">
+<p>REST-APIはOpenAPI（Swagger）を利用して製造を行うため、製造のフローがスクラッチとは異なります。
+以下のような流れで実装を進めてください。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Sec540_Dev_Programming_restapi_workflow.png" alt="Sec540 Dev Programming restapi workflow">
+</div>
+</div>
 <div class="sect3">
-<h4 id="_パッケージ構成">パッケージ構成</h4>
-
+<h4 id="_ソースコード出力">ソースコード出力</h4>
+<div class="paragraph">
+<p>Swaggerによる自動生成方法は
+プロジェクト直下で以下のコマンドを実行することで自動生成を行うことができます。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">gradle generateSwaggerCode</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>プロジェクトはブランク状態で既にライブラリの依存関係が設定されているため
+特に何も行う必要がなくクラス参照を行うことができる。</p>
+</div>
 </div>
 <div class="sect3">
-<h4 id="_クラス名">クラス名</h4>
-
+<h4 id="_デリゲートの実装">デリゲートの実装</h4>
+<div class="paragraph">
+<p>デリゲートはコントローラと同一のパッケージに出力される。</p>
+</div>
+<div class="paragraph">
+<p>ちょっと投げやりに書きます。<br>
+現状実装されているサンプルを見ればわかると思いますので、まずはそちらを参照。
+このクラスはDIコンテナに登録してインジェクションして利用したいので「@Component」は絶対に必要です。
+また、サービスクラスはこのクラスから利用するので、必DIコンテナ経由で取得したものを利用してください。
+コンストラクタインジェクションの方が最近っぽいですが、どちらでも構いません。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_サービスの実装">サービスの実装</h4>
+<div class="paragraph">
+<p>普通に、ビジネスロジック、トランザクション処理を実装して行ってください。
+@Transactionalとかまぁ適当にググればなんとかなります。
+　</p>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_コーディング規約">コーディング規約</h3>
+<h3 id="_セッション管理">セッション管理</h3>
 <div class="paragraph">
-<p>他のサイトに飛ばせばいいと思う。。。</p>
+<p>SpringSessionを利用する。<br>
+キャッシュサーバー（Redis）を利用。</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_共通">共通</h3>
-
-</div>
-<div class="sect2">
-<h3 id="_オンライン_rest_api">オンライン/REST-API</h3>
-
-</div>
-<div class="sect2">
-<h3 id="_バッチ">バッチ</h3>
-<div class="paragraph">
-<p>あるかな。。。</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_node_js">Node.js</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>こっちになるのかな。<br>
-正直こっちの世界わからんのだが。。。</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_javascript_html">JavaScript/HTML</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>こっちになるのかな。<br>
-正直こっちの世界わからんのだが。。。</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-10-08 22:58:41 +09:00
+Last updated 2017-10-15 01:41:15 +09:00
 </div>
 </div>
 </body>

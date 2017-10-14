@@ -1,0 +1,79 @@
+@startuml
+
+/' ---------------------------------------------- '/
+' 固定エリア
+
+'ヘッダー
+header
+
+<font color=red>公開</font>
+
+
+endheader
+
+
+'フッター
+right footer
+
+
+<b>Copyright &#169; 2017 segarden.work All Right Reserved.</b>　
+endfooter
+
+/' ---------------------------------------------- '/
+' スタイルエリア
+
+'必要なら追加
+skinparam {
+defaultFontName Meiryo
+ArrowColor black
+Shadow none
+shadowing false
+'linetype ortho
+}
+skinparam rectangle {
+BackgroundColor White
+BorderColor Black
+}
+skinparam actor {
+BackgroundColor White
+BorderColor Black
+}
+skinparam note {
+BackgroundColor #dcf8f8
+BorderColor Black
+}
+
+/' ---------------------------------------------- '/
+' 描画エリア
+
+rectangle SwaggerYAML作成
+rectangle ソースコード出力
+rectangle デリゲートの実装
+rectangle サービスクラスの作成
+rectangle ビジネスロジックの実装
+
+SwaggerYAML作成 --> ソースコード出力
+note right {
+設計工程にて作成されたSwaggerYAMLからソースコードを自動生成する。
+必要であればSwaggerYAMLの修正を行うが、設計担当者へのフィードバックは必須となる。
+}
+ソースコード出力 --> デリゲートの実装
+note right {
+REST-APIのサーバーサイド実装では、
+コントローラとサービスの橋渡し役のクラスとしてデリゲートを設けているため、
+Swaggerで出力したインタフェースを実装する。
+}
+デリゲートの実装 --> サービスクラスの作成
+note right {
+ビジネスロジックはサービスクラスにて実装する。
+サービスクラスに関してはSwaggerでは出力されないため自分でクラスの作成を行うこと。
+（インタフェースも存在しないのでPOJOで良い。）
+}
+サービスクラスの作成 --> ビジネスロジックの実装
+note right {
+ここからは単純に業務仕様であるビジネスロジック実装となる。
+基本的にデリゲートの１メソッドは１サービスと紐づいており
+トランザクションもそこで完結としたい。
+}
+
+@enduml
