@@ -45,18 +45,6 @@
         <div class="col-md-9" style="padding-top:50px;">
             <h3>レポート編集</h3>
             <br/>
-            <div class="alert alert-success" role="alert">
-                例：処理が正常に完了した場合のメッセージ
-            </div>
-            <div class="alert alert-danger" role="alert">
-                例：処理が異常で終了した場合のメッセージ
-            </div>
-            <div class="alert alert-warning" role="alert">
-                例：処理が異常（警告扱い）で終了した場合のメッセージ
-            </div>
-            <div class="alert alert-info" role="alert">
-                例：情報を通知するためのメッセージ
-            </div>
             <br/>
             <form>
                 <hr/>
@@ -66,38 +54,42 @@
                         <table class="table table-sm table-striped">
                             <tbody>
                                 <tr>
+                                    <th>対象</th>
+                                    <td colspan="2">2017年 11月度</td>
+                                </tr>
+                                <tr>
                                     <th>対象者所属</th>
-                                    <td colspan="2"></td>
+                                    <td colspan="2">○○本部 △△部 □□課 ××係</td>
                                 </tr>
                                 <tr>
                                     <th>対象者</th>
-                                    <td>社員番号：</td>
-                                    <td>氏名：</td>
+                                    <td>社員番号：12345</td>
+                                    <td>氏名：ほげ　太郎</td>
                                 </tr>
                                 <tr>
                                     <th>トレーナー</th>
-                                    <td>社員番号：</td>
-                                    <td>氏名：</td>
+                                    <td>社員番号：23456</td>
+                                    <td>氏名：ふが　太郎</td>
                                 </tr>
                                 <tr>
                                     <th>トレーナー</th>
-                                    <td>社員番号：</td>
-                                    <td>氏名：</td>
+                                    <td>社員番号：34567</td>
+                                    <td>氏名：ぴよ　太郎</td>
                                 </tr>
                                 <tr>
                                     <th>係長</th>
-                                    <td>社員番号：</td>
-                                    <td>氏名：</td>
+                                    <td>社員番号：45678</td>
+                                    <td>氏名：ピコ　太郎</td>
                                 </tr>
                                 <tr>
                                     <th>課長</th>
-                                    <td>社員番号：</td>
-                                    <td>氏名：</td>
+                                    <td>社員番号：56789</td>
+                                    <td>氏名：ナノ　太郎</td>
                                 </tr>
                                 <tr>
                                     <th>部長</th>
-                                    <td>社員番号：</td>
-                                    <td>氏名：</td>
+                                    <td>社員番号：67890</td>
+                                    <td>氏名：メガ　太郎</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -108,14 +100,25 @@
                 <h4>計画</h4>
                 <div class="form-group">
                     <label for="goal">当月計画</label>&nbsp;<i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="トレーナーと対象者で「どのようなスキル習得を目的とし、どのような作業を実施するのか」という計画を立ててください。その後、計画に対して上司を交えてレビューしましょう。(意識合わせの為)レビュー後に最終決定した計画を、この欄に記載するようにしましょう。2ヶ月目以降は、前月のOJT報告書【翌月計画】欄の写しで構いません。"></i>
-                    <textarea class="form-control" id="goal" rows="5"></textarea>
+                    <textarea class="form-control" id="goal" rows="6">
+Javaを利用するシステム開発プロジェクトへアサインされ、現在詳細設計工程であるため製造工程から本格的に作業を行えるよう当月は学習期間として以下の学習を行う。（稼働日：２２日）
+1. 基本的なJava構文の理解と実践学習（Java8対応）：５日
+2. Webアプリケーションとは何かを学ぶ：２日
+3. SpringMVCを用いたWebアプリケーションの作成：９日
+4. ローカル端末上でアプリケーションが稼働する環境構築を行う：６日
+                    </textarea>
                     <small id="goalHelp" class="form-text text-muted">
                         対象者が、当月のOJT開始時の計画を記載
                     </small>
                 </div>
                 <div class="form-group">
                     <label for="goal">当月実績</label>&nbsp;<i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="対象者が、当月に実施した作業を記載してください。出来る限り具体的な数値で記載するようにしましょう。"></i>
-                    <textarea class="form-control" id="goal" rows="5"></textarea>
+                    <textarea class="form-control" id="goal" rows="8">
+1. 基本構文（if,for,while,switch）、型（プリミティブとそのラッパー、文字列、コレクション）について利用方法を学んだ。クラスの継承やインタフェースについては完全に理解しきれていない。
+2. インターネット上の資料を参照し、学習を進めた。実際に動くものをみなければ、深く理解することができず早い段階で次の作業へ移り、実際に作成しながら学ぶようにトレーナーと相談した。
+3. インターネット上の資料を参照し、実際にチュートリアルアプケーションを構築した。サーバーサイド技術に注力し、チュートリアルを利用して応用技術も少し学んだ。
+4. インターネット上の資料を参照し、MySQL、Tomcat、Mavenの環境を構築し作成したチュートリアルアプリケーションを稼働させた。
+                    </textarea>
                     <small id="goalHelp" class="form-text text-muted">
                         対象者が、全体からの実績率と、コメントを記載
                     </small>
@@ -124,7 +127,11 @@
                 <h4>評価</h4>
                 <div class="form-group">
                     <label for="selfAssessment">自己評価</label>&nbsp;<i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="対象者が、当月のOJTで何が成功であったか、何が失敗であったかについて自己評価をしましょう。また、今後自分が何を重点的にするべきかを記載しましょう。"></i>
-                    <textarea class="form-control" id="selfAssessment" rows="5"></textarea>
+                    <textarea class="form-control" id="selfAssessment" rows="6">
+Java言語の学習について、学習の対象が膨大な量であることに作業に着手してから気づいた。そのためどの内容から手をつけてよいものか悩み、トレーナーに相談をした。
+結果として基本構文と型の学習および利用方法に注力することになった。実際にプロジェクトでプログラミングを行うためには、クラスの継承関係やインタフェースの利用なども
+理解しておかないと後々困ることになるとトレーナーに教わったため継続的にJavaの学習を進めていきたいと思う。
+                    </textarea>
                     <small id="selfAssessmentHelp" class="form-text text-muted">
                         対象者が、当月のOJTに対する自分への評価・今後への改善点などを記載
                     </small>
@@ -146,7 +153,7 @@
                                     <td>業務全体イメージ</td>
                                     <td>
                                         <select class="custom-select">
-                                            <option selected></option>
+                                            <option selected>1</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
@@ -156,7 +163,7 @@
                                     </td>
                                     <td>
                                         <select class="custom-select">
-                                            <option selected></option>
+                                            <option selected>2</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
@@ -169,7 +176,7 @@
                                     <td>業務遂行の速さ</td>
                                     <td>
                                         <select class="custom-select">
-                                            <option selected></option>
+                                            <option selected>2</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
@@ -179,7 +186,7 @@
                                     </td>
                                     <td>
                                         <select class="custom-select">
-                                            <option selected></option>
+                                            <option selected>4</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
@@ -192,7 +199,7 @@
                                     <td>業務遂行の正確さ</td>
                                     <td>
                                         <select class="custom-select">
-                                            <option selected></option>
+                                            <option selected>2</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
@@ -202,7 +209,7 @@
                                     </td>
                                     <td>
                                         <select class="custom-select">
-                                            <option selected></option>
+                                            <option selected>4</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
@@ -215,7 +222,7 @@
                                     <td>指示内容の理解力</td>
                                     <td>
                                         <select class="custom-select">
-                                            <option selected></option>
+                                            <option selected>3</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
@@ -225,7 +232,7 @@
                                     </td>
                                     <td>
                                         <select class="custom-select">
-                                            <option selected></option>
+                                            <option selected>4</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
@@ -238,7 +245,7 @@
                                     <td>グループ内での発言</td>
                                     <td>
                                         <select class="custom-select">
-                                            <option selected></option>
+                                            <option selected>1</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
@@ -248,7 +255,7 @@
                                     </td>
                                     <td>
                                         <select class="custom-select">
-                                            <option selected></option>
+                                            <option selected>2</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
@@ -261,7 +268,7 @@
                                     <td>報連相の実施（作業報告）</td>
                                     <td>
                                         <select class="custom-select">
-                                            <option selected></option>
+                                            <option selected>3</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
@@ -271,7 +278,7 @@
                                     </td>
                                     <td>
                                         <select class="custom-select">
-                                            <option selected></option>
+                                            <option selected>3</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
@@ -284,7 +291,7 @@
                                     <td>周囲とのコミュニケーション</td>
                                     <td>
                                         <select class="custom-select">
-                                            <option selected></option>
+                                            <option selected>3</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
@@ -294,7 +301,7 @@
                                     </td>
                                     <td>
                                         <select class="custom-select">
-                                            <option selected></option>
+                                            <option selected>3</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
@@ -307,7 +314,7 @@
                                     <td>ビジネスマナーの遵守</td>
                                     <td>
                                         <select class="custom-select">
-                                            <option selected></option>
+                                            <option selected>3</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
@@ -317,7 +324,7 @@
                                     </td>
                                     <td>
                                         <select class="custom-select">
-                                            <option selected></option>
+                                            <option selected>3</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
@@ -339,15 +346,22 @@
                 </div>
                 <br/>
                 <div class="form-group">
-                    <label for="trainerAssessment">評価者所見</label>（氏名：ほげ　太郎）&nbsp;<i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="評価者が、当月のOJTに対する対象者への評価をコメントしてください。また、評価者・対象者間の満足度のギャップに対して、何故生じたかを記載してください。OJT報告書レビュー時に、「評価者・対象者間の満足度のギャップが何故生じたか」、または「評価者(上司)は、対象者にどの程度期待しているのか」を確認するようにしてください。"></i>
-                    <textarea class="form-control" id="trainerAssessment" rows="5"></textarea>
+                    <label for="trainerAssessment">評価者所見</label>（氏名：ふが　太郎）&nbsp;<i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="評価者が、当月のOJTに対する対象者への評価をコメントしてください。また、評価者・対象者間の満足度のギャップに対して、何故生じたかを記載してください。OJT報告書レビュー時に、「評価者・対象者間の満足度のギャップが何故生じたか」、または「評価者(上司)は、対象者にどの程度期待しているのか」を確認するようにしてください。"></i>
+                    <textarea class="form-control" id="trainerAssessment" rows="5">
+基本的には、与えた作業をきちんとこなしており求めた成果物も出せているため問題ありません。
+本人も自覚しているようですが、Javaの基礎知識というものは人によって解釈も異なるほど膨大に存在します。また、実際にJavaで作成されるシステムではJava以外の技術も多く使って構築されるため、それらの学習も付いて回ることを覚えておいてください。
+次月以降は業務と並行してになるかとは思いますが、引き続き学習を進めていっていただきたいです。
+                    </textarea>
                     <small id="trainerAssessmentHelp" class="form-text text-muted">
                         評価者が、当月のOJTに対する対象者への評価・一般能力評価についての考察を記載
                     </small>
                 </div>
                 <div class="form-group">
-                    <label for="bossAssessment">上司所見</label>（氏名：ふが　太郎）&nbsp;<i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="評価者が、当月のOJTに対する対象者への評価をコメントしてください。また、評価者・対象者間の満足度のギャップに対して、何故生じたかを記載してください。OJT報告書レビュー時に、「評価者・対象者間の満足度のギャップが何故生じたか」、または「評価者(上司)は、対象者にどの程度期待しているのか」を確認するようにしてください。"></i>
-                    <textarea class="form-control" id="bossAssessment" rows="5"></textarea>
+                    <label for="bossAssessment">上司所見</label>（氏名：ナノ　太郎）&nbsp;<i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="評価者が、当月のOJTに対する対象者への評価をコメントしてください。また、評価者・対象者間の満足度のギャップに対して、何故生じたかを記載してください。OJT報告書レビュー時に、「評価者・対象者間の満足度のギャップが何故生じたか」、または「評価者(上司)は、対象者にどの程度期待しているのか」を確認するようにしてください。"></i>
+                    <textarea class="form-control" id="bossAssessment" rows="5">
+今月は来月に備えて学習を進めてもらいました。基礎技術力は一月で備わるようなものではありませんが、それでも業務とは別で集中して学習する期間を少しは設けなければ厳しいと考えたためこのような期間を設けました。そして、その期間を有効的に活用してもらえたと感じています。
+与えられた課題に対して期間を守りきちんとした成果物を出せていることはとても良いことです。難易度は上がると思いますが、次月からの業務でも同じように期間を守って成果を出していってもらいたいです。
+                    </textarea>
                     <small id="bossAssessmentHelp" class="form-text text-muted">
                         評価者が、当月のOJTに対する対象者への評価・一般能力評価についての考察を記載
                     </small>
@@ -356,7 +370,14 @@
                 <h4>翌月計画</h4>
                 <div class="form-group">
                     <label for="nextGoal">翌月計画</label>&nbsp;<i class="fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="当月の反省点・改善点を含め、翌月の計画を記載してください。計画の立て方としては、OJT開始時と同じように、まずはトレーナーと対象者で計画を立てましょう。その後、上司を含めてレビューを実施し、最終決定した計画を記載してください。(最終月の場合は、必要ありません)"></i>
-                    <textarea class="form-control" id="nextGoal" rows="5"></textarea>
+                    <textarea class="form-control" id="nextGoal" rows="6">
+プロジェクトの製造工程にて実際にMK/UT作業を行いながら学習を進めていく。（稼働日：２２日）
+1. 基本的なJava構文の理解と実践学習（Java8対応）：４日
+2. A機能の実装：３日
+3. A機能の単体試験：６日
+4. B機能の実装：３日
+5. B機能の単体試験：６日
+                    </textarea>
                     <small id="nextGoalHelp" class="form-text text-muted">
                         対象者が、翌月のOJTに対しての計画を記載
                     </small>
@@ -378,52 +399,52 @@
                                     <tr>
                                         <td>当月の計画に対するレビューを実施したか。</td>
                                         <td>
-                                            <button type="button" class="btn btn-sm btn-warning" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                                いいえ
+                                            <button type="button" class="btn btn-sm btn-success active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                                はい
                                             </button>
                                         </td>
                                         <td>
-                                            <button type="button" class="btn btn-sm btn-warning" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                                いいえ
+                                            <button type="button" class="btn btn-sm btn-success active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                                はい
                                             </button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>作業毎に、必ず目的の説明をしているか、または説明を聞いたか。</td>
                                         <td>
-                                            <button type="button" class="btn btn-sm btn-warning" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                                いいえ
+                                            <button type="button" class="btn btn-sm btn-success active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                                はい
                                             </button>
                                         </td>
                                         <td>
-                                            <button type="button" class="btn btn-sm btn-warning" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                                いいえ
+                                            <button type="button" class="btn btn-sm btn-success active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                                はい
                                             </button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>作業終了時に評価、及びフィードバックをしたか、されたか。</td>
                                         <td>
-                                            <button type="button" class="btn btn-sm btn-warning" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                                いいえ
+                                            <button type="button" class="btn btn-sm btn-success active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                                はい
                                             </button>
                                         </td>
                                         <td>
-                                            <button type="button" class="btn btn-sm btn-warning" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                                いいえ
+                                            <button type="button" class="btn btn-sm btn-success active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                                はい
                                             </button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>一日一度以上はコミュニケーションをとれていたか。</td>
                                         <td>
-                                            <button type="button" class="btn btn-sm btn-warning" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                                いいえ
+                                            <button type="button" class="btn btn-sm btn-success active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                                はい
                                             </button>
                                         </td>
                                         <td>
-                                            <button type="button" class="btn btn-sm btn-warning" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                                いいえ
+                                            <button type="button" class="btn btn-sm btn-success active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                                はい
                                             </button>
                                         </td>
                                     </tr>
@@ -469,7 +490,7 @@ var chart = new Chart(ctx, {
         datasets: [
             {
                 label: "対象者",
-                data: [1, 3, 2, 4, 3, 3, 4, 3],
+                data: [1, 2, 2, 3, 1, 3, 3, 3],
                 fill: true,
                 "backgroundColor":"rgba(255, 99, 132, 0.2)",
                 "borderColor":"rgb(255, 99, 132)",
@@ -480,7 +501,7 @@ var chart = new Chart(ctx, {
             },
             {
                 label: "評価者",
-                data: [2, 3, 4, 3, 5, 3, 1, 3],
+                data: [2, 4, 4, 4, 2, 3, 3, 3],
                 fill: true,
                 backgroundColor :"rgba(54, 162, 235, 0.2)",
                 borderColor :"rgb(54, 162, 235)",
@@ -505,9 +526,15 @@ var chart = new Chart(ctx, {
         title: {
             display: true,
             text: '一般能力 レーダーチャート'
+        },
+        scale: {
+                ticks: {
+                    suggestedMin: 0,
+                    suggestedMax: 5,
+                    stepSize: 1
+                }
+            }
         }
-
-    }
 });
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
