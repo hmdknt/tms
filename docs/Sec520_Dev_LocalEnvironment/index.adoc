@@ -22,6 +22,16 @@ JDK1.8をインストールしてください。 +
 ** https://devnote.jp/jdk/8/osx/[JDK (Mac OS X版)]
 ** https://www.javadrive.jp/install/jdk/index1.html[JDK (Win版)]
 
+== node.js
+node.jsをインストールしてください。 +
+バージョンは8以上のものを選択してください。
+
+.手順
+* https://nodejs.org/ja/[公式サイト]からダウンロード（執筆時点は、8.9.0 LTS）
+
+
+
+
 == IDE
 基本はこの2つの内のどちらかを使用してください。 +
 オススメは「IntelliJ」です。ただし、業務では「Spring Tool Suite」を利用する方が多いでしょう。 +

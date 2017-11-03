@@ -11,24 +11,20 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
+import work.segarden.tms.frontend.api.server.TmsApplication;
 
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@Ignore
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-//@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = TmsApplication.class)
 public class SampleControllerTest {
 
     @Autowired
     private WebApplicationContext context;
 
     private MockMvc mvc;
-
-    @Autowired
-    //private work.segarden.tms.frontend.api.helper.UsersApi usersApi;
 
     @Before
     public void setup() {
