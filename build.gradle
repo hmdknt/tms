@@ -90,9 +90,7 @@ configure(subprojects - project('docs') - project('mockup') - project('frontend-
             }
         }
     }
-
 }
-
 
 
 
