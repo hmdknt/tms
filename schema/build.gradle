@@ -9,8 +9,7 @@ plugins {
 }
 
 flyway {
-    url = 'jdbc:mysql://localhost:3306/tms?characterEncoding=UTF-8&serverTimezone=JST'
+    url = 'jdbc:mysql://localhost:3306/tmsdb?characterEncoding=UTF-8&serverTimezone=JST'
     user = 'root'
-    password = 'root123'
-    
+    password = 'password'
 }
