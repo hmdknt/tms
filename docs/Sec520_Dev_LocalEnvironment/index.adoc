@@ -108,14 +108,3 @@ $ brew install asciidoc
 . asciidoc-previewを検索する
 . image:asciidoc-preview.jpg[] +
    をインストールする
-
-
-== gradle.properties
-user/.gradle配下のgradle.propertiesを以下のように設定する。(gradle.propertiesがない場合は追加する)
-
-[source,java]
------
-flyway.user=root
-flyway.password=password
-flyway.url=jdbc:mysql://localhost:3306/tmsdb?characterEncoding=UTF-8&serverTimezone=JST
------
