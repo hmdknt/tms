@@ -1,9 +1,34 @@
 -- MySQL Workbench Synchronization
--- Generated: 2017-11-05 10:00
+-- Generated: 2017-11-14 22:46
 -- Model: New Model
 -- Version: 1.0
 -- Project: Name of the project
 -- Author: MASARU NAKAMURA
+
+
+
+
+DROP TABLE IF EXISTS  `tmsdb`.`l_report_and_rader_element`;
+DROP TABLE IF EXISTS  `tmsdb`.`l_user_and_role`;
+DROP TABLE IF EXISTS  `tmsdb`.`t_sign_element`;
+DROP TABLE IF EXISTS  `tmsdb`.`m_sign_master`;
+DROP TABLE IF EXISTS  `tmsdb`.`t_rader_element`;
+DROP TABLE IF EXISTS  `tmsdb`.`m_rader_master`;
+DROP TABLE IF EXISTS  `tmsdb`.`m_role_master`;
+DROP TABLE IF EXISTS  `tmsdb`.`t_self_check_element`;
+DROP TABLE IF EXISTS  `tmsdb`.`m_self_check_master`;
+DROP TABLE IF EXISTS  `tmsdb`.`t_trainer`;
+DROP TABLE IF EXISTS  `tmsdb`.`t_trainer`;
+DROP TABLE IF EXISTS  `tmsdb`.`t_boss`;
+DROP TABLE IF EXISTS  `tmsdb`.`t_report_timestamp`;
+DROP TABLE IF EXISTS  `tmsdb`.`t_entry_filed_extend`;
+DROP TABLE IF EXISTS  `tmsdb`.`t_report`;
+DROP TABLE IF EXISTS  `tmsdb`.`t_user`;
+
+
+
+
+
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
@@ -137,7 +162,7 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COMMENT = '権限マスタ';
 
-CREATE TABLE IF NOT EXISTS `tmsdb`.`t_entry_filed_extend_` (
+CREATE TABLE IF NOT EXISTS `tmsdb`.`t_entry_filed_extend` (
   `report_id` VARCHAR(12) NOT NULL,
   `filed_name` VARCHAR(45) NULL DEFAULT NULL COMMENT '記入欄名',
   `content` TEXT(2000) NULL DEFAULT NULL COMMENT '記述内容',
