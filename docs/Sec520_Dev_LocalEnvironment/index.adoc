@@ -30,7 +30,13 @@ node.jsをインストールしてください。 +
 * https://nodejs.org/ja/[公式サイト]からダウンロード（執筆時点は、8.9.0 LTS）
 
 
+== Gitクライアント
+Gitクライアントをインストールしてください。 +
+https://desktop.github.com/[Git for Windows/Mac] や
+https://git-scm.com/downloads[Git GUI] 等々、お好きなクライアントソフトを使用してください。
 
+* 手順（Git GUI版）
+** https://git-scm.com/downloads[公式サイト]から、各々の環境に適したインストーラをダウンロードしてインストール
 
 == IDE
 基本はこの2つの内のどちらかを使用してください。 +
@@ -43,20 +49,48 @@ node.jsをインストールしてください。 +
 . ダウンロードしたものを解凍してください。
 
 * IntelliJ IDEA
-** 環境構築手順
+** Mac版環境構築手順
 . https://www.jetbrains.com/idea/download/#section=mac[公式サイト]からCommunity版をダウンロードする
 . ダウンロードしたideaIC-20YY.X.X.dmgを選択する
 . IntelliJをApplicationにドラッグすれば完了
+** Windows版環境構築手順
+. https://www.jetbrains.com/idea/download/#section=windows[公式サイト]から、Community版をダウンロードする
+. ダウンロードしたインストーラー（ideaIC-20YY.X.X.exe）で道なりにインストール
+** TraningManagementSystem/tmsの取込手順
+. IntelliJ IDEA を起動
+. GitHubアカウントの設定 +
+Project選択画面のCheck out from Version Control から GitHubを選択し、
+Gitアカウントを設定する。 +
+image:Sec520_Dev_LocalEnvironment_IntelliJ_GitAccountSettings.jpg[]
+. Git Repository URL を指定してClone +
+アカウント設定に引き続き、Cloneするリポジトリに
+https://github.com/TraningManagementSystem/tms[TraningManagementSystem/tms] の
+Git Repository URLを設定する。 +
+image:Sec520_Dev_LocalEnvironment_IntelliJ_GitCloneTMS.jpg[]
+. Gradleの設定 +
+Clone後、Gradleの設定を行う。 +
+IntelliJ IDEAのWrapper Gradleを使用する場合は、デフォルト設定のまま完了する。 +
+自分でインストールしたGradleを使用する場合は、GradleのインストールフォルダをGradle homeに設定する。 +
+image:Sec520_Dev_LocalEnvironment_IntelliJ_GradleSettings.jpg[]
+. ProjectのSDKの設定 +
+プロジェクト取り込み後、
+IntelliJ IDEAのメニュー File > Project Structure... にて、
+Project SDKにインストール済みのJDKを指定する。 +
+image:Sec520_Dev_LocalEnvironment_IntelliJ_sdkSettings.jpg[]
 
 == BuildTools
 * gradle(ver.4.2)
-** 環境構築手順
+** Mac版環境構築手順
 . javaのversionを確認する(7以上でないと上手くいかないと公式のページに書いてあった)
 . 以下のコマンドを実行
++
 [source,bash]
 ----
 $ brew update && brew install gradle
 ----
++
+** Windows版環境構築手順
+. https://gradle.org/install/[公式サイト]より、 https://gradle.org/install/#manually[Install manually] の章を参照しながら、Gradleのインストール実施。
 
 == Docker
 開発環境としてDockerを利用します。 +
@@ -78,7 +112,7 @@ $ brew update && brew install gradle
 ** 環境構築手順
 . Terminalを開く
 . 以下の2つのコマンドを実行する
-
++
 [source,bash]
 ----
 $ ruby -e "$(curl -fsSL https://raw.gi thubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null
@@ -108,5 +142,3 @@ $ brew install asciidoc
 . asciidoc-previewを検索する
 . image:asciidoc-preview.jpg[] +
    をインストールする
-
-

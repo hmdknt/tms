@@ -425,6 +425,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel1">
 <li><a href="#_overview">Overview</a></li>
 <li><a href="#_jdk">JDK</a></li>
+<li><a href="#_node_js">node.js</a></li>
+<li><a href="#_gitクライアント">Gitクライアント</a></li>
 <li><a href="#_ide">IDE</a></li>
 <li><a href="#_buildtools">BuildTools</a></li>
 <li><a href="#_docker">Docker</a></li>
@@ -475,6 +477,47 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
+<h2 id="_node_js">node.js</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>node.jsをインストールしてください。<br>
+バージョンは8以上のものを選択してください。</p>
+</div>
+<div class="ulist">
+<div class="title">手順</div>
+<ul>
+<li>
+<p><a href="https://nodejs.org/ja/">公式サイト</a>からダウンロード（執筆時点は、8.9.0 LTS）</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_gitクライアント">Gitクライアント</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Gitクライアントをインストールしてください。<br>
+<a href="https://desktop.github.com/">Git for Windows/Mac</a> や
+<a href="https://git-scm.com/downloads">Git GUI</a> 等々、お好きなクライアントソフトを使用してください。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>手順（Git GUI版）</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://git-scm.com/downloads">公式サイト</a>から、各々の環境に適したインストーラをダウンロードしてインストール</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_ide">IDE</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -509,7 +552,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p>環境構築手順</p>
+<p>Mac版環境構築手順</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -520,6 +563,56 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li>
 <p>IntelliJをApplicationにドラッグすれば完了</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Windows版環境構築手順</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="https://www.jetbrains.com/idea/download/#section=windows">公式サイト</a>から、Community版をダウンロードする</p>
+</li>
+<li>
+<p>ダウンロードしたインストーラー（ideaIC-20YY.X.X.exe）で道なりにインストール</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>TraningManagementSystem/tmsの取込手順</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>IntelliJ IDEA を起動</p>
+</li>
+<li>
+<p>GitHubアカウントの設定<br>
+Project選択画面のCheck out from Version Control から GitHubを選択し、
+Gitアカウントを設定する。<br>
+<span class="image"><img src="images/Sec520_Dev_LocalEnvironment_IntelliJ_GitAccountSettings.jpg" alt="Sec520 Dev LocalEnvironment IntelliJ GitAccountSettings"></span></p>
+</li>
+<li>
+<p>Git Repository URL を指定してClone<br>
+アカウント設定に引き続き、Cloneするリポジトリに
+<a href="https://github.com/TraningManagementSystem/tms">TraningManagementSystem/tms</a> の
+Git Repository URLを設定する。<br>
+<span class="image"><img src="images/Sec520_Dev_LocalEnvironment_IntelliJ_GitCloneTMS.jpg" alt="Sec520 Dev LocalEnvironment IntelliJ GitCloneTMS"></span></p>
+</li>
+<li>
+<p>Gradleの設定<br>
+Clone後、Gradleの設定を行う。<br>
+IntelliJ IDEAのWrapper Gradleを使用する場合は、デフォルト設定のまま完了する。<br>
+自分でインストールしたGradleを使用する場合は、GradleのインストールフォルダをGradle homeに設定する。<br>
+<span class="image"><img src="images/Sec520_Dev_LocalEnvironment_IntelliJ_GradleSettings.jpg" alt="Sec520 Dev LocalEnvironment IntelliJ GradleSettings"></span></p>
+</li>
+<li>
+<p>ProjectのSDKの設定<br>
+プロジェクト取り込み後、
+IntelliJ IDEAのメニュー File &gt; Project Structure&#8230;&#8203; にて、
+Project SDKにインストール済みのJDKを指定する。<br>
+<span class="image"><img src="images/Sec520_Dev_LocalEnvironment_IntelliJ_sdkSettings.jpg" alt="Sec520 Dev LocalEnvironment IntelliJ sdkSettings"></span></p>
 </li>
 </ol>
 </div>
@@ -541,7 +634,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p>環境構築手順</p>
+<p>Mac版環境構築手順</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -549,6 +642,21 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li>
 <p>以下のコマンドを実行</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ brew update &amp;&amp; brew install gradle</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Windows版環境構築手順</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="https://gradle.org/install/">公式サイト</a>より、 <a href="https://gradle.org/install/#manually">Install manually</a> の章を参照しながら、Gradleのインストール実施。</p>
 </li>
 </ol>
 </div>
@@ -557,11 +665,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </li>
 </ul>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>$ brew update &amp;&amp; brew install gradle</pre>
-</div>
 </div>
 </div>
 </div>
@@ -632,6 +735,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li>
 <p>以下の2つのコマンドを実行する</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ ruby -e "$(curl -fsSL https://raw.gi thubusercontent.com/Homebrew/install/master/install)" &lt; /dev/null 2&gt; /dev/null
+
+$ brew install asciidoc</code></pre>
+</div>
+</div>
 </li>
 </ol>
 </div>
@@ -640,13 +750,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </li>
 </ul>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ ruby -e "$(curl -fsSL https://raw.gi thubusercontent.com/Homebrew/install/master/install)" &lt; /dev/null 2&gt; /dev/null
-
-$ brew install asciidoc</code></pre>
-</div>
 </div>
 </div>
 </div>
@@ -735,7 +838,7 @@ $ brew install asciidoc</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-10-08 22:58:41 +09:00
+Last updated 2017-11-24 22:39:14 +09:00
 </div>
 </div>
 </body>
