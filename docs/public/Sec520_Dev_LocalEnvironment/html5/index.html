@@ -442,11 +442,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_overview">Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>ローカル環境構築ガイドラインは本プロジェクトの開発を行うための、PCセットアップに関するものとなります。
-現在（2017/9）時点のメンバー全員がMacでの作業を行なっているため、<br>
-基本的にWindowsの環境構築に一切の配慮をしていません。<br>
-これ以降で活動に入られた方でWindowsを使用される方がおられる場合は追記をしていただけると助かります。
-なんといっても業務ではWindows利用が圧倒的多数ですので。。。</p>
+<p>ローカル環境構築ガイドラインは本プロジェクトの開発を行うための、PCセットアップに関するものとなります。<br>
+現在（2017/11/25）時点ではDocker関連の環境構築手順が不整備ですので、順次追記していきましょう。</p>
 </div>
 </div>
 </div>
@@ -460,7 +457,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p>手順</p>
+<p>インストール手順</p>
 <div class="ulist">
 <ul>
 <li>
@@ -484,10 +481,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 バージョンは8以上のものを選択してください。</p>
 </div>
 <div class="ulist">
-<div class="title">手順</div>
+<ul>
+<li>
+<p>インストール手順</p>
+<div class="ulist">
 <ul>
 <li>
 <p><a href="https://nodejs.org/ja/">公式サイト</a>からダウンロード（執筆時点は、8.9.0 LTS）</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -504,7 +507,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p>手順（Git GUI版）</p>
+<p>インストール手順（Git GUI版）</p>
 <div class="ulist">
 <ul>
 <li>
@@ -532,7 +535,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p>環境構築手順</p>
+<p>インストール手順</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -552,7 +555,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p>Mac版環境構築手順</p>
+<p>Mac版インストール手順</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -568,7 +571,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </li>
 <li>
-<p>Windows版環境構築手順</p>
+<p>Windows版インストール手順</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -603,7 +606,7 @@ Git Repository URLを設定する。<br>
 <li>
 <p>Gradleの設定<br>
 Clone後、Gradleの設定を行う。<br>
-IntelliJ IDEAのWrapper Gradleを使用する場合は、デフォルト設定のまま完了する。<br>
+Gradle Wrapperを使用する場合は、デフォルト設定のまま完了する。(推奨)<br>
 自分でインストールしたGradleを使用する場合は、GradleのインストールフォルダをGradle homeに設定する。<br>
 <span class="image"><img src="images/Sec520_Dev_LocalEnvironment_IntelliJ_GradleSettings.jpg" alt="Sec520 Dev LocalEnvironment IntelliJ GradleSettings"></span></p>
 </li>
@@ -634,7 +637,7 @@ Project SDKにインストール済みのJDKを指定する。<br>
 <div class="ulist">
 <ul>
 <li>
-<p>Mac版環境構築手順</p>
+<p>Mac版インストール手順</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -652,7 +655,7 @@ Project SDKにインストール済みのJDKを指定する。<br>
 </div>
 </li>
 <li>
-<p>Windows版環境構築手順</p>
+<p>Windows版インストール手順</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -692,7 +695,7 @@ Project SDKにインストール済みのJDKを指定する。<br>
 <div class="ulist">
 <ul>
 <li>
-<p>環境構築手順</p>
+<p>インストール手順</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -727,7 +730,7 @@ Project SDKにインストール済みのJDKを指定する。<br>
 <div class="ulist">
 <ul>
 <li>
-<p>環境構築手順</p>
+<p>インストール手順</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -763,7 +766,7 @@ $ brew install asciidoc</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p>環境構築手順</p>
+<p>インストール手順</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -838,7 +841,7 @@ $ brew install asciidoc</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-24 22:39:14 +09:00
+Last updated 2017-11-25 09:45:46 +09:00
 </div>
 </div>
 </body>
