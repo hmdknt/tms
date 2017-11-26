@@ -65,8 +65,13 @@ https://github.com/TraningManagementSystem/tms[TraningManagementSystem/tms] の
 Git Repository URLを設定する。 +
 image:Sec520_Dev_LocalEnvironment_IntelliJ_GitCloneTMS.jpg[]
 . Gradleの設定 +
-Clone後、Gradleの設定を行う。 +
-Gradle Wrapperを使用する場合は、デフォルト設定のまま完了する。(推奨) +
+Clone後、Gradleの設定を行う。
+.. 自動更新の設定 +
+Use auto-importを任意で設定する。 +
+Use auto-importを設定すると、プロジェクト取り込み時およびGradle設定変更時にGradleの設定が自動でプロジェクトへ反映されます。 +
+設定しない場合、GradleツールバーのRefreshメニューで、Gradleの設定を手動でプロジェクトへ反映する必要があります。
+.. 使用するGradleの設定 +
+Gradle Wrapperを使用する場合は、デフォルト設定のままとする。(推奨) +
 自分でインストールしたGradleを使用する場合は、GradleのインストールフォルダをGradle homeに設定する。 +
 image:Sec520_Dev_LocalEnvironment_IntelliJ_GradleSettings.jpg[]
 . ProjectのSDKの設定 +
