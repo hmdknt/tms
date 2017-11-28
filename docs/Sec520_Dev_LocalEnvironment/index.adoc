@@ -8,17 +8,14 @@
 :homepage: https://traningmanagementsystem.github.io/devlog/
 
 == Overview
-ローカル環境構築ガイドラインは本プロジェクトの開発を行うための、PCセットアップに関するものとなります。
-現在（2017/9）時点のメンバー全員がMacでの作業を行なっているため、 +
-基本的にWindowsの環境構築に一切の配慮をしていません。 +
-これ以降で活動に入られた方でWindowsを使用される方がおられる場合は追記をしていただけると助かります。
-なんといっても業務ではWindows利用が圧倒的多数ですので。。。
+ローカル環境構築ガイドラインは本プロジェクトの開発を行うための、PCセットアップに関するものとなります。 +
+現在（2017/11/25）時点ではDocker関連の環境構築手順が不整備ですので、順次追記していきましょう。
 
 == JDK
 JDK1.8をインストールしてください。 +
 バージョンは最新版で良いです。
 
-* 手順
+* インストール手順
 ** https://devnote.jp/jdk/8/osx/[JDK (Mac OS X版)]
 ** https://www.javadrive.jp/install/jdk/index1.html[JDK (Win版)]
 
@@ -26,11 +23,17 @@ JDK1.8をインストールしてください。 +
 node.jsをインストールしてください。 +
 バージョンは8以上のものを選択してください。
 
-.手順
-* https://nodejs.org/ja/[公式サイト]からダウンロード（執筆時点は、8.9.0 LTS）
+* インストール手順
+** https://nodejs.org/ja/[公式サイト]からダウンロード（執筆時点は、8.9.0 LTS）
 
 
+== Gitクライアント
+Gitクライアントをインストールしてください。 +
+https://desktop.github.com/[Git for Windows/Mac] や
+https://git-scm.com/downloads[Git GUI] 等々、お好きなクライアントソフトを使用してください。
 
+* インストール手順（Git GUI版）
+** https://git-scm.com/downloads[公式サイト]から、各々の環境に適したインストーラをダウンロードしてインストール
 
 == IDE
 基本はこの2つの内のどちらかを使用してください。 +
@@ -38,25 +41,58 @@ node.jsをインストールしてください。 +
 理由はベースがEclipseであるからです。
 
 * Spring Tool Suite
-** 環境構築手順
+** インストール手順
 . https://spring.io/tools/sts[公式サイト]からSTSをダウンロードしてください。（最新版でOK）
 . ダウンロードしたものを解凍してください。
 
 * IntelliJ IDEA
-** 環境構築手順
+** Mac版インストール手順
 . https://www.jetbrains.com/idea/download/#section=mac[公式サイト]からCommunity版をダウンロードする
 . ダウンロードしたideaIC-20YY.X.X.dmgを選択する
 . IntelliJをApplicationにドラッグすれば完了
+** Windows版インストール手順
+. https://www.jetbrains.com/idea/download/#section=windows[公式サイト]から、Community版をダウンロードする
+. ダウンロードしたインストーラー（ideaIC-20YY.X.X.exe）で道なりにインストール
+** TraningManagementSystem/tmsの取込手順
+. IntelliJ IDEA を起動
+. GitHubアカウントの設定 +
+Project選択画面のCheck out from Version Control から GitHubを選択し、
+Gitアカウントを設定する。 +
+image:Sec520_Dev_LocalEnvironment_IntelliJ_GitAccountSettings.jpg[]
+. Git Repository URL を指定してClone +
+アカウント設定に引き続き、Cloneするリポジトリに
+https://github.com/TraningManagementSystem/tms[TraningManagementSystem/tms] の
+Git Repository URLを設定する。 +
+image:Sec520_Dev_LocalEnvironment_IntelliJ_GitCloneTMS.jpg[]
+. Gradleの設定 +
+Clone後、Gradleの設定を行う。
+.. 自動更新の設定 +
+Use auto-importを任意で設定する。 +
+Use auto-importを設定すると、プロジェクト取り込み時およびGradle設定変更時にGradleの設定が自動でプロジェクトへ反映されます。 +
+設定しない場合、GradleツールバーのRefreshメニューで、Gradleの設定を手動でプロジェクトへ反映する必要があります。
+.. 使用するGradleの設定 +
+Gradle Wrapperを使用する場合は、デフォルト設定のままとする。(推奨) +
+自分でインストールしたGradleを使用する場合は、GradleのインストールフォルダをGradle homeに設定する。 +
+image:Sec520_Dev_LocalEnvironment_IntelliJ_GradleSettings.jpg[]
+. ProjectのSDKの設定 +
+プロジェクト取り込み後、
+IntelliJ IDEAのメニュー File > Project Structure... にて、
+Project SDKにインストール済みのJDKを指定する。 +
+image:Sec520_Dev_LocalEnvironment_IntelliJ_sdkSettings.jpg[]
 
 == BuildTools
 * gradle(ver.4.2)
-** 環境構築手順
+** Mac版インストール手順
 . javaのversionを確認する(7以上でないと上手くいかないと公式のページに書いてあった)
 . 以下のコマンドを実行
++
 [source,bash]
 ----
 $ brew update && brew install gradle
 ----
++
+** Windows版インストール手順
+. https://gradle.org/install/[公式サイト]より、 https://gradle.org/install/#manually[Install manually] の章を参照しながら、Gradleのインストール実施。
 
 == Docker
 開発環境としてDockerを利用します。 +
@@ -65,7 +101,7 @@ $ brew update && brew install gradle
 
 == DatabaseClient
 * MySQLWorkbench(ver.6.3)
-** 環境構築手順
+** インストール手順
 . https://dev.mysql.com/downloads/workbench/[公式サイト] からMySQLWorkbenchをダウンロードする
 . ダウンロードしたmysql-workbench-community-6.3.9-osx-x86_64.dmg を選択する
 . MySQLWorkBenchをApplicationにドラッグすれば完了
@@ -75,10 +111,10 @@ $ brew update && brew install gradle
 ドキュメントビルダーとしてAsciiDoc/AsciiDoctorを利用します。
 
 * Asciidoc
-** 環境構築手順
+** インストール手順
 . Terminalを開く
 . 以下の2つのコマンドを実行する
-
++
 [source,bash]
 ----
 $ ruby -e "$(curl -fsSL https://raw.gi thubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null
@@ -89,7 +125,7 @@ $ brew install asciidoc
 
 == DocumentWrittingSoft
 * Atom
-** 環境構築手順
+** インストール手順
 . https://atom.io[公式サイト]からAtomをダウンロード
 . ダウンロードしたものを解凍する
 
@@ -108,5 +144,3 @@ $ brew install asciidoc
 . asciidoc-previewを検索する
 . image:asciidoc-preview.jpg[] +
    をインストールする
-
-
