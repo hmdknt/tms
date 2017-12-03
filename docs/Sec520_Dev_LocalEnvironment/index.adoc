@@ -98,6 +98,72 @@ $ brew update && brew install gradle
 開発環境としてDockerを利用します。 +
 
 == Docker Compose
+docker-composeを利用するにあたり、必要となるコマンドを以下にまとめる。
+
+[cols="30,70", options="header"]
+.コマンド一覧
+|===
+|コマンド
+|説明
+
+|config
+|docker-compose.ymlの確認と表示
+
+|up
+|コンテナの作成と起動
+
+|ps
+|コンテナ一覧の表示
+
+|restart
+|コンテナの再起動
+
+|stop
+|稼働中のコンテナの停止
+
+|rm
+|停止済みのサービス・コンテナの削除
+
+|===
+
+=== 各コマンドの例
+docker-composeを利用する場合は、``tms/docker/develop``でdocker-composeのコマンドを叩く必要がある．
+
+==== config
+``docker-compose config ``を実行すると、docker-compose.ymlのファイルの中身を確認することができる． +
+以下に`` docker-compose config ``を実行した時の結果を示す．
+image:Sec520_Docker_Commad_Config.png[]
+
+==== up
+docker-compose up を実行すると、docker-compose.ymlで定義したコンテナを開始することができる． +
+以下に``docker-compose up``を実行した時の結果を示す．(``-d``を付けてコンテナをバックグラウンドで起動させている)
+
+image:Sec520_Docker_Commad_up.png[]
+
+コンテナが起動しているかの確認は``docker-compose ps``を実行して確認する． +
+image:Sec520_Docker_Commad_ps.png[]
+
+==== restart
+``docker-compose restart``を実行するとコンテナを再起動することができる． +
+以下に``docker-compose restart``を実行した時の結果を示す．
+image:Sec520_Docker_Commad_restart.png[]
+
+==== stop
+``docker-compose stop``を実行すると起動中のコンテナを停止することができる． +
+以下に``docker-compose stop``を実行した時の結果を示す．
+image:Sec520_Docker_Commad_stop.png[]
+
+コンテナが停止したかの確認は``docker-compose ps``を実行して確認する．
+image:Sec520_Docker_Commad_ps1.png[]
+
+==== rm
+``docker-compose rm``を実行すると停止中のコンテナを削除することができる． +
+以下に``docker-compose rm``を実行した時の結果を示す．
+image:Sec520_Docker_Commad_rm.png[]
+
+コンテナが削除されたかの確認は``docker-compose ps``を実行して確認する．
+image:Sec520_Docker_Commad_ps2.png[]
+
 
 == DatabaseClient
 * MySQLWorkbench(ver.6.3)
