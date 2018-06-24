@@ -11,7 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.Locale;
 import java.util.TimeZone;
 
-//@RestController
+@RestController
 //@RequestMapping("/samples")
 public class SampleController {
 

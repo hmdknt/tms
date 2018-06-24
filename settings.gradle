@@ -4,6 +4,7 @@ rootProject.name = 'tms'
 // Applications
 include 'frontend-api'
 include 'frontend-web'
+include 'back-sample'
 
 // DataBase
 include 'schema'
@@ -31,6 +32,7 @@ include 'docs:Sec550_Dev_UnitTest'
 include 'docs:Sec560_Dev_IntegrationTest'
 include 'docs:Sec570_Dev_CICD'
 include 'docs:Sec700_Knowledge_GitHowToUse'
+
 
 // Framework
 include 'framework:framework-frontend-api'

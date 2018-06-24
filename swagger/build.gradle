@@ -33,7 +33,7 @@ project('frontend-api-server') {
     swaggerSources {
         frontendApiV1 {
             // 仕様定義YAML
-            inputFile = parent.file('frontend-api-v1.yaml')
+            inputFile = parent.file('get-service-list.yaml')
             // SwaggerUI
             ui {
                 options.docExpansion = 'full'
@@ -80,7 +80,7 @@ project('frontend-api-client') {
     swaggerSources {
         frontendApiV1 {
             // 仕様定義YAML
-            inputFile = parent.file('frontend-api-v1.yaml')
+            inputFile = parent.file('get-service-list.yaml')
             // SwaggerCodeGen
             code {
                 // Select generate langurage

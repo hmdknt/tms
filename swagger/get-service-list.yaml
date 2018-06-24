@@ -1,0 +1,61 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Service list
+  description: |
+    **This example has a working backend hosted in Heroku**
+
+    You can try all HTTP operation described in this Swagger spec.
+
+    Find source code of this API [here](https://github.com/mohsen1/petstore-api)
+host: localhost:9999
+basePath: /proto
+schemes:
+  - http
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /shadow/{shadow_id}/services:
+    post:
+      tags:
+        - service
+      parameters:
+        - name: shadow_id
+          in: path
+          description: number of pets to return
+          type: string
+          required: true
+        - name: x-api-key
+          in: header
+          description: aaa
+          type: string
+          required: true
+        - name: x-session-id
+          in: header
+          description: aaa
+          type: string
+          required: true
+      responses:
+        200:
+          description: "成功時のレスポンス"
+          schema:
+            $ref: "#/definitions/ServiceInfo"
+definitions:
+  ServiceInfo:
+    type: "object"
+    properties:
+      service_info:
+        type: "array"
+        items:
+          $ref: "#/definitions/ServiceDetail" # Storeを呼び出す
+  ServiceDetail:
+    type: "object"
+    properties:
+      status:
+        type: "integer"
+      name:
+        type: "string"
+        example: "ABC PET STORE"
